@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  teatime-lists
+ 
+  Created by Mathieu Perrais on 9/13/18.
+  Copyright © 2018 Tea Time Labs Inc. All rights reserved.
+*/
+
+/* SHARED */
+"CANCEL_ACTION_TITLE" = "Cancel";
+"POST_ACTION_TITLE" = "Post";
+
+

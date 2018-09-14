@@ -14,6 +14,7 @@ target 'teatime-lists' do
   pod 'Moya', '~> 11.0'
   pod 'Moya/RxSwift', '~> 11.0'
   pod 'Kingfisher', '~> 4.0'
+  pod 'TinyConstraints'
 
   # Pods for teatime-lists
 
