@@ -1,0 +1,6 @@
+framework module Pods_teatime_listsTests {
+  umbrella header "Pods-teatime-listsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
