@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>793128218593-91u19tumgh94hv1odnu83tl27fboria8.apps.googleusercontent.com</string>
+	<string>793128218593-svqv37vdhva3fr8ri45nl0rtab2ub8kq.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.793128218593-91u19tumgh94hv1odnu83tl27fboria8</string>
+	<string>com.googleusercontent.apps.793128218593-svqv37vdhva3fr8ri45nl0rtab2ub8kq</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAFutpIH6yBoSgeGcHez8IXX497u62IVEo</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.teatimehq.teatime-lists</string>
+	<string>com.teatimelabs.lists</string>
 	<key>PROJECT_ID</key>
 	<string>teatime-lists</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:793128218593:ios:b769d36410b9f5d6</string>
+	<string>1:793128218593:ios:3412459bcef461ee</string>
 	<key>DATABASE_URL</key>
 	<string>https://teatime-lists.firebaseio.com</string>
 </dict>
