@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 class LandingViewController: UIViewController {
 
@@ -18,7 +19,11 @@ class LandingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        if (FBSDKAccessToken.currentAccessTokenIsActive()) {
+//            UIApplication.shared.keyWindow?.rootViewController =
+        } else {
+            UIApplication.shared.windows.last?.rootViewController = LoginViewController()
+        }
         
     }
 

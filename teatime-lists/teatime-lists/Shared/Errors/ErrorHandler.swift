@@ -10,7 +10,9 @@ import UIKit
 
 final class ErrorHandler {
     
-    
+    static func alertView(error: Error) {
+        
+    }
     
     
 }

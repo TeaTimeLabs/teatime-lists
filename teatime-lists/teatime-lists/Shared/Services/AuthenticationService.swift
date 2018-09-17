@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import Firebase
 
 
 
@@ -25,7 +26,7 @@ enum UserStatus {
 }
 
 
-final class AuthenticationService {
+struct AuthenticationService {
 
     static let shared = AuthenticationService()
     
@@ -45,16 +46,17 @@ extension AuthenticationService {
         }
         
         // Sending credentials to Firebase
-//        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
         
-//        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
-//            if let error = error {
-//                // ...
-//                return
-//            }
-//            // User is signed in
-//            // ...
-//        }
+        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+            if let error = error {
+                // ...
+                return
+            }
+
+            
+            GraphService().getFriends()
+        }
     }
     
     

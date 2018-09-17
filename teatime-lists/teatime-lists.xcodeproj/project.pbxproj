@@ -9,15 +9,20 @@
 /* Begin PBXBuildFile section */
 		429DCE021F0A24AFF19D8EA9 /* Pods_teatime_listsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A087FD5A09F6733E01735EC3 /* Pods_teatime_listsTests.framework */; };
 		59D89198BF5E73A63622BC1E /* Pods_teatime_lists.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B434D017F16AB9F7A017E44F /* Pods_teatime_lists.framework */; };
+		F011DE6A215019840058DEDE /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F011DE69215019840058DEDE /* Friend.swift */; };
+		F011DE6D215023590058DEDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F011DE6C215023590058DEDE /* Main.storyboard */; };
+		F011DE6F2150236A0058DEDE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F011DE6E2150236A0058DEDE /* MainViewController.swift */; };
 		F013C939214C86B5001F1179 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C938214C86B5001F1179 /* LandingViewController.swift */; };
 		F013C93B214C86DC001F1179 /* Landing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F013C93A214C86DC001F1179 /* Landing.storyboard */; };
 		F013C93E214C873B001F1179 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F013C93D214C873B001F1179 /* Login.storyboard */; };
 		F013C940214C8747001F1179 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C93F214C8747001F1179 /* LoginViewController.swift */; };
-		F013C942214C8A46001F1179 /* AuthenticationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C941214C8A46001F1179 /* AuthenticationHelper.swift */; };
+		F013C942214C8A46001F1179 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C941214C8A46001F1179 /* AuthenticationService.swift */; };
 		F013C944214C8B12001F1179 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C943214C8B12001F1179 /* Constants.swift */; };
-		F013C946214C8F50001F1179 /* UIWindow+topVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C945214C8F50001F1179 /* UIWindow+topVC.swift */; };
+		F013C946214C8F50001F1179 /* UIWindow+TopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C945214C8F50001F1179 /* UIWindow+TopVC.swift */; };
 		F013C949214C95EF001F1179 /* FacebookError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C948214C95EF001F1179 /* FacebookError.swift */; };
 		F013C94B214C970A001F1179 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C94A214C970A001F1179 /* ErrorHandler.swift */; };
+		F013C94D214C9A8A001F1179 /* UIViewController+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C94C214C9A8A001F1179 /* UIViewController+Presenter.swift */; };
+		F013C94F214C9B48001F1179 /* GraphService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C94E214C9B48001F1179 /* GraphService.swift */; };
 		F09A7949214B265B0070CA93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A7948214B265B0070CA93 /* AppDelegate.swift */; };
 		F09A7950214B265E0070CA93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F09A794F214B265E0070CA93 /* Assets.xcassets */; };
 		F09A7953214B265E0070CA93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F09A7951214B265E0070CA93 /* LaunchScreen.storyboard */; };
@@ -58,15 +63,20 @@
 		A087FD5A09F6733E01735EC3 /* Pods_teatime_listsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_teatime_listsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B434D017F16AB9F7A017E44F /* Pods_teatime_lists.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_teatime_lists.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B81D62ECF0DE3756B6369C7E /* Pods-teatime-listsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teatime-listsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-teatime-listsTests/Pods-teatime-listsTests.release.xcconfig"; sourceTree = "<group>"; };
+		F011DE69215019840058DEDE /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		F011DE6C215023590058DEDE /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F011DE6E2150236A0058DEDE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F013C938214C86B5001F1179 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		F013C93A214C86DC001F1179 /* Landing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Landing.storyboard; sourceTree = "<group>"; };
 		F013C93D214C873B001F1179 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		F013C93F214C8747001F1179 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		F013C941214C8A46001F1179 /* AuthenticationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationHelper.swift; sourceTree = "<group>"; };
+		F013C941214C8A46001F1179 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		F013C943214C8B12001F1179 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		F013C945214C8F50001F1179 /* UIWindow+topVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+topVC.swift"; sourceTree = "<group>"; };
+		F013C945214C8F50001F1179 /* UIWindow+TopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+TopVC.swift"; sourceTree = "<group>"; };
 		F013C948214C95EF001F1179 /* FacebookError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookError.swift; sourceTree = "<group>"; };
 		F013C94A214C970A001F1179 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		F013C94C214C9A8A001F1179 /* UIViewController+Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Presenter.swift"; sourceTree = "<group>"; };
+		F013C94E214C9B48001F1179 /* GraphService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphService.swift; sourceTree = "<group>"; };
 		F09A7945214B265B0070CA93 /* teatime-lists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "teatime-lists.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09A7948214B265B0070CA93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F09A794F214B265E0070CA93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,6 +142,15 @@
 				A087FD5A09F6733E01735EC3 /* Pods_teatime_listsTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F011DE6B215023410058DEDE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F011DE6C215023590058DEDE /* Main.storyboard */,
+				F011DE6E2150236A0058DEDE /* MainViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		F013C93C214C8729001F1179 /* Login */ = {
@@ -204,7 +223,7 @@
 			children = (
 				F09A799A214C2A720070CA93 /* Landing */,
 				F013C93C214C8729001F1179 /* Login */,
-				F09A7985214C264B0070CA93 /* OnBoarding */,
+				F011DE6B215023410058DEDE /* Main */,
 				F09A7986214C26520070CA93 /* MapView */,
 				F09A7984214C262C0070CA93 /* ListEditing */,
 			);
@@ -215,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				F09A7995214C28480070CA93 /* Example from Dolo test */,
+				F011DE69215019840058DEDE /* Friend.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,7 +279,8 @@
 				F09A7982214C25A10070CA93 /* InterfaceBuilder+Localization.swift */,
 				F09A7989214C27060070CA93 /* Cell+Reusability.swift */,
 				F09A798B214C27A10070CA93 /* Collection+Safety.swift */,
-				F013C945214C8F50001F1179 /* UIWindow+topVC.swift */,
+				F013C945214C8F50001F1179 /* UIWindow+TopVC.swift */,
+				F013C94C214C9A8A001F1179 /* UIViewController+Presenter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -275,7 +296,8 @@
 		F09A7972214C23730070CA93 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				F013C941214C8A46001F1179 /* AuthenticationHelper.swift */,
+				F013C941214C8A46001F1179 /* AuthenticationService.swift */,
+				F013C94E214C9B48001F1179 /* GraphService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -292,13 +314,6 @@
 			children = (
 			);
 			path = ListEditing;
-			sourceTree = "<group>";
-		};
-		F09A7985214C264B0070CA93 /* OnBoarding */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		F09A7986214C26520070CA93 /* MapView */ = {
@@ -415,6 +430,7 @@
 				F013C93B214C86DC001F1179 /* Landing.storyboard in Resources */,
 				F09A7988214C269D0070CA93 /* Colors.xcassets in Resources */,
 				F013C93E214C873B001F1179 /* Login.storyboard in Resources */,
+				F011DE6D215023590058DEDE /* Main.storyboard in Resources */,
 				F09A7997214C28A00070CA93 /* Localizable.strings in Resources */,
 				F09A7953214B265E0070CA93 /* LaunchScreen.storyboard in Resources */,
 				F09A7969214B38000070CA93 /* GoogleService-Info.plist in Resources */,
@@ -470,6 +486,7 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -493,6 +510,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TinyConstraints.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -532,12 +550,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F013C940214C8747001F1179 /* LoginViewController.swift in Sources */,
+				F011DE6F2150236A0058DEDE /* MainViewController.swift in Sources */,
 				F013C944214C8B12001F1179 /* Constants.swift in Sources */,
+				F011DE6A215019840058DEDE /* Friend.swift in Sources */,
 				F09A7991214C28240070CA93 /* LocationCategory.swift in Sources */,
+				F013C94D214C9A8A001F1179 /* UIViewController+Presenter.swift in Sources */,
 				F09A798C214C27A10070CA93 /* Collection+Safety.swift in Sources */,
 				F09A7974214C23A50070CA93 /* ExampleButton.swift in Sources */,
 				F09A7978214C23D60070CA93 /* Routes.swift in Sources */,
-				F013C942214C8A46001F1179 /* AuthenticationHelper.swift in Sources */,
+				F013C942214C8A46001F1179 /* AuthenticationService.swift in Sources */,
+				F013C94F214C9B48001F1179 /* GraphService.swift in Sources */,
 				F09A797F214C25560070CA93 /* UIViewController+Child.swift in Sources */,
 				F09A7992214C28240070CA93 /* Location.swift in Sources */,
 				F09A7993214C28240070CA93 /* LocationResults.swift in Sources */,
@@ -548,7 +570,7 @@
 				F09A7999214C29B30070CA93 /* UIView+Subviews.swift in Sources */,
 				F013C94B214C970A001F1179 /* ErrorHandler.swift in Sources */,
 				F013C939214C86B5001F1179 /* LandingViewController.swift in Sources */,
-				F013C946214C8F50001F1179 /* UIWindow+topVC.swift in Sources */,
+				F013C946214C8F50001F1179 /* UIWindow+TopVC.swift in Sources */,
 				F09A7976214C23CB0070CA93 /* Routable.swift in Sources */,
 				F09A7983214C25A10070CA93 /* InterfaceBuilder+Localization.swift in Sources */,
 				F013C949214C95EF001F1179 /* FacebookError.swift in Sources */,
