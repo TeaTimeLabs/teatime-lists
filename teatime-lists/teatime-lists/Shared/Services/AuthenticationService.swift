@@ -39,9 +39,10 @@ struct AuthenticationService {
 
 // Facebook
 extension AuthenticationService {
-    func handleFacebookLogin(result: FBSDKLoginManagerLoginResult?, error: Error?) {
+    func handleFacebookLogin(result: FBSDKLoginManagerLoginResult?, error: Error?, completionHandler: ((Bool) -> ())?) {
         if let error = error {
             print(error.localizedDescription)
+            completionHandler?(false)
             return
         }
         
@@ -51,11 +52,14 @@ extension AuthenticationService {
         Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
             if let error = error {
                 // ...
+                completionHandler?(false)
                 return
             }
+            
+            completionHandler?(true)
 
             
-            GraphService().getFriends()
+//            GraphService().getFriends()
         }
     }
     

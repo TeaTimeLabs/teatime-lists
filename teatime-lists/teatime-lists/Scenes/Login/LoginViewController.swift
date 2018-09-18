@@ -31,7 +31,13 @@ class LoginViewController: UIViewController {
 extension LoginViewController: FBSDKLoginButtonDelegate {
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         
-        AuthenticationService.shared.handleFacebookLogin(result: result, error: error)
+        AuthenticationService.shared.handleFacebookLogin(result: result, error: error) { [weak self] success in
+            if success {
+                self?.makeRootOfKeyWindow(storyboard: .main)
+            } else {
+                // display warning message to try again
+            }
+        }
         
     }
     

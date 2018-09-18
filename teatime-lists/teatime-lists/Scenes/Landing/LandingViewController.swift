@@ -19,12 +19,16 @@ class LandingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if (FBSDKAccessToken.currentAccessTokenIsActive()) {
-//            UIApplication.shared.keyWindow?.rootViewController =
-        } else {
-            UIApplication.shared.windows.last?.rootViewController = LoginViewController()
-        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        if (FBSDKAccessToken.currentAccessTokenIsActive()) {
+            makeRootOfKeyWindow(storyboard: .main)
+        } else {
+            makeRootOfKeyWindow(storyboard: .login)
+        }
     }
 
 

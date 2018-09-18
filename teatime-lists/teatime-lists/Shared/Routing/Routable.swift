@@ -52,14 +52,20 @@ public extension Routable where Self: UIViewController {
     func showDetailViewController<T: UIViewController>(storyboard: StoryboardIdentifier, identifier: String? = nil, configure: ((T) -> Void)? = nil) {
         RoutingLogic.showDetailViewController(delegate: self, storyboard: storyboard.rawValue, identifier: identifier, configure: configure)
     }
+    
+    func makeRootOfKeyWindow<T: UIViewController>(storyboard: StoryboardIdentifier, identifier: String? = nil, configure: ((T) -> Void)? = nil) {
+        RoutingLogic.makeRootOfKeyWindow(delegate: self, storyboard: storyboard.rawValue, identifier: identifier, configure: configure)
+    }
 }
 
 public protocol Router {
-    weak var viewController: UIViewController? { get set }
+    var viewController: UIViewController? { get set }
     
     func present<T: UIViewController>(storyboard: String, identifier: String?, animated: Bool, modalPresentationStyle: UIModalPresentationStyle?, modalTransitionStyle: UIModalTransitionStyle?, configure: ((T) -> Void)?, completion: ((T) -> Void)?)
     func show<T: UIViewController>(storyboard: String, identifier: String?, configure: ((T) -> Void)?)
     func showDetailViewController<T: UIViewController>(storyboard: String, identifier: String?, configure: ((T) -> Void)?)
+    
+    func makeRootOfKeyWindow<T: UIViewController>(storyboard: String, identifier: String?, configure: ((T) -> Void)?)
 }
 
 public extension Router {
@@ -101,6 +107,14 @@ public extension Router {
     func showDetailViewController<T: UIViewController>(storyboard: String, identifier: String? = nil, configure: ((T) -> Void)? = nil) {
         guard let viewController = viewController else { return }
         RoutingLogic.showDetailViewController(delegate: viewController, storyboard: storyboard, identifier: identifier, configure: configure)
+    }
+    
+    /**
+     Added: Make Root of KeyWindow
+     */
+    func makeRootOfKeyWindow<T: UIViewController>(storyboard: String, identifier: String? = nil, animated: Bool = true, modalPresentationStyle: UIModalPresentationStyle? = nil, modalTransitionStyle: UIModalTransitionStyle? = nil, configure: ((T) -> Void)? = nil, completion: ((T) -> Void)? = nil) {
+        guard let viewController = viewController else { return }
+        RoutingLogic.makeRootOfKeyWindow(delegate: viewController, storyboard: storyboard, identifier: identifier, animated: animated, modalPresentationStyle: modalPresentationStyle, modalTransitionStyle: modalTransitionStyle, configure: configure, completion: completion)
     }
 }
 
@@ -154,6 +168,28 @@ fileprivate enum RoutingLogic {
         configure?(controller)
         
         delegate.showDetailViewController(controller, sender: delegate)
+    }
+    
+    static func makeRootOfKeyWindow<T: UIViewController>(delegate: UIViewController, storyboard: String, identifier: String? = nil, animated: Bool = true, modalPresentationStyle: UIModalPresentationStyle? = nil, modalTransitionStyle: UIModalTransitionStyle? = nil, configure: ((T) -> Void)? = nil, completion: ((T) -> Void)? = nil) {
+        let storyboard = UIStoryboard(name: storyboard)
+        
+        guard let controller = (identifier != nil
+            ? storyboard.instantiateViewController(withIdentifier: identifier!)
+            : storyboard.instantiateInitialViewController()) as? T
+            else { return assertionFailure("Invalid controller for storyboard \(storyboard).") }
+        
+        if let modalPresentationStyle = modalPresentationStyle {
+            controller.modalPresentationStyle = modalPresentationStyle
+        }
+        
+        if let modalTransitionStyle = modalTransitionStyle {
+            controller.modalTransitionStyle = modalTransitionStyle
+        }
+        
+        configure?(controller)
+        
+        UIApplication.shared.keyWindow?.rootViewController = controller
+        completion?(controller)
     }
 }
 

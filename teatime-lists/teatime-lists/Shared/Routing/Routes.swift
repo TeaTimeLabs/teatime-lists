@@ -10,8 +10,8 @@ import UIKit
 
 extension UIViewController: Routable {
     public enum StoryboardIdentifier: String {
-        case exampleModule = "ExampleModule"
-        case exampleModule2 = "ExampleModule2"
+        case login = "Login"
+        case main = "Main"
     }
 }
 
