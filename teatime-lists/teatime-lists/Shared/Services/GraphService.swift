@@ -32,9 +32,6 @@ struct GraphService {
             
             let friends = try? JSONDecoder().decode([Friend].self, from: json["data"].rawData())
             
-
-            print()
-            
             
 //            var friends = [Friend]()
             
