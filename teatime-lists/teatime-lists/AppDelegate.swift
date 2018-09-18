@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import FBSDKCoreKit
+import GoogleMaps
+import GooglePlaces
 
 
 @UIApplicationMain
@@ -21,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         UIApplication.shared.windows.last?.makeKeyAndVisible()
+        
+        GMSServices.provideAPIKey("AIzaSyA8vzL74tZNhysjzcp-5OmBcV-cbwlIVkk")
+        GMSPlacesClient.provideAPIKey("AIzaSyA8vzL74tZNhysjzcp-5OmBcV-cbwlIVkk")
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         FirebaseApp.configure()
