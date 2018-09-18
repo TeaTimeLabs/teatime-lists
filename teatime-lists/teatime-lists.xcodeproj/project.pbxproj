@@ -12,6 +12,7 @@
 		F011DE6A215019840058DEDE /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F011DE69215019840058DEDE /* Friend.swift */; };
 		F011DE6D215023590058DEDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F011DE6C215023590058DEDE /* Main.storyboard */; };
 		F011DE6F2150236A0058DEDE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F011DE6E2150236A0058DEDE /* MainViewController.swift */; };
+		F011DE7121507D790058DEDE /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = F011DE7021507D790058DEDE /* Account.swift */; };
 		F013C939214C86B5001F1179 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C938214C86B5001F1179 /* LandingViewController.swift */; };
 		F013C93B214C86DC001F1179 /* Landing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F013C93A214C86DC001F1179 /* Landing.storyboard */; };
 		F013C93E214C873B001F1179 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F013C93D214C873B001F1179 /* Login.storyboard */; };
@@ -66,6 +67,7 @@
 		F011DE69215019840058DEDE /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		F011DE6C215023590058DEDE /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F011DE6E2150236A0058DEDE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F011DE7021507D790058DEDE /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		F013C938214C86B5001F1179 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		F013C93A214C86DC001F1179 /* Landing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Landing.storyboard; sourceTree = "<group>"; };
 		F013C93D214C873B001F1179 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				F09A7995214C28480070CA93 /* Example from Dolo test */,
+				F011DE7021507D790058DEDE /* Account.swift */,
 				F011DE69215019840058DEDE /* Friend.swift */,
 			);
 			path = Models;
@@ -572,6 +575,7 @@
 				F013C939214C86B5001F1179 /* LandingViewController.swift in Sources */,
 				F013C946214C8F50001F1179 /* UIWindow+TopVC.swift in Sources */,
 				F09A7976214C23CB0070CA93 /* Routable.swift in Sources */,
+				F011DE7121507D790058DEDE /* Account.swift in Sources */,
 				F09A7983214C25A10070CA93 /* InterfaceBuilder+Localization.swift in Sources */,
 				F013C949214C95EF001F1179 /* FacebookError.swift in Sources */,
 				F09A798A214C27060070CA93 /* Cell+Reusability.swift in Sources */,

@@ -24,11 +24,8 @@ class LandingViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if (FBSDKAccessToken.currentAccessTokenIsActive()) {
-            makeRootOfKeyWindow(storyboard: .main)
-        } else {
-            makeRootOfKeyWindow(storyboard: .login)
-        }
+        // Needed to instantiate the AuthenticationService singleton
+        AuthenticationService.shared.landing()
     }
 
 

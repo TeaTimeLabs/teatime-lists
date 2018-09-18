@@ -19,13 +19,6 @@ enum FacebookPermissions {
     static let friends = "user_friends"
 }
 
-
-enum UserStatus {
-    case authenticated
-    case guest
-}
-
-
 struct AuthenticationService {
 
     static let shared = AuthenticationService()
@@ -34,7 +27,32 @@ struct AuthenticationService {
                                        FacebookPermissions.email,
                                        FacebookPermissions.friends]
     
-    private init() {}
+    private var authHandle: AuthStateDidChangeListenerHandle?
+    
+    private init() {
+        // Init and register the status listener and check the current Status of the user.
+        // This is also triggered right away, we are relying on that method only to Navigate the User to Login or Main.
+        authHandle = Auth.auth().addStateDidChangeListener() { auth, user in
+            if user != nil {
+                UIWindow.topMostViewController()?.makeRootOfKeyWindow(storyboard: .main)
+            } else {
+                UIWindow.topMostViewController()?.makeRootOfKeyWindow(storyboard: .login)
+            }
+        }}
+    
+    
+    func getUser() -> User? {
+        return Auth.auth().currentUser
+    }
+    
+    func isAuthenticated() -> Bool {
+        return Auth.auth().currentUser != nil
+    }
+    
+    
+    func landing() {
+        // Aditional customization to do at launch if needed
+    }
 }
 
 // Facebook
@@ -51,15 +69,13 @@ extension AuthenticationService {
         
         Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
             if let error = error {
-                // ...
+                // TODO: Handle error
+                print(error.localizedDescription)
                 completionHandler?(false)
                 return
             }
             
             completionHandler?(true)
-
-            
-//            GraphService().getFriends()
         }
     }
     

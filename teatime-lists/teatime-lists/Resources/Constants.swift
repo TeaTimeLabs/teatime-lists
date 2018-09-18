@@ -8,4 +8,6 @@
 
 import Foundation
 
+// Put constants here in case-less enum hierarchy
+
 

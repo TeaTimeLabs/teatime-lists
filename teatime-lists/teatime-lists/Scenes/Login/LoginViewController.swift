@@ -33,7 +33,7 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
         
         AuthenticationService.shared.handleFacebookLogin(result: result, error: error) { [weak self] success in
             if success {
-                self?.makeRootOfKeyWindow(storyboard: .main)
+                // Additional code
             } else {
                 // display warning message to try again
             }
