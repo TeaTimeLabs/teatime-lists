@@ -7,22 +7,42 @@
 //
 
 import Foundation
-import RxSwift
+import Firebase
 
 
-struct Account {
-    
-    enum Status {
-        case authenticated
-        case guest
-    }
-    
+class Account {
     
     static var shared = Account()
     
-    
-    var status: Status = .guest
-    
+    var friends: [Friend]? = nil
     
     private init() {}
+    
+    // Private
+    private func getFirebaseUser() -> User? {
+        return Auth.auth().currentUser
+    }
 }
+
+
+// MARK: - Basic properties
+extension Account {
+    var isAuthenticate: Bool {
+        return getFirebaseUser() != nil
+    }
+    
+    var fullName: String? {
+        return getFirebaseUser()?.displayName
+    }
+    
+    var photoURL: URL? {
+        return getFirebaseUser()?.photoURL
+    }
+}
+
+
+// MARK: - Danger Zone
+extension Account {
+
+}
+

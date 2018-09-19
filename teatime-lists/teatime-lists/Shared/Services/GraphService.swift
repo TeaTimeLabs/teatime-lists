@@ -14,29 +14,32 @@ import FBSDKCoreKit
 
 struct GraphService {
 
-    func getFriends() {
-        let parameters = ["fields": "name,picture.type(normal)"]
+    func getFriends() -> [Friend]? {
+        // Only if current Facebook authentication is good
+//        guard FBSDKAccessToken.current() != nil else {
+//            return nil
+//        }
+//
+//        let parameters = ["fields": "name,picture.type(normal)"]
+//
+//        FBSDKGraphRequest(graphPath: "me/friends", parameters: parameters).start { (connection, result, error) in
+//            guard error == nil else {
+//                print(error)
+//                return
+//            }
+//
+//            guard let result = result else {
+//                // Parsining error
+//                return
+//            }
+//
+//            ///////// SUPER TERRIBLE CODE, REDO A PROPER WAY
+//            let json = JSON(result)
+//            let friends = try? JSONDecoder().decode([Friend].self, from: json["data"].rawData())
+//
+//        }
         
-        FBSDKGraphRequest(graphPath: "me/friends", parameters: parameters).start { (connection, result, error) in
-            guard error == nil else {
-                print(error)
-                return
-            }
-            
-            guard let result = result else {
-                // Parsining error
-                return
-            }
-            
-            let json = JSON(result)
-            
-            let friends = try? JSONDecoder().decode([Friend].self, from: json["data"].rawData())
-            
-            
-//            var friends = [Friend]()
-            
-            
-        }
+        return nil
     }
     
 }

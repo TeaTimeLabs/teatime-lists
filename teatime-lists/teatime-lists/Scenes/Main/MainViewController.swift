@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        GraphService().getFriends()
+//        GraphService().getFriends()
     }
 
     override func loadView() {

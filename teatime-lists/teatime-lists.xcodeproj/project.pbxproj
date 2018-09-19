@@ -64,6 +64,7 @@
 		A087FD5A09F6733E01735EC3 /* Pods_teatime_listsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_teatime_listsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B434D017F16AB9F7A017E44F /* Pods_teatime_lists.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_teatime_lists.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B81D62ECF0DE3756B6369C7E /* Pods-teatime-listsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teatime-listsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-teatime-listsTests/Pods-teatime-listsTests.release.xcconfig"; sourceTree = "<group>"; };
+		F00048142151BFE400328037 /* teatime-lists.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "teatime-lists.entitlements"; sourceTree = "<group>"; };
 		F011DE69215019840058DEDE /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		F011DE6C215023590058DEDE /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F011DE6E2150236A0058DEDE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +197,7 @@
 		F09A7947214B265B0070CA93 /* teatime-lists */ = {
 			isa = PBXGroup;
 			children = (
+				F00048142151BFE400328037 /* teatime-lists.entitlements */,
 				F09A796D214C23170070CA93 /* Resources */,
 				F09A796E214C23520070CA93 /* Shared */,
 				F09A796C214C22F10070CA93 /* Models */,
@@ -400,6 +402,11 @@
 				TargetAttributes = {
 					F09A7944214B265B0070CA93 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					F09A7958214B265E0070CA93 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -752,6 +759,7 @@
 			baseConfigurationReference = 9FD3639087ACD85EA5A57C73 /* Pods-teatime-lists.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "teatime-lists/teatime-lists.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: mathieu@doloapp.com (7TFS74PJD6)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2JJCFWQJV6;
@@ -774,6 +782,7 @@
 			baseConfigurationReference = 90A05B8076712DF5A5B08547 /* Pods-teatime-lists.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "teatime-lists/teatime-lists.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Tea Time Labs Inc. (2JJCFWQJV6)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2JJCFWQJV6;
