@@ -45,6 +45,9 @@
 		F09A7994214C28240070CA93 /* LocationCategoryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A7990214C28240070CA93 /* LocationCategoryIcon.swift */; };
 		F09A7997214C28A00070CA93 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F09A7996214C28A00070CA93 /* Localizable.strings */; };
 		F09A7999214C29B30070CA93 /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A7998214C29B30070CA93 /* UIView+Subviews.swift */; };
+		F0FA8DA42152EAA700E0A5F0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA8DA32152EAA700E0A5F0 /* MapViewController.swift */; };
+		F0FA8DA62152ECC100E0A5F0 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA8DA52152ECC100E0A5F0 /* LocationService.swift */; };
+		F0FA8DA92152FF4E00E0A5F0 /* UltraLight.json in Resources */ = {isa = PBXBuildFile; fileRef = F0FA8DA82152FF4E00E0A5F0 /* UltraLight.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +108,9 @@
 		F09A7990214C28240070CA93 /* LocationCategoryIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCategoryIcon.swift; sourceTree = "<group>"; };
 		F09A7996214C28A00070CA93 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		F09A7998214C29B30070CA93 /* UIView+Subviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
+		F0FA8DA32152EAA700E0A5F0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		F0FA8DA52152ECC100E0A5F0 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		F0FA8DA82152FF4E00E0A5F0 /* UltraLight.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UltraLight.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +309,7 @@
 			children = (
 				F013C941214C8A46001F1179 /* AuthenticationService.swift */,
 				F013C94E214C9B48001F1179 /* GraphService.swift */,
+				F0FA8DA52152ECC100E0A5F0 /* LocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -324,6 +331,8 @@
 		F09A7986214C26520070CA93 /* MapView */ = {
 			isa = PBXGroup;
 			children = (
+				F0FA8DA72152FED700E0A5F0 /* Map Styling */,
+				F0FA8DA32152EAA700E0A5F0 /* MapViewController.swift */,
 			);
 			path = MapView;
 			sourceTree = "<group>";
@@ -346,6 +355,14 @@
 				F013C938214C86B5001F1179 /* LandingViewController.swift */,
 			);
 			path = Landing;
+			sourceTree = "<group>";
+		};
+		F0FA8DA72152FED700E0A5F0 /* Map Styling */ = {
+			isa = PBXGroup;
+			children = (
+				F0FA8DA82152FF4E00E0A5F0 /* UltraLight.json */,
+			);
+			path = "Map Styling";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,6 +461,7 @@
 				F011DE6D215023590058DEDE /* Main.storyboard in Resources */,
 				F09A7997214C28A00070CA93 /* Localizable.strings in Resources */,
 				F09A7953214B265E0070CA93 /* LaunchScreen.storyboard in Resources */,
+				F0FA8DA92152FF4E00E0A5F0 /* UltraLight.json in Resources */,
 				F09A7969214B38000070CA93 /* GoogleService-Info.plist in Resources */,
 				F09A7950214B265E0070CA93 /* Assets.xcassets in Resources */,
 			);
@@ -605,8 +623,10 @@
 				F09A7976214C23CB0070CA93 /* Routable.swift in Sources */,
 				F011DE7121507D790058DEDE /* Account.swift in Sources */,
 				F09A7983214C25A10070CA93 /* InterfaceBuilder+Localization.swift in Sources */,
+				F0FA8DA62152ECC100E0A5F0 /* LocationService.swift in Sources */,
 				F013C949214C95EF001F1179 /* FacebookError.swift in Sources */,
 				F09A798A214C27060070CA93 /* Cell+Reusability.swift in Sources */,
+				F0FA8DA42152EAA700E0A5F0 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

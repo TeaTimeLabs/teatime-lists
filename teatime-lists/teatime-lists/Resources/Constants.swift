@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import CoreLocation
 
 // Put constants here in case-less enum hierarchy
 
+let defaultMapLocation = CLLocationCoordinate2DMake(37.787359,  -122.408227)
 
