@@ -48,6 +48,10 @@
 		F0FA8DA42152EAA700E0A5F0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA8DA32152EAA700E0A5F0 /* MapViewController.swift */; };
 		F0FA8DA62152ECC100E0A5F0 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA8DA52152ECC100E0A5F0 /* LocationService.swift */; };
 		F0FA8DA92152FF4E00E0A5F0 /* UltraLight.json in Resources */ = {isa = PBXBuildFile; fileRef = F0FA8DA82152FF4E00E0A5F0 /* UltraLight.json */; };
+		F0FA8DAF2153060F00E0A5F0 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0FA8DAC2153060E00E0A5F0 /* Poppins-Medium.ttf */; };
+		F0FA8DB02153060F00E0A5F0 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0FA8DAD2153060F00E0A5F0 /* Poppins-SemiBold.ttf */; };
+		F0FA8DB12153060F00E0A5F0 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0FA8DAE2153060F00E0A5F0 /* Poppins-Regular.ttf */; };
+		F0FA8DB3215306D800E0A5F0 /* UIFont+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA8DB2215306D800E0A5F0 /* UIFont+Custom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +115,10 @@
 		F0FA8DA32152EAA700E0A5F0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F0FA8DA52152ECC100E0A5F0 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		F0FA8DA82152FF4E00E0A5F0 /* UltraLight.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UltraLight.json; sourceTree = "<group>"; };
+		F0FA8DAC2153060E00E0A5F0 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		F0FA8DAD2153060F00E0A5F0 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		F0FA8DAE2153060F00E0A5F0 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		F0FA8DB2215306D800E0A5F0 /* UIFont+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Custom.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +300,7 @@
 				F09A798B214C27A10070CA93 /* Collection+Safety.swift */,
 				F013C945214C8F50001F1179 /* UIWindow+TopVC.swift */,
 				F013C94C214C9A8A001F1179 /* UIViewController+Presenter.swift */,
+				F0FA8DB2215306D800E0A5F0 /* UIFont+Custom.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -317,6 +326,9 @@
 		F09A7979214C24190070CA93 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				F0FA8DAC2153060E00E0A5F0 /* Poppins-Medium.ttf */,
+				F0FA8DAE2153060F00E0A5F0 /* Poppins-Regular.ttf */,
+				F0FA8DAD2153060F00E0A5F0 /* Poppins-SemiBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -457,6 +469,8 @@
 			files = (
 				F013C93B214C86DC001F1179 /* Landing.storyboard in Resources */,
 				F09A7988214C269D0070CA93 /* Colors.xcassets in Resources */,
+				F0FA8DB02153060F00E0A5F0 /* Poppins-SemiBold.ttf in Resources */,
+				F0FA8DB12153060F00E0A5F0 /* Poppins-Regular.ttf in Resources */,
 				F013C93E214C873B001F1179 /* Login.storyboard in Resources */,
 				F011DE6D215023590058DEDE /* Main.storyboard in Resources */,
 				F09A7997214C28A00070CA93 /* Localizable.strings in Resources */,
@@ -464,6 +478,7 @@
 				F0FA8DA92152FF4E00E0A5F0 /* UltraLight.json in Resources */,
 				F09A7969214B38000070CA93 /* GoogleService-Info.plist in Resources */,
 				F09A7950214B265E0070CA93 /* Assets.xcassets in Resources */,
+				F0FA8DAF2153060F00E0A5F0 /* Poppins-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,6 +626,7 @@
 				F013C94F214C9B48001F1179 /* GraphService.swift in Sources */,
 				F09A797F214C25560070CA93 /* UIViewController+Child.swift in Sources */,
 				F09A7992214C28240070CA93 /* Location.swift in Sources */,
+				F0FA8DB3215306D800E0A5F0 /* UIFont+Custom.swift in Sources */,
 				F09A7993214C28240070CA93 /* LocationResults.swift in Sources */,
 				F09A7994214C28240070CA93 /* LocationCategoryIcon.swift in Sources */,
 				F09A7949214B265B0070CA93 /* AppDelegate.swift in Sources */,
