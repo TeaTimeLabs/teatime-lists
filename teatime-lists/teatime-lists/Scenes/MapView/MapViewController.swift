@@ -22,6 +22,7 @@ final class MapViewController: UIViewController {
         mapView = GMSMapView.map(withFrame: UIScreen.main.bounds, camera: camera)
         mapView.styleMap()
         mapView.isMyLocationEnabled = true
+        mapView.settings.myLocationButton = true
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -37,6 +38,11 @@ final class MapViewController: UIViewController {
         view.addSubview(mapView)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+
+    }
 
 }
 

@@ -16,9 +16,10 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let value = LocationService.shared.rxLocation.value
+        _ = LocationService.shared
 
         mapViewController = MapViewController()
         add(mapViewController!, inside: view)
+        view.sendSubview(toBack: mapViewController!.view)
     }
 }

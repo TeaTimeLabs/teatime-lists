@@ -24,6 +24,7 @@
 		F013C94B214C970A001F1179 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C94A214C970A001F1179 /* ErrorHandler.swift */; };
 		F013C94D214C9A8A001F1179 /* UIViewController+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C94C214C9A8A001F1179 /* UIViewController+Presenter.swift */; };
 		F013C94F214C9B48001F1179 /* GraphService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C94E214C9B48001F1179 /* GraphService.swift */; };
+		F06142262153182B00087370 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06142252153182B00087370 /* SearchBarView.swift */; };
 		F09A7949214B265B0070CA93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A7948214B265B0070CA93 /* AppDelegate.swift */; };
 		F09A7950214B265E0070CA93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F09A794F214B265E0070CA93 /* Assets.xcassets */; };
 		F09A7953214B265E0070CA93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F09A7951214B265E0070CA93 /* LaunchScreen.storyboard */; };
@@ -52,6 +53,7 @@
 		F0FA8DB02153060F00E0A5F0 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0FA8DAD2153060F00E0A5F0 /* Poppins-SemiBold.ttf */; };
 		F0FA8DB12153060F00E0A5F0 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0FA8DAE2153060F00E0A5F0 /* Poppins-Regular.ttf */; };
 		F0FA8DB3215306D800E0A5F0 /* UIFont+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA8DB2215306D800E0A5F0 /* UIFont+Custom.swift */; };
+		F0FA8DB6215310A200E0A5F0 /* ListBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA8DB5215310A200E0A5F0 /* ListBrowserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,7 @@
 		F013C94A214C970A001F1179 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		F013C94C214C9A8A001F1179 /* UIViewController+Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Presenter.swift"; sourceTree = "<group>"; };
 		F013C94E214C9B48001F1179 /* GraphService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphService.swift; sourceTree = "<group>"; };
+		F06142252153182B00087370 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		F09A7945214B265B0070CA93 /* teatime-lists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "teatime-lists.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09A7948214B265B0070CA93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F09A794F214B265E0070CA93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,6 +122,7 @@
 		F0FA8DAD2153060F00E0A5F0 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		F0FA8DAE2153060F00E0A5F0 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		F0FA8DB2215306D800E0A5F0 /* UIFont+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Custom.swift"; sourceTree = "<group>"; };
+		F0FA8DB5215310A200E0A5F0 /* ListBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBrowserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,14 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		F06142242153181000087370 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				F06142252153182B00087370 /* SearchBarView.swift */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
 		F09A793C214B265B0070CA93 = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +255,7 @@
 				F013C93C214C8729001F1179 /* Login */,
 				F011DE6B215023410058DEDE /* Main */,
 				F09A7986214C26520070CA93 /* MapView */,
+				F0FA8DB42153103B00E0A5F0 /* ListBrowser */,
 				F09A7984214C262C0070CA93 /* ListEditing */,
 			);
 			path = Scenes;
@@ -375,6 +388,15 @@
 				F0FA8DA82152FF4E00E0A5F0 /* UltraLight.json */,
 			);
 			path = "Map Styling";
+			sourceTree = "<group>";
+		};
+		F0FA8DB42153103B00E0A5F0 /* ListBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				F06142242153181000087370 /* SearchBar */,
+				F0FA8DB5215310A200E0A5F0 /* ListBrowserViewController.swift */,
+			);
+			path = ListBrowser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -619,6 +641,7 @@
 				F011DE6A215019840058DEDE /* Friend.swift in Sources */,
 				F09A7991214C28240070CA93 /* LocationCategory.swift in Sources */,
 				F013C94D214C9A8A001F1179 /* UIViewController+Presenter.swift in Sources */,
+				F0FA8DB6215310A200E0A5F0 /* ListBrowserViewController.swift in Sources */,
 				F09A798C214C27A10070CA93 /* Collection+Safety.swift in Sources */,
 				F09A7974214C23A50070CA93 /* ExampleButton.swift in Sources */,
 				F09A7978214C23D60070CA93 /* Routes.swift in Sources */,
@@ -632,6 +655,7 @@
 				F09A7949214B265B0070CA93 /* AppDelegate.swift in Sources */,
 				F09A797B214C24F30070CA93 /* UIColor+Manipulation.swift in Sources */,
 				F09A797D214C25260070CA93 /* String+Localization.swift in Sources */,
+				F06142262153182B00087370 /* SearchBarView.swift in Sources */,
 				F09A7999214C29B30070CA93 /* UIView+Subviews.swift in Sources */,
 				F013C94B214C970A001F1179 /* ErrorHandler.swift in Sources */,
 				F013C939214C86B5001F1179 /* LandingViewController.swift in Sources */,
