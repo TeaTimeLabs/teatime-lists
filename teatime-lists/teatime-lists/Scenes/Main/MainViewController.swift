@@ -13,13 +13,16 @@ import GoogleMaps
 class MainViewController: UIViewController {
 
     var mapViewController: MapViewController?
+    var drawerViewController: DrawerViewController?
+    @IBOutlet var searchBarView: SearchBarView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         _ = LocationService.shared
 
-        mapViewController = MapViewController()
-        add(mapViewController!, inside: view)
-        view.sendSubview(toBack: mapViewController!.view)
+        searchBarView?.delegate = self
+        addMapController()
+        addDrawerController(with: ListBrowserViewController(nibName: "ListBrowserViewController", bundle: nil))
     }
 }
+

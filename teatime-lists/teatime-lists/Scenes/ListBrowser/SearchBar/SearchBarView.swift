@@ -9,9 +9,13 @@
 import UIKit
 import TinyConstraints
 
-@IBDesignable
+protocol SearchBarViewDelegate: class {
+    func didTapCenterLocation()
+}
 
 class SearchBarView: UIView {
+    
+    weak var delegate: SearchBarViewDelegate?
 
     private let leftIconImageView = UIImageView()
     private let searchTextField = UITextField()
@@ -55,7 +59,13 @@ class SearchBarView: UIView {
         
         leftIconImageView.image = #imageLiteral(resourceName: "icnSearch")
         leftIconImageView.contentMode = .center
+        
         nearbyButton.setImage(#imageLiteral(resourceName: "icnLocate"), for: .normal)
+        nearbyButton.addTarget(self, action: #selector(didTapCenterLocation), for: .touchUpInside)
     }
     
+    
+    @objc func didTapCenterLocation() {
+        delegate?.didTapCenterLocation()
+    }
 }

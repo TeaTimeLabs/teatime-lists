@@ -9,20 +9,20 @@
 import UIKit
 import GoogleMaps
 
-
 final class MapViewController: UIViewController {
     
-    private let mapView: GMSMapView
+    let defaultZoom: Float = 16.0
+    
+    let mapView: GMSMapView
     
     init() {
         let latitude = LocationService.shared.rxLocation.value.latitude
         let longitude = LocationService.shared.rxLocation.value.longitude
         
-        let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: 16.0)
+        let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: defaultZoom)
         mapView = GMSMapView.map(withFrame: UIScreen.main.bounds, camera: camera)
         mapView.styleMap()
         mapView.isMyLocationEnabled = true
-        mapView.settings.myLocationButton = true
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -31,19 +31,24 @@ final class MapViewController: UIViewController {
         fatalError("Should never happen")
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.addSubview(mapView)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-
+    
+    func setMapBottomPadding(_ padding: CGFloat) {
+        mapView.padding = UIEdgeInsets(top: 0, left: 0, bottom: padding, right: 0)
     }
-
+    
+    func centerOnUserLocation(zoom: Float? = nil) {
+        guard let latitude = mapView.myLocation?.coordinate.latitude,
+            let longitude = mapView.myLocation?.coordinate.longitude else { return }
+        
+        let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: zoom ?? defaultZoom)
+        mapView.animate(to: camera)
+    }
 }
 
 

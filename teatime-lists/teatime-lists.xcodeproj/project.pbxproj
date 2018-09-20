@@ -25,6 +25,12 @@
 		F013C94D214C9A8A001F1179 /* UIViewController+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C94C214C9A8A001F1179 /* UIViewController+Presenter.swift */; };
 		F013C94F214C9B48001F1179 /* GraphService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C94E214C9B48001F1179 /* GraphService.swift */; };
 		F06142262153182B00087370 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06142252153182B00087370 /* SearchBarView.swift */; };
+		F0614229215418C800087370 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614228215418C800087370 /* DrawerViewController.swift */; };
+		F061422C2154273E00087370 /* ListBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F061422A2154273E00087370 /* ListBrowserViewController.swift */; };
+		F061422D2154273E00087370 /* ListBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F061422B2154273E00087370 /* ListBrowserViewController.xib */; };
+		F061422F21543E0E00087370 /* MainViewController+Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F061422E21543E0E00087370 /* MainViewController+Drawer.swift */; };
+		F061423121543E4500087370 /* MainViewController+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = F061423021543E4400087370 /* MainViewController+Map.swift */; };
+		F079717A21544D10007A0CA4 /* MainViewController+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079717921544D10007A0CA4 /* MainViewController+Search.swift */; };
 		F09A7949214B265B0070CA93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A7948214B265B0070CA93 /* AppDelegate.swift */; };
 		F09A7950214B265E0070CA93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F09A794F214B265E0070CA93 /* Assets.xcassets */; };
 		F09A7953214B265E0070CA93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F09A7951214B265E0070CA93 /* LaunchScreen.storyboard */; };
@@ -53,7 +59,6 @@
 		F0FA8DB02153060F00E0A5F0 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0FA8DAD2153060F00E0A5F0 /* Poppins-SemiBold.ttf */; };
 		F0FA8DB12153060F00E0A5F0 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0FA8DAE2153060F00E0A5F0 /* Poppins-Regular.ttf */; };
 		F0FA8DB3215306D800E0A5F0 /* UIFont+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA8DB2215306D800E0A5F0 /* UIFont+Custom.swift */; };
-		F0FA8DB6215310A200E0A5F0 /* ListBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA8DB5215310A200E0A5F0 /* ListBrowserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +95,12 @@
 		F013C94C214C9A8A001F1179 /* UIViewController+Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Presenter.swift"; sourceTree = "<group>"; };
 		F013C94E214C9B48001F1179 /* GraphService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphService.swift; sourceTree = "<group>"; };
 		F06142252153182B00087370 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		F0614228215418C800087370 /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
+		F061422A2154273E00087370 /* ListBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBrowserViewController.swift; sourceTree = "<group>"; };
+		F061422B2154273E00087370 /* ListBrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListBrowserViewController.xib; sourceTree = "<group>"; };
+		F061422E21543E0E00087370 /* MainViewController+Drawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Drawer.swift"; sourceTree = "<group>"; };
+		F061423021543E4400087370 /* MainViewController+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Map.swift"; sourceTree = "<group>"; };
+		F079717921544D10007A0CA4 /* MainViewController+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Search.swift"; sourceTree = "<group>"; };
 		F09A7945214B265B0070CA93 /* teatime-lists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "teatime-lists.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09A7948214B265B0070CA93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F09A794F214B265E0070CA93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,7 +133,6 @@
 		F0FA8DAD2153060F00E0A5F0 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		F0FA8DAE2153060F00E0A5F0 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		F0FA8DB2215306D800E0A5F0 /* UIFont+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Custom.swift"; sourceTree = "<group>"; };
-		F0FA8DB5215310A200E0A5F0 /* ListBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBrowserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +180,9 @@
 			children = (
 				F011DE6C215023590058DEDE /* Main.storyboard */,
 				F011DE6E2150236A0058DEDE /* MainViewController.swift */,
+				F061423021543E4400087370 /* MainViewController+Map.swift */,
+				F079717921544D10007A0CA4 /* MainViewController+Search.swift */,
+				F061422E21543E0E00087370 /* MainViewController+Drawer.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -322,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				F09A7973214C23A50070CA93 /* ExampleButton.swift */,
+				F0614228215418C800087370 /* DrawerViewController.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -394,7 +408,8 @@
 			isa = PBXGroup;
 			children = (
 				F06142242153181000087370 /* SearchBar */,
-				F0FA8DB5215310A200E0A5F0 /* ListBrowserViewController.swift */,
+				F061422A2154273E00087370 /* ListBrowserViewController.swift */,
+				F061422B2154273E00087370 /* ListBrowserViewController.xib */,
 			);
 			path = ListBrowser;
 			sourceTree = "<group>";
@@ -490,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F013C93B214C86DC001F1179 /* Landing.storyboard in Resources */,
+				F061422D2154273E00087370 /* ListBrowserViewController.xib in Resources */,
 				F09A7988214C269D0070CA93 /* Colors.xcassets in Resources */,
 				F0FA8DB02153060F00E0A5F0 /* Poppins-SemiBold.ttf in Resources */,
 				F0FA8DB12153060F00E0A5F0 /* Poppins-Regular.ttf in Resources */,
@@ -640,8 +656,8 @@
 				F013C944214C8B12001F1179 /* Constants.swift in Sources */,
 				F011DE6A215019840058DEDE /* Friend.swift in Sources */,
 				F09A7991214C28240070CA93 /* LocationCategory.swift in Sources */,
+				F0614229215418C800087370 /* DrawerViewController.swift in Sources */,
 				F013C94D214C9A8A001F1179 /* UIViewController+Presenter.swift in Sources */,
-				F0FA8DB6215310A200E0A5F0 /* ListBrowserViewController.swift in Sources */,
 				F09A798C214C27A10070CA93 /* Collection+Safety.swift in Sources */,
 				F09A7974214C23A50070CA93 /* ExampleButton.swift in Sources */,
 				F09A7978214C23D60070CA93 /* Routes.swift in Sources */,
@@ -649,12 +665,16 @@
 				F013C94F214C9B48001F1179 /* GraphService.swift in Sources */,
 				F09A797F214C25560070CA93 /* UIViewController+Child.swift in Sources */,
 				F09A7992214C28240070CA93 /* Location.swift in Sources */,
+				F061422F21543E0E00087370 /* MainViewController+Drawer.swift in Sources */,
 				F0FA8DB3215306D800E0A5F0 /* UIFont+Custom.swift in Sources */,
 				F09A7993214C28240070CA93 /* LocationResults.swift in Sources */,
 				F09A7994214C28240070CA93 /* LocationCategoryIcon.swift in Sources */,
+				F061422C2154273E00087370 /* ListBrowserViewController.swift in Sources */,
+				F079717A21544D10007A0CA4 /* MainViewController+Search.swift in Sources */,
 				F09A7949214B265B0070CA93 /* AppDelegate.swift in Sources */,
 				F09A797B214C24F30070CA93 /* UIColor+Manipulation.swift in Sources */,
 				F09A797D214C25260070CA93 /* String+Localization.swift in Sources */,
+				F061423121543E4500087370 /* MainViewController+Map.swift in Sources */,
 				F06142262153182B00087370 /* SearchBarView.swift in Sources */,
 				F09A7999214C29B30070CA93 /* UIView+Subviews.swift in Sources */,
 				F013C94B214C970A001F1179 /* ErrorHandler.swift in Sources */,
