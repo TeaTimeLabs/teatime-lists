@@ -32,6 +32,6 @@ extension MainViewController: DrawerViewControllerDelegate {
         // Pushing up the Map according to the Drawer Height
         mapViewController?.setMapBottomPadding(frame.height)
         
-        searchBarView?.alpha = (frame.minY - 200) / 180
+        searchBarView?.alpha = (frame.minY - 150) / 180
     }
 }

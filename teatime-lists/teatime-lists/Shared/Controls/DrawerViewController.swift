@@ -60,7 +60,7 @@ class DrawerViewController: UIViewController {
         
         UIView.animate(withDuration: finalDuration, delay: 0.0,
                        usingSpringWithDamping: 0.7,
-                       initialSpringVelocity: 0.2, options: [.allowUserInteraction, .layoutSubviews], animations: {
+                       initialSpringVelocity: 0.1, options: [.allowUserInteraction, .layoutSubviews], animations: {
             // configure the State from Enum values
             self.view.frame = CGRect(x: 0, y: state.getYPosition(), width: self.view.frame.width, height: state.getHeight())
 //            self.contentViewController.view.frame = self.view.bounds
