@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
+import TinyConstraints
 
 protocol DrawerViewControllerDelegate: class {
     func didUpdateFrame(_ frame: CGRect)
@@ -20,10 +19,6 @@ class DrawerViewController: UIViewController {
     weak var delegate: DrawerViewControllerDelegate?
     private var contentViewController: UIViewController
     
-    let fullView: CGFloat = 0
-    var partialView: CGFloat {
-        return UIScreen.main.bounds.height - 400
-    }
     
     init(content: UIViewController) {
         contentViewController = content
@@ -59,35 +54,50 @@ class DrawerViewController: UIViewController {
     }
     
     
+    func changeState(_ state: DrawerState, animated: Bool = true, duration: TimeInterval = 0.8) {
+        let finalDuration = animated ? duration : 0.0 // 0.0 animation if not animated
+        
+        UIView.animate(withDuration: finalDuration, delay: 0.0, options: [.allowUserInteraction], animations: {
+            // configure the State from Enum values
+            self.view.frame = CGRect(x: 0, y: state.getYPosition(), width: self.view.frame.width, height: state.getHeight())
+            self.contentViewController.view.frame = self.view.bounds
+            self.delegate?.didUpdateFrame(self.view.frame)
+        })
+    }
+    
 
     @objc func panGesture(_ recognizer: UIPanGestureRecognizer) {
         let translation = recognizer.translation(in: self.view)
         let velocity = recognizer.velocity(in: self.view)
-        let y = self.view.frame.minY
+        // minY + translation.y  (but bounded to 0 and Screen height)
+        let y = max(min(view.frame.minY + translation.y, UIScreen.main.bounds.height), 0.0)
         
-        view.frame = CGRect(x: 0, y: y + translation.y, width: view.frame.width, height:  UIScreen.main.bounds.height - (y + translation.y))
-        delegate?.didUpdateFrame(self.view.frame)
+        view.frame = CGRect(x: 0, y: y, width: view.frame.width, height:  UIScreen.main.bounds.height - y)
+        delegate?.didUpdateFrame(view.frame)
         recognizer.setTranslation(CGPoint.zero, in: self.view)
         
         if recognizer.state == .ended {
-            var duration =  velocity.y < 0 ? Double((y - fullView) / -velocity.y) : Double((partialView - y) / velocity.y )
             
-            duration = duration > 0.8 ? 0.8 : duration
+            if let targetState = DrawerState.init(positionY: y, velocityY: velocity.y) {
+                var duration =  abs(Double((targetState.getYPosition() - y) / velocity.y))
+                duration = duration > 0.5 ? 0.5 : duration
+                changeState(targetState, animated: true, duration: duration)
+            }
             
-            UIView.animate(withDuration: duration, delay: 0.0, options: [.allowUserInteraction], animations: {
-                if  velocity.y >= 0 {
-                    self.view.frame = CGRect(x: 0, y: self.partialView, width: self.view.frame.width, height: 400)
-                    self.delegate?.didUpdateFrame(self.view.frame)
-                } else {
-                    self.view.frame = CGRect(x: 0, y: self.fullView, width: self.view.frame.width, height: UIScreen.main.bounds.height)
-                    self.delegate?.didUpdateFrame(self.view.frame)
-                }
-                
-            }, completion: { [weak self] _ in
-                if ( velocity.y < 0 ) {
-                    // If Partial View
-                }
-            })
+//            var duration =  velocity.y < 0 ? Double((y - fullView) / -velocity.y) : Double((partialView - y) / velocity.y )
+//
+//            duration = duration > 0.8 ? 0.8 : duration
+//
+//            UIView.animate(withDuration: duration, delay: 0.0, options: [.allowUserInteraction], animations: {
+//                if  velocity.y >= 0 {
+//                    self.view.frame = CGRect(x: 0, y: self.partialView, width: self.view.frame.width, height: 400)
+//                    self.delegate?.didUpdateFrame(self.view.frame)
+//                } else {
+//                    self.view.frame = CGRect(x: 0, y: self.fullView, width: self.view.frame.width, height: UIScreen.main.bounds.height)
+//                    self.delegate?.didUpdateFrame(self.view.frame)
+//                }
+//
+//            }
         }
     }
 }

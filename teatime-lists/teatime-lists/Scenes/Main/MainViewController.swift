@@ -22,6 +22,7 @@ class MainViewController: UIViewController {
 
         searchBarView?.delegate = self
         addMapController()
+        // TODO: make a static method on it to instantiate
         addDrawerController(with: ListBrowserViewController(nibName: "ListBrowserViewController", bundle: nil))
     }
 }

@@ -9,9 +9,13 @@
 import UIKit
 
 extension UIViewController {
-    func add(_ child: UIViewController, inside container: UIView) {
+    func add(_ child: UIViewController, inside container: UIView, pin: Bool = true) {
         addChildViewController(child)
-        container.addSubviewAndPin(child.view)
+        if pin {
+            container.addSubviewAndPin(child.view)
+        } else {
+            container.addSubview(child.view)
+        }
         child.didMove(toParentViewController: self)
     }
     

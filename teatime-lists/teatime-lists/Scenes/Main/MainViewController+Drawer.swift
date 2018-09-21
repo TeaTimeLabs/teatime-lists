@@ -15,7 +15,8 @@ extension MainViewController {
         guard let drawerContainer = drawerViewController else {
             drawerViewController = DrawerViewController(content: content)
             drawerViewController?.delegate = self
-            add(drawerViewController!, inside: view)
+            add(drawerViewController!, inside: view, pin: false)
+            drawerViewController?.changeState(.partialScreen, animated: false)
             return
         }
         
@@ -30,5 +31,7 @@ extension MainViewController: DrawerViewControllerDelegate {
     func didUpdateFrame(_ frame: CGRect) {
         // Pushing up the Map according to the Drawer Height
         mapViewController?.setMapBottomPadding(frame.height)
+        
+        searchBarView?.alpha = (frame.minY - 200) / 180
     }
 }
