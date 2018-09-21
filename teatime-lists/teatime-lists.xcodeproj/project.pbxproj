@@ -32,6 +32,9 @@
 		F061423121543E4500087370 /* MainViewController+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = F061423021543E4400087370 /* MainViewController+Map.swift */; };
 		F079717A21544D10007A0CA4 /* MainViewController+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079717921544D10007A0CA4 /* MainViewController+Search.swift */; };
 		F079717C215471CD007A0CA4 /* DrawerViewController+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079717B215471CD007A0CA4 /* DrawerViewController+State.swift */; };
+		F079717E2154C37E007A0CA4 /* ListEditing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F079717D2154C37E007A0CA4 /* ListEditing.storyboard */; };
+		F07971802154C399007A0CA4 /* ListEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079717F2154C399007A0CA4 /* ListEditingViewController.swift */; };
+		F07971822154C819007A0CA4 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07971812154C819007A0CA4 /* AddButton.swift */; };
 		F09A7949214B265B0070CA93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A7948214B265B0070CA93 /* AppDelegate.swift */; };
 		F09A7950214B265E0070CA93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F09A794F214B265E0070CA93 /* Assets.xcassets */; };
 		F09A7953214B265E0070CA93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F09A7951214B265E0070CA93 /* LaunchScreen.storyboard */; };
@@ -103,6 +106,9 @@
 		F061423021543E4400087370 /* MainViewController+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Map.swift"; sourceTree = "<group>"; };
 		F079717921544D10007A0CA4 /* MainViewController+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Search.swift"; sourceTree = "<group>"; };
 		F079717B215471CD007A0CA4 /* DrawerViewController+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrawerViewController+State.swift"; sourceTree = "<group>"; };
+		F079717D2154C37E007A0CA4 /* ListEditing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListEditing.storyboard; sourceTree = "<group>"; };
+		F079717F2154C399007A0CA4 /* ListEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEditingViewController.swift; sourceTree = "<group>"; };
+		F07971812154C819007A0CA4 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		F09A7945214B265B0070CA93 /* teatime-lists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "teatime-lists.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09A7948214B265B0070CA93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F09A794F214B265E0070CA93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -337,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				F09A7973214C23A50070CA93 /* ExampleButton.swift */,
+				F07971812154C819007A0CA4 /* AddButton.swift */,
 				F0614228215418C800087370 /* DrawerViewController.swift */,
 				F079717B215471CD007A0CA4 /* DrawerViewController+State.swift */,
 			);
@@ -366,6 +373,8 @@
 		F09A7984214C262C0070CA93 /* ListEditing */ = {
 			isa = PBXGroup;
 			children = (
+				F079717D2154C37E007A0CA4 /* ListEditing.storyboard */,
+				F079717F2154C399007A0CA4 /* ListEditingViewController.swift */,
 			);
 			path = ListEditing;
 			sourceTree = "<group>";
@@ -411,8 +420,8 @@
 			isa = PBXGroup;
 			children = (
 				F06142242153181000087370 /* SearchBar */,
-				F061422A2154273E00087370 /* ListBrowserViewController.swift */,
 				F061422B2154273E00087370 /* ListBrowserViewController.xib */,
+				F061422A2154273E00087370 /* ListBrowserViewController.swift */,
 			);
 			path = ListBrowser;
 			sourceTree = "<group>";
@@ -520,6 +529,7 @@
 				F09A7969214B38000070CA93 /* GoogleService-Info.plist in Resources */,
 				F09A7950214B265E0070CA93 /* Assets.xcassets in Resources */,
 				F0FA8DAF2153060F00E0A5F0 /* Poppins-Medium.ttf in Resources */,
+				F079717E2154C37E007A0CA4 /* ListEditing.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +687,8 @@
 				F09A7949214B265B0070CA93 /* AppDelegate.swift in Sources */,
 				F09A797B214C24F30070CA93 /* UIColor+Manipulation.swift in Sources */,
 				F09A797D214C25260070CA93 /* String+Localization.swift in Sources */,
+				F07971802154C399007A0CA4 /* ListEditingViewController.swift in Sources */,
+				F07971822154C819007A0CA4 /* AddButton.swift in Sources */,
 				F061423121543E4500087370 /* MainViewController+Map.swift in Sources */,
 				F06142262153182B00087370 /* SearchBarView.swift in Sources */,
 				F09A7999214C29B30070CA93 /* UIView+Subviews.swift in Sources */,

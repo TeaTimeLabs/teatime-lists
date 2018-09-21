@@ -57,10 +57,12 @@ class DrawerViewController: UIViewController {
     func changeState(_ state: DrawerState, animated: Bool = true, duration: TimeInterval = 0.8) {
         let finalDuration = animated ? duration : 0.0 // 0.0 animation if not animated
         
-        UIView.animate(withDuration: finalDuration, delay: 0.0, options: [.allowUserInteraction], animations: {
+        UIView.animate(withDuration: finalDuration, delay: 0.0,
+                       usingSpringWithDamping: 0.7,
+                       initialSpringVelocity: 0.2, options: [.allowUserInteraction, .layoutSubviews], animations: {
             // configure the State from Enum values
             self.view.frame = CGRect(x: 0, y: state.getYPosition(), width: self.view.frame.width, height: state.getHeight())
-            self.contentViewController.view.frame = self.view.bounds
+//            self.contentViewController.view.frame = self.view.bounds
             self.delegate?.didUpdateFrame(self.view.frame)
         })
     }
@@ -83,21 +85,6 @@ class DrawerViewController: UIViewController {
                 duration = duration > 0.5 ? 0.5 : duration
                 changeState(targetState, animated: true, duration: duration)
             }
-            
-//            var duration =  velocity.y < 0 ? Double((y - fullView) / -velocity.y) : Double((partialView - y) / velocity.y )
-//
-//            duration = duration > 0.8 ? 0.8 : duration
-//
-//            UIView.animate(withDuration: duration, delay: 0.0, options: [.allowUserInteraction], animations: {
-//                if  velocity.y >= 0 {
-//                    self.view.frame = CGRect(x: 0, y: self.partialView, width: self.view.frame.width, height: 400)
-//                    self.delegate?.didUpdateFrame(self.view.frame)
-//                } else {
-//                    self.view.frame = CGRect(x: 0, y: self.fullView, width: self.view.frame.width, height: UIScreen.main.bounds.height)
-//                    self.delegate?.didUpdateFrame(self.view.frame)
-//                }
-//
-//            }
         }
     }
 }

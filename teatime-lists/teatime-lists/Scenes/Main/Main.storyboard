@@ -24,6 +24,10 @@
                                     <constraint firstAttribute="height" constant="55" id="Wmc-HX-GmK"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MN7-hT-bB5">
+                                <rect key="frame" x="314" y="608" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="jLv-Zt-8p2" firstAttribute="trailing" secondItem="jHu-IF-aIv" secondAttribute="trailing" constant="23" id="Z7i-Jc-mv9"/>

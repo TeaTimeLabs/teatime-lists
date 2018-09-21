@@ -42,7 +42,7 @@ enum DrawerState {
         case .partialScreen:
             return UIScreen.main.bounds.height * 0.60
         case .minimumScreen:
-            return UIScreen.main.bounds.height - 90
+            return UIScreen.main.bounds.height - 70
         case .offScreen:
             return UIScreen.main.bounds.height
         }
