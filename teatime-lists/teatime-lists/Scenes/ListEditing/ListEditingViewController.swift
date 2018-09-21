@@ -16,6 +16,9 @@ class ListEditingViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func cancelTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
 
 }

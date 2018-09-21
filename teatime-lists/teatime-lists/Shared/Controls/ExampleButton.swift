@@ -41,6 +41,11 @@ class DButton: UIButton {
         }
     }
     
+    convenience init(frame: CGRect, style: DButtonStyle) {
+        self.init(frame: frame)
+        buttonStyle = style
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setStyle()

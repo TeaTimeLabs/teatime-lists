@@ -46,7 +46,7 @@
 	<string>$(PRODUCT_NAME) would like to access your location to display nearby lists.</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Poppins-Medium.tff</string>
+		<string>Poppins-Medium.ttf</string>
 		<string>Poppins-Regular.ttf</string>
 		<string>Poppins-SemiBold.ttf</string>
 	</array>

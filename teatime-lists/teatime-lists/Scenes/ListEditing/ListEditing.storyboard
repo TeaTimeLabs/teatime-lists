@@ -16,7 +16,20 @@
                     <view key="view" contentMode="scaleToFill" id="pFt-3v-P1Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anL-cr-cYZ">
+                                <rect key="frame" x="163.5" y="318.5" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelTapped:" destination="WSb-gY-sAn" eventType="touchUpInside" id="ADs-0z-6lX"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="anL-cr-cYZ" firstAttribute="centerX" secondItem="pFt-3v-P1Z" secondAttribute="centerX" id="AmP-RG-oTY"/>
+                            <constraint firstItem="anL-cr-cYZ" firstAttribute="centerY" secondItem="pFt-3v-P1Z" secondAttribute="centerY" id="wnj-Nf-cZJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nVf-AM-6pJ"/>
                     </view>
                 </viewController>

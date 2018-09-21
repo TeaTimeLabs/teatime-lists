@@ -34,7 +34,21 @@
 		F079717C215471CD007A0CA4 /* DrawerViewController+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079717B215471CD007A0CA4 /* DrawerViewController+State.swift */; };
 		F079717E2154C37E007A0CA4 /* ListEditing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F079717D2154C37E007A0CA4 /* ListEditing.storyboard */; };
 		F07971802154C399007A0CA4 /* ListEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079717F2154C399007A0CA4 /* ListEditingViewController.swift */; };
-		F07971822154C819007A0CA4 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07971812154C819007A0CA4 /* AddButton.swift */; };
+		F07971822154C819007A0CA4 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07971812154C819007A0CA4 /* FloatingButton.swift */; };
+		F079718521557ED2007A0CA4 /* ListDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079718421557ED2007A0CA4 /* ListDetailsViewController.swift */; };
+		F079718821557FB3007A0CA4 /* ListDetailsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079718721557FB3007A0CA4 /* ListDetailsViewController+TableView.swift */; };
+		F079718B21558151007A0CA4 /* ListInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079718921558151007A0CA4 /* ListInfoTableViewCell.swift */; };
+		F079718C21558151007A0CA4 /* ListInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F079718A21558151007A0CA4 /* ListInfoTableViewCell.xib */; };
+		F079718F21558161007A0CA4 /* ListDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079718D21558161007A0CA4 /* ListDescriptionTableViewCell.swift */; };
+		F079719021558161007A0CA4 /* ListDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F079718E21558161007A0CA4 /* ListDescriptionTableViewCell.xib */; };
+		F079719321558178007A0CA4 /* PlaceInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079719121558178007A0CA4 /* PlaceInfoTableViewCell.swift */; };
+		F079719421558178007A0CA4 /* PlaceInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F079719221558178007A0CA4 /* PlaceInfoTableViewCell.xib */; };
+		F079719821558362007A0CA4 /* ListBrowserViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079719721558362007A0CA4 /* ListBrowserViewController+TableView.swift */; };
+		F07971A021558AEF007A0CA4 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079719B21558AEC007A0CA4 /* UICollectionView+Reusable.swift */; };
+		F07971A121558AEF007A0CA4 /* NibOwnerLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079719C21558AEC007A0CA4 /* NibOwnerLoadable.swift */; };
+		F07971A221558AEF007A0CA4 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079719D21558AED007A0CA4 /* Reusable.swift */; };
+		F07971A321558AEF007A0CA4 /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079719E21558AED007A0CA4 /* UITableView+Reusable.swift */; };
+		F07971A421558AEF007A0CA4 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079719F21558AEE007A0CA4 /* NibLoadable.swift */; };
 		F09A7949214B265B0070CA93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A7948214B265B0070CA93 /* AppDelegate.swift */; };
 		F09A7950214B265E0070CA93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F09A794F214B265E0070CA93 /* Assets.xcassets */; };
 		F09A7953214B265E0070CA93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F09A7951214B265E0070CA93 /* LaunchScreen.storyboard */; };
@@ -48,7 +62,6 @@
 		F09A797F214C25560070CA93 /* UIViewController+Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A797E214C25550070CA93 /* UIViewController+Child.swift */; };
 		F09A7983214C25A10070CA93 /* InterfaceBuilder+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A7982214C25A10070CA93 /* InterfaceBuilder+Localization.swift */; };
 		F09A7988214C269D0070CA93 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F09A7987214C269D0070CA93 /* Colors.xcassets */; };
-		F09A798A214C27060070CA93 /* Cell+Reusability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A7989214C27060070CA93 /* Cell+Reusability.swift */; };
 		F09A798C214C27A10070CA93 /* Collection+Safety.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A798B214C27A10070CA93 /* Collection+Safety.swift */; };
 		F09A7991214C28240070CA93 /* LocationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A798D214C28210070CA93 /* LocationCategory.swift */; };
 		F09A7992214C28240070CA93 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A798E214C28220070CA93 /* Location.swift */; };
@@ -108,7 +121,21 @@
 		F079717B215471CD007A0CA4 /* DrawerViewController+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrawerViewController+State.swift"; sourceTree = "<group>"; };
 		F079717D2154C37E007A0CA4 /* ListEditing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListEditing.storyboard; sourceTree = "<group>"; };
 		F079717F2154C399007A0CA4 /* ListEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEditingViewController.swift; sourceTree = "<group>"; };
-		F07971812154C819007A0CA4 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
+		F07971812154C819007A0CA4 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
+		F079718421557ED2007A0CA4 /* ListDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailsViewController.swift; sourceTree = "<group>"; };
+		F079718721557FB3007A0CA4 /* ListDetailsViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListDetailsViewController+TableView.swift"; sourceTree = "<group>"; };
+		F079718921558151007A0CA4 /* ListInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInfoTableViewCell.swift; sourceTree = "<group>"; };
+		F079718A21558151007A0CA4 /* ListInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListInfoTableViewCell.xib; sourceTree = "<group>"; };
+		F079718D21558161007A0CA4 /* ListDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		F079718E21558161007A0CA4 /* ListDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		F079719121558178007A0CA4 /* PlaceInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoTableViewCell.swift; sourceTree = "<group>"; };
+		F079719221558178007A0CA4 /* PlaceInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceInfoTableViewCell.xib; sourceTree = "<group>"; };
+		F079719721558362007A0CA4 /* ListBrowserViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListBrowserViewController+TableView.swift"; sourceTree = "<group>"; };
+		F079719B21558AEC007A0CA4 /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
+		F079719C21558AEC007A0CA4 /* NibOwnerLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibOwnerLoadable.swift; sourceTree = "<group>"; };
+		F079719D21558AED007A0CA4 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		F079719E21558AED007A0CA4 /* UITableView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
+		F079719F21558AEE007A0CA4 /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		F09A7945214B265B0070CA93 /* teatime-lists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "teatime-lists.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09A7948214B265B0070CA93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F09A794F214B265E0070CA93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,7 +153,6 @@
 		F09A797E214C25550070CA93 /* UIViewController+Child.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Child.swift"; sourceTree = "<group>"; };
 		F09A7982214C25A10070CA93 /* InterfaceBuilder+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InterfaceBuilder+Localization.swift"; sourceTree = "<group>"; };
 		F09A7987214C269D0070CA93 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		F09A7989214C27060070CA93 /* Cell+Reusability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Cell+Reusability.swift"; sourceTree = "<group>"; };
 		F09A798B214C27A10070CA93 /* Collection+Safety.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Safety.swift"; sourceTree = "<group>"; };
 		F09A798D214C28210070CA93 /* LocationCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCategory.swift; sourceTree = "<group>"; };
 		F09A798E214C28220070CA93 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -213,12 +239,55 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
-		F06142242153181000087370 /* SearchBar */ = {
+		F06142242153181000087370 /* SearchMap */ = {
 			isa = PBXGroup;
 			children = (
 				F06142252153182B00087370 /* SearchBarView.swift */,
 			);
-			path = SearchBar;
+			path = SearchMap;
+			sourceTree = "<group>";
+		};
+		F079718321557E75007A0CA4 /* List Details */ = {
+			isa = PBXGroup;
+			children = (
+				F079718621557ED8007A0CA4 /* Cells */,
+				F079718421557ED2007A0CA4 /* ListDetailsViewController.swift */,
+				F079718721557FB3007A0CA4 /* ListDetailsViewController+TableView.swift */,
+			);
+			path = "List Details";
+			sourceTree = "<group>";
+		};
+		F079718621557ED8007A0CA4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F079718921558151007A0CA4 /* ListInfoTableViewCell.swift */,
+				F079718A21558151007A0CA4 /* ListInfoTableViewCell.xib */,
+				F079718D21558161007A0CA4 /* ListDescriptionTableViewCell.swift */,
+				F079718E21558161007A0CA4 /* ListDescriptionTableViewCell.xib */,
+				F079719121558178007A0CA4 /* PlaceInfoTableViewCell.swift */,
+				F079719221558178007A0CA4 /* PlaceInfoTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F079719921558A9C007A0CA4 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				F079719A21558ADC007A0CA4 /* Reusable */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		F079719A21558ADC007A0CA4 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				F079719F21558AEE007A0CA4 /* NibLoadable.swift */,
+				F079719C21558AEC007A0CA4 /* NibOwnerLoadable.swift */,
+				F079719D21558AED007A0CA4 /* Reusable.swift */,
+				F079719B21558AEC007A0CA4 /* UICollectionView+Reusable.swift */,
+				F079719E21558AED007A0CA4 /* UITableView+Reusable.swift */,
+			);
+			path = Reusable;
 			sourceTree = "<group>";
 		};
 		F09A793C214B265B0070CA93 = {
@@ -274,9 +343,11 @@
 			children = (
 				F09A799A214C2A720070CA93 /* Landing */,
 				F013C93C214C8729001F1179 /* Login */,
+				F06142242153181000087370 /* SearchMap */,
 				F011DE6B215023410058DEDE /* Main */,
 				F09A7986214C26520070CA93 /* MapView */,
 				F0FA8DB42153103B00E0A5F0 /* ListBrowser */,
+				F079718321557E75007A0CA4 /* List Details */,
 				F09A7984214C262C0070CA93 /* ListEditing */,
 			);
 			path = Scenes;
@@ -307,8 +378,9 @@
 				F013C947214C95B0001F1179 /* Errors */,
 				F09A7972214C23730070CA93 /* Services */,
 				F09A7971214C23670070CA93 /* Controls */,
-				F09A7970214C23610070CA93 /* Extensions */,
 				F09A796F214C23580070CA93 /* Routing */,
+				F09A7970214C23610070CA93 /* Extensions */,
+				F079719921558A9C007A0CA4 /* Libraries */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -330,7 +402,6 @@
 				F09A797E214C25550070CA93 /* UIViewController+Child.swift */,
 				F09A7998214C29B30070CA93 /* UIView+Subviews.swift */,
 				F09A7982214C25A10070CA93 /* InterfaceBuilder+Localization.swift */,
-				F09A7989214C27060070CA93 /* Cell+Reusability.swift */,
 				F09A798B214C27A10070CA93 /* Collection+Safety.swift */,
 				F013C945214C8F50001F1179 /* UIWindow+TopVC.swift */,
 				F013C94C214C9A8A001F1179 /* UIViewController+Presenter.swift */,
@@ -343,7 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				F09A7973214C23A50070CA93 /* ExampleButton.swift */,
-				F07971812154C819007A0CA4 /* AddButton.swift */,
+				F07971812154C819007A0CA4 /* FloatingButton.swift */,
 				F0614228215418C800087370 /* DrawerViewController.swift */,
 				F079717B215471CD007A0CA4 /* DrawerViewController+State.swift */,
 			);
@@ -419,9 +490,9 @@
 		F0FA8DB42153103B00E0A5F0 /* ListBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				F06142242153181000087370 /* SearchBar */,
 				F061422B2154273E00087370 /* ListBrowserViewController.xib */,
 				F061422A2154273E00087370 /* ListBrowserViewController.swift */,
+				F079719721558362007A0CA4 /* ListBrowserViewController+TableView.swift */,
 			);
 			path = ListBrowser;
 			sourceTree = "<group>";
@@ -519,10 +590,13 @@
 				F013C93B214C86DC001F1179 /* Landing.storyboard in Resources */,
 				F061422D2154273E00087370 /* ListBrowserViewController.xib in Resources */,
 				F09A7988214C269D0070CA93 /* Colors.xcassets in Resources */,
+				F079718C21558151007A0CA4 /* ListInfoTableViewCell.xib in Resources */,
 				F0FA8DB02153060F00E0A5F0 /* Poppins-SemiBold.ttf in Resources */,
 				F0FA8DB12153060F00E0A5F0 /* Poppins-Regular.ttf in Resources */,
 				F013C93E214C873B001F1179 /* Login.storyboard in Resources */,
 				F011DE6D215023590058DEDE /* Main.storyboard in Resources */,
+				F079719421558178007A0CA4 /* PlaceInfoTableViewCell.xib in Resources */,
+				F079719021558161007A0CA4 /* ListDescriptionTableViewCell.xib in Resources */,
 				F09A7997214C28A00070CA93 /* Localizable.strings in Resources */,
 				F09A7953214B265E0070CA93 /* LaunchScreen.storyboard in Resources */,
 				F0FA8DA92152FF4E00E0A5F0 /* UltraLight.json in Resources */,
@@ -667,40 +741,50 @@
 				F013C940214C8747001F1179 /* LoginViewController.swift in Sources */,
 				F011DE6F2150236A0058DEDE /* MainViewController.swift in Sources */,
 				F013C944214C8B12001F1179 /* Constants.swift in Sources */,
+				F07971A021558AEF007A0CA4 /* UICollectionView+Reusable.swift in Sources */,
 				F011DE6A215019840058DEDE /* Friend.swift in Sources */,
 				F09A7991214C28240070CA93 /* LocationCategory.swift in Sources */,
 				F0614229215418C800087370 /* DrawerViewController.swift in Sources */,
+				F079719821558362007A0CA4 /* ListBrowserViewController+TableView.swift in Sources */,
 				F013C94D214C9A8A001F1179 /* UIViewController+Presenter.swift in Sources */,
+				F079719321558178007A0CA4 /* PlaceInfoTableViewCell.swift in Sources */,
 				F09A798C214C27A10070CA93 /* Collection+Safety.swift in Sources */,
+				F07971A221558AEF007A0CA4 /* Reusable.swift in Sources */,
+				F07971A321558AEF007A0CA4 /* UITableView+Reusable.swift in Sources */,
 				F09A7974214C23A50070CA93 /* ExampleButton.swift in Sources */,
 				F09A7978214C23D60070CA93 /* Routes.swift in Sources */,
 				F013C942214C8A46001F1179 /* AuthenticationService.swift in Sources */,
 				F013C94F214C9B48001F1179 /* GraphService.swift in Sources */,
 				F09A797F214C25560070CA93 /* UIViewController+Child.swift in Sources */,
+				F079718B21558151007A0CA4 /* ListInfoTableViewCell.swift in Sources */,
 				F09A7992214C28240070CA93 /* Location.swift in Sources */,
 				F061422F21543E0E00087370 /* MainViewController+Drawer.swift in Sources */,
 				F0FA8DB3215306D800E0A5F0 /* UIFont+Custom.swift in Sources */,
 				F09A7993214C28240070CA93 /* LocationResults.swift in Sources */,
 				F09A7994214C28240070CA93 /* LocationCategoryIcon.swift in Sources */,
 				F061422C2154273E00087370 /* ListBrowserViewController.swift in Sources */,
+				F079718521557ED2007A0CA4 /* ListDetailsViewController.swift in Sources */,
 				F079717A21544D10007A0CA4 /* MainViewController+Search.swift in Sources */,
 				F09A7949214B265B0070CA93 /* AppDelegate.swift in Sources */,
+				F07971A121558AEF007A0CA4 /* NibOwnerLoadable.swift in Sources */,
 				F09A797B214C24F30070CA93 /* UIColor+Manipulation.swift in Sources */,
 				F09A797D214C25260070CA93 /* String+Localization.swift in Sources */,
 				F07971802154C399007A0CA4 /* ListEditingViewController.swift in Sources */,
-				F07971822154C819007A0CA4 /* AddButton.swift in Sources */,
+				F07971822154C819007A0CA4 /* FloatingButton.swift in Sources */,
 				F061423121543E4500087370 /* MainViewController+Map.swift in Sources */,
 				F06142262153182B00087370 /* SearchBarView.swift in Sources */,
 				F09A7999214C29B30070CA93 /* UIView+Subviews.swift in Sources */,
 				F013C94B214C970A001F1179 /* ErrorHandler.swift in Sources */,
+				F079718F21558161007A0CA4 /* ListDescriptionTableViewCell.swift in Sources */,
 				F013C939214C86B5001F1179 /* LandingViewController.swift in Sources */,
 				F013C946214C8F50001F1179 /* UIWindow+TopVC.swift in Sources */,
 				F09A7976214C23CB0070CA93 /* Routable.swift in Sources */,
+				F079718821557FB3007A0CA4 /* ListDetailsViewController+TableView.swift in Sources */,
+				F07971A421558AEF007A0CA4 /* NibLoadable.swift in Sources */,
 				F011DE7121507D790058DEDE /* Account.swift in Sources */,
 				F09A7983214C25A10070CA93 /* InterfaceBuilder+Localization.swift in Sources */,
 				F0FA8DA62152ECC100E0A5F0 /* LocationService.swift in Sources */,
 				F013C949214C95EF001F1179 /* FacebookError.swift in Sources */,
-				F09A798A214C27060070CA93 /* Cell+Reusability.swift in Sources */,
 				F0FA8DA42152EAA700E0A5F0 /* MapViewController.swift in Sources */,
 				F079717C215471CD007A0CA4 /* DrawerViewController+State.swift in Sources */,
 			);

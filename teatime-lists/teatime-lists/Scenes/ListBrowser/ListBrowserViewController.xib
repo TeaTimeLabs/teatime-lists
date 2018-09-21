@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListBrowserViewController" customModule="teatime_lists" customModuleProvider="target">
             <connections>
                 <outlet property="filterButton" destination="R1P-tK-lda" id="flH-u9-9XO"/>
+                <outlet property="tableView" destination="NSz-IS-n6D" id="Vcm-0u-kt0"/>
                 <outlet property="titleLabel" destination="RtR-HS-Dej" id="Ujw-Hf-31G"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

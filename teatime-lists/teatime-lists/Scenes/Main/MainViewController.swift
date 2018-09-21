@@ -14,7 +14,8 @@ class MainViewController: UIViewController {
 
     var mapViewController: MapViewController?
     var drawerViewController: DrawerViewController?
-    @IBOutlet var searchBarView: SearchBarView?
+    @IBOutlet var searchBarView: SearchBarView!
+    @IBOutlet var floatingButton: FloatingButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,12 @@ class MainViewController: UIViewController {
         addMapController()
         // TODO: make a static method on it to instantiate
         addDrawerController(with: ListBrowserViewController(nibName: "ListBrowserViewController", bundle: nil))
+        
+        view.bringSubview(toFront: floatingButton)
+    }
+    
+    @IBAction func addListTapped(_ sender: Any) {
+        present(storyboard: .listEditing)
     }
 }
 

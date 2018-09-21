@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Glc-2S-cBQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bzj-0N-Nhl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,25 +24,55 @@
                                     <constraint firstAttribute="height" constant="55" id="Wmc-HX-GmK"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MN7-hT-bB5">
-                                <rect key="frame" x="314" y="608" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MN7-hT-bB5" customClass="FloatingButton" customModule="teatime_lists" customModuleProvider="target">
+                                <rect key="frame" x="302" y="589" width="51" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="Uec-n4-2H2"/>
+                                    <constraint firstAttribute="width" constant="51" id="dtO-nC-Nhg"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addListTapped:" destination="Glc-2S-cBQ" eventType="touchUpInside" id="ceA-bd-nkN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="jLv-Zt-8p2" firstAttribute="bottom" secondItem="MN7-hT-bB5" secondAttribute="bottom" constant="27" id="5O2-ga-gPd"/>
                             <constraint firstItem="jLv-Zt-8p2" firstAttribute="trailing" secondItem="jHu-IF-aIv" secondAttribute="trailing" constant="23" id="Z7i-Jc-mv9"/>
                             <constraint firstItem="jHu-IF-aIv" firstAttribute="top" secondItem="jLv-Zt-8p2" secondAttribute="top" constant="10" id="ida-sL-jAz"/>
                             <constraint firstItem="jHu-IF-aIv" firstAttribute="leading" secondItem="jLv-Zt-8p2" secondAttribute="leading" constant="23" id="ilZ-Ww-Cwm"/>
+                            <constraint firstItem="jLv-Zt-8p2" firstAttribute="trailing" secondItem="MN7-hT-bB5" secondAttribute="trailing" constant="22" id="u0K-wj-V5N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jLv-Zt-8p2"/>
                     </view>
+                    <navigationItem key="navigationItem" id="uCO-lB-9uc"/>
                     <connections>
+                        <outlet property="floatingButton" destination="MN7-hT-bB5" id="KC3-7D-u9X"/>
                         <outlet property="searchBarView" destination="jHu-IF-aIv" id="r4D-jr-RoD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSi-LC-QpQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="76" y="116.49175412293854"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ahu-Jx-5td">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="Bzj-0N-Nhl" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hw4-m0-dky">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Glc-2S-cBQ" kind="relationship" relationship="rootViewController" id="qi6-NX-fAL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cVf-WD-RqY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-719" y="116"/>
         </scene>
     </scenes>
 </document>

@@ -50,7 +50,8 @@ class DrawerViewController: UIViewController {
     func changeContent(_ content: UIViewController) {
         contentViewController.removeFromParent()
         contentViewController = content
-        add(contentViewController, inside: view)
+        add(contentViewController, inside: view, pin: true)
+//        contentViewController.view.edgesToSuperview(insets: UIApplication.shared.keyWindow!.safeAreaInsets)
     }
     
     
