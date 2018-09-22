@@ -10,7 +10,7 @@ import UIKit
 
 
 @IBDesignable
-class DButton: UIButton {
+final class DButton: UIButton {
     
     enum DButtonStyle: Int {
         case main = 0

@@ -15,6 +15,8 @@ final class MapViewController: UIViewController {
     
     let mapView: GMSMapView
     
+    var markers = Set<PlaceMarker>()
+    
     init() {
         let latitude = LocationService.shared.rxLocation.value.latitude
         let longitude = LocationService.shared.rxLocation.value.longitude
@@ -25,6 +27,7 @@ final class MapViewController: UIViewController {
         mapView.isMyLocationEnabled = true
         
         super.init(nibName: nil, bundle: nil)
+        mapView.delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,6 +38,12 @@ final class MapViewController: UIViewController {
         super.viewDidLoad()
 
         view.addSubview(mapView)
+        
+        
+        // DEBUG: Remove
+        let marker = PlaceMarker(place: 0)
+        markers.insert(marker)
+        marker.map = mapView
     }
 
     
@@ -48,6 +57,31 @@ final class MapViewController: UIViewController {
         
         let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: zoom ?? defaultZoom)
         mapView.animate(to: camera)
+    }
+}
+
+
+extension MapViewController: GMSMapViewDelegate {
+    // tap map marker
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        // remove color from currently selected marker
+        if let selectedMarker = mapView.selectedMarker {
+            selectedMarker.icon = GMSMarker.markerImage(with: nil)
+        }
+        
+        // select new marker and make green
+        mapView.selectedMarker = marker
+        (marker as? PlaceMarker)?.isSelected = true
+        
+        // tap event handled by delegate
+        return true
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        
+        markers.forEach({ $0.isSelected = false})
+        
+        mapView.selectedMarker = nil
     }
 }
 

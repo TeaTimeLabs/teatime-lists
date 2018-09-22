@@ -14,6 +14,8 @@ class MainViewController: UIViewController {
 
     var mapViewController: MapViewController?
     var drawerViewController: DrawerViewController?
+    var popoverViewController: PopoverViewController?
+    
     @IBOutlet var searchBarView: SearchBarView!
     @IBOutlet var floatingButton: FloatingButton!
     
@@ -25,6 +27,8 @@ class MainViewController: UIViewController {
         addMapController()
         // TODO: make a static method on it to instantiate
         addDrawerController(with: ListBrowserViewController(nibName: "ListBrowserViewController", bundle: nil))
+        
+        addPopoverController(with: PlaceInfoViewController())
         
         view.bringSubview(toFront: floatingButton)
     }
