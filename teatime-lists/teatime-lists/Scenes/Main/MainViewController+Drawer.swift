@@ -11,12 +11,12 @@ import UIKit
 
 extension MainViewController {
     
-    func addDrawerController(with content: UIViewController) {
+    func addDrawerController(with content: UIViewController, state: DrawerState = .partialScreen) {
         guard let drawerContainer = drawerViewController else {
             drawerViewController = DrawerViewController(content: content)
             drawerViewController?.delegate = self
             add(drawerViewController!, inside: view, pin: false)
-            drawerViewController?.changeState(.partialScreen, animated: false)
+            drawerViewController?.changeState(state, animated: false)
             return
         }
         

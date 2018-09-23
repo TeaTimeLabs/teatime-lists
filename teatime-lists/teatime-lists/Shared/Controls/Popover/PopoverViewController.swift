@@ -12,6 +12,9 @@ final class PopoverViewController: UIViewController {
 
     private var contentViewController: UIViewController
     
+    private var hiddingConstraint: NSLayoutConstraint?
+    
+    
     init(content: UIViewController) {
         contentViewController = content
         super.init(nibName: nil, bundle: nil)
@@ -35,11 +38,37 @@ final class PopoverViewController: UIViewController {
         changeContent(contentViewController)
     }
     
+    func setUpConstraints() {
+        view.rightToSuperview(offset: 8)
+        view.leftToSuperview(offset: 8)
+        view.bottomToSuperview(offset: -8, priority: .defaultHigh, usingSafeArea: true)
+        if let superview = view.superview {
+            hiddingConstraint = view.topToBottom(of: superview, offset: 30)
+        }
+    }
     
     func changeContent(_ content: UIViewController) {
         contentViewController.removeFromParent()
         contentViewController = content
         add(contentViewController, inside: view, pin: true)
+    }
+    
+    
+    func changeState(_ state: PopoverState, animated: Bool = true, duration: TimeInterval = 5.0) {
+        
+
+        
+        UIView.animate(withDuration: duration, delay: 0.0,
+                       options: [], animations: {
+                        
+                        switch state {
+                        case .offScreen:
+                            self.hiddingConstraint?.isActive = true
+                        default:
+                            self.hiddingConstraint?.isActive = false
+                        }
+                        self.view.layoutIfNeeded()
+        })
     }
 
 }

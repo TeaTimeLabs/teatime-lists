@@ -8,11 +8,8 @@
 
 import UIKit
 
-extension PopoverViewController {
-    
-    enum PopoverState {
-        case onScreen
-        case offScreen
-    }
-    
+
+enum PopoverState {
+    case onScreen
+    case offScreen
 }
