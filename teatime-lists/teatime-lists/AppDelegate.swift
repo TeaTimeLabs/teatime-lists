@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import Firebase
 import FBSDKCoreKit
 import GoogleMaps
 import GooglePlaces
-
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,9 +26,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyA8vzL74tZNhysjzcp-5OmBcV-cbwlIVkk")
         GMSPlacesClient.provideAPIKey("AIzaSyA8vzL74tZNhysjzcp-5OmBcV-cbwlIVkk")
         
-        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        FirebaseApp.configure()
+        let configuration = ParseClientConfiguration {
+            $0.applicationId = "zF6B3MIMZiy1IArcbdSbrAFRYKSK5lbigXN7kUXW"
+            $0.clientKey = "LSQjOJzUuzHCxIN542J0u1YKE5V6c3c8ZVIle6lg"
+            $0.server = "https://parseapi.back4app.com"
+        }
+        Parse.initialize(with: configuration)
         
+        
+//        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        PFFacebookUtils.initializeFacebook(applicationLaunchOptions: launchOptions)
+
+        configureParseClasses()
+        
+   
+        
+        saveInstallationObject()
+        
+        PFAnalytics.trackAppOpened(launchOptions: launchOptions)
         return true
     }
     
@@ -56,10 +70,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func saveInstallationObject(){
+        if let installation = PFInstallation.current(){
+            installation.saveInBackground {
+                (success: Bool, error: Error?) in
+                if (success) {
+                    print("You have successfully connected your app to Back4App!")
+                } else {
+                    if let myError = error{
+                        print(myError.localizedDescription)
+                    }else{
+                        print("Uknown error")
+                    }
+                }
+            }
+        }
+    }
+    
+    func configureParseClasses(){
+//        UserModel.registerSubclass()
+//        ListModel.registerSubclass()
+//        Place.registerSubclass()
+//        PlaceItem.registerSubclass()
     }
 
 

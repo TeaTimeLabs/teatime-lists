@@ -16,7 +16,20 @@
                     <view key="view" contentMode="scaleToFill" id="IYe-oL-AZm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bo-Zq-N6m">
+                                <rect key="frame" x="118" y="318" width="138" height="30"/>
+                                <state key="normal" title="Login with facebook"/>
+                                <connections>
+                                    <action selector="loginTapped:" destination="wzh-bZ-xjP" eventType="touchUpInside" id="aSn-FJ-Le6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3bo-Zq-N6m" firstAttribute="centerX" secondItem="IYe-oL-AZm" secondAttribute="centerX" id="PY8-dh-if7"/>
+                            <constraint firstItem="3bo-Zq-N6m" firstAttribute="centerY" secondItem="IYe-oL-AZm" secondAttribute="centerY" id="fR8-U9-VO9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Dtb-7H-oKS"/>
                     </view>
                 </viewController>

@@ -1,24 +1,22 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '10.0'
+platform :ios, '11.0'
 
 target 'teatime-lists' do
   use_frameworks!
 
   # Auth
-  pod 'Firebase/Core'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Firestore'
-  pod 'FBSDKCoreKit'  
+  pod 'Parse'
+  pod 'Parse/FacebookUtils'
+  pod 'Parse/UI'
+  pod 'FBSDKCoreKit', '~> 4.28.0'
   pod 'FBSDKLoginKit'
   
   # RFP
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
-  pod 'Moya', '~> 11.0'
-  pod 'Moya/RxSwift', '~> 11.0'
   
   # Utilities
-  pod 'Kingfisher', '~> 4.0'
+  pod 'Alamofire'
   pod 'TinyConstraints'
   pod 'SwiftyJSON'
   

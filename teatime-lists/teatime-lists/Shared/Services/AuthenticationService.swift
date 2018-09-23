@@ -7,9 +7,7 @@
 //
 
 import UIKit
-import FBSDKCoreKit
-import FBSDKLoginKit
-import Firebase
+import Parse
 
 
 
@@ -27,62 +25,45 @@ struct AuthenticationService {
                                        FacebookPermissions.email,
                                        FacebookPermissions.friends]
     
-    private var authHandle: AuthStateDidChangeListenerHandle?
     
-    private init() {
-        // Init and register the status listener and check the current Status of the user.
-        // This is also triggered right away, we are relying on that method only to Navigate the User to Login or Main.
-        authHandle = Auth.auth().addStateDidChangeListener() { auth, user in
-            if user != nil {
-                UIWindow.topMostViewController()?.makeRootOfKeyWindow(storyboard: .main)
-            } else {
-                UIWindow.topMostViewController()?.makeRootOfKeyWindow(storyboard: .login)
-            }
-        }}
+    private init() { }
     
     
-    func getUser() -> User? {
-        return Auth.auth().currentUser
+    func getUser() -> PFUser? {
+        return PFUser.current()
     }
     
     func isAuthenticated() -> Bool {
-        return Auth.auth().currentUser != nil
+        return PFUser.current() != nil
+    }
+    
+    
+    func loginWithFacebook() {
+        PFFacebookUtils.logInInBackground(withReadPermissions: AuthenticationService.requestedPermissions) { (user, error) in
+            guard let user = user else {
+                print("User cancelled the login")
+                return
+            }
+            
+            if user.isNew {
+                print("User is new")
+                UIWindow.topMostViewController()?.makeRootOfKeyWindow(storyboard: .main)
+            } else {
+                print("user is coming back")
+                UIWindow.topMostViewController()?.makeRootOfKeyWindow(storyboard: .main)
+            }
+
+        }
+        
     }
     
     
     func landing() {
-        // Aditional customization to do at launch if needed
-    }
-}
-
-// Facebook
-extension AuthenticationService {
-    func handleFacebookLogin(result: FBSDKLoginManagerLoginResult?, error: Error?, completionHandler: ((Bool) -> ())?) {
-        if let error = error {
-            print(error.localizedDescription)
-            completionHandler?(false)
+        if let user = PFUser.current(), PFFacebookUtils.isLinked(with: user) {
+            UIWindow.topMostViewController()?.makeRootOfKeyWindow(storyboard: .main)
             return
         }
-        
-        // Sending credentials to Firebase
-        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-        
-        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
-            if let error = error {
-                // TODO: Handle error
-                print(error.localizedDescription)
-                completionHandler?(false)
-                return
-            }
-            
-            completionHandler?(true)
-        }
+        UIWindow.topMostViewController()?.makeRootOfKeyWindow(storyboard: .login)
     }
-    
-    
-    
 }
-
-
-// Firebase
 

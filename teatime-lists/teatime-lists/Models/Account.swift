@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Firebase
+//import Firebase
 
 
 class Account {
@@ -19,25 +19,25 @@ class Account {
     private init() {}
     
     // Private
-    private func getFirebaseUser() -> User? {
-        return Auth.auth().currentUser
-    }
+//    private func getFirebaseUser() -> User? {
+//        return Auth.auth().currentUser
+//    }
 }
 
 
 // MARK: - Basic properties
 extension Account {
-    var isAuthenticate: Bool {
-        return getFirebaseUser() != nil
-    }
-    
-    var fullName: String? {
-        return getFirebaseUser()?.displayName
-    }
-    
-    var photoURL: URL? {
-        return getFirebaseUser()?.photoURL
-    }
+//    var isAuthenticate: Bool {
+//        return getFirebaseUser() != nil
+//    }
+//    
+//    var fullName: String? {
+//        return getFirebaseUser()?.displayName
+//    }
+//    
+//    var photoURL: URL? {
+//        return getFirebaseUser()?.photoURL
+//    }
 }
 
 

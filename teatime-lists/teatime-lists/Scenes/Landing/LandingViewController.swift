@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKCoreKit
+import Parse
 
 class LandingViewController: UIViewController {
 
@@ -23,7 +24,6 @@ class LandingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
