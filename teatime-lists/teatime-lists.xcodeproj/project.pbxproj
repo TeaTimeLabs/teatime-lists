@@ -31,6 +31,7 @@
 		F052C9CD21585A3E00922DB2 /* GoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F052C9CC21585A3E00922DB2 /* GoogleHelper.swift */; };
 		F052C9CF21585B4400922DB2 /* NewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F052C9CE21585B4400922DB2 /* NewListViewController.swift */; };
 		F052C9D121585E2B00922DB2 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F052C9D021585E2B00922DB2 /* CustomTextView.swift */; };
+		F052C9D32158985A00922DB2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F052C9D22158985A00922DB2 /* MainViewModel.swift */; };
 		F06142262153182B00087370 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06142252153182B00087370 /* SearchBarView.swift */; };
 		F0614229215418C800087370 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614228215418C800087370 /* DrawerViewController.swift */; };
 		F061422C2154273E00087370 /* ListBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F061422A2154273E00087370 /* ListBrowserViewController.swift */; };
@@ -132,6 +133,7 @@
 		F052C9CC21585A3E00922DB2 /* GoogleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleHelper.swift; sourceTree = "<group>"; };
 		F052C9CE21585B4400922DB2 /* NewListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewListViewController.swift; sourceTree = "<group>"; };
 		F052C9D021585E2B00922DB2 /* CustomTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		F052C9D22158985A00922DB2 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		F06142252153182B00087370 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		F0614228215418C800087370 /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		F061422A2154273E00087370 /* ListBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBrowserViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				F079717921544D10007A0CA4 /* MainViewController+Search.swift */,
 				F061422E21543E0E00087370 /* MainViewController+Drawer.swift */,
 				F07971B32155B2B7007A0CA4 /* MainViewController+Popover.swift */,
+				F052C9D22158985A00922DB2 /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -838,6 +841,7 @@
 				F079718521557ED2007A0CA4 /* ListDetailsViewController.swift in Sources */,
 				F079717A21544D10007A0CA4 /* MainViewController+Search.swift in Sources */,
 				F07971B02155AF51007A0CA4 /* PopoverViewController.swift in Sources */,
+				F052C9D32158985A00922DB2 /* MainViewModel.swift in Sources */,
 				F09A7949214B265B0070CA93 /* AppDelegate.swift in Sources */,
 				F07971B92155C6B3007A0CA4 /* PlaceIcon.swift in Sources */,
 				F07971A121558AEF007A0CA4 /* NibOwnerLoadable.swift in Sources */,

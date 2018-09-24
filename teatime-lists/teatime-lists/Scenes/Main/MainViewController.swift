@@ -14,10 +14,13 @@ import GoogleMaps
 class MainViewController: UIViewController {
 
     let disposeBag = DisposeBag()
+    let mainViewModel = MainViewModel()
     
     var mapViewController: MapViewController?
     var drawerViewController: DrawerViewController?
     var popoverViewController: PopoverViewController?
+    
+    var listBrowserViewController: ListBrowserViewController?
     
     @IBOutlet var searchBarView: SearchBarView!
     @IBOutlet var floatingButton: FloatingButton!
@@ -34,17 +37,32 @@ class MainViewController: UIViewController {
 
         searchBarView?.delegate = self
         addMapController()
-        // TODO: make a static method on it to instantiate
-        addDrawerController(with: ListBrowserViewController(nibName: "ListBrowserViewController", bundle: nil))
+        
+        listBrowserViewController = ListBrowserViewController(nibName: "ListBrowserViewController", bundle: nil)
+        addDrawerController(with: listBrowserViewController!)
         
         addPopoverController(with: PlaceInfoViewController())
         
-        view.bringSubview(toFront: floatingButton)
         
-//        mapViewController?.selectedMarker.asDriver().drive(onNext: { [weak self] (marker) in
-//            self?.popoverViewController?.changeState((marker != nil) ? .onScreen : .offScreen)
-//        }).disposed(by: disposeBag)
+        mainViewModel.lists.asDriver().drive(onNext: { [weak self] (listModels) in
+            self?.listBrowserViewController?.listsData = listModels ?? []
+        }).disposed(by: disposeBag)
+        
+        
+        mainViewModel.places.asDriver().drive(onNext: { [weak self] (places) in
+            self?.mapViewController?.places = places
+        }).disposed(by: disposeBag)
+        
+        
+        view.bringSubview(toFront: floatingButton)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        mainViewModel.fetchLists()
+    }
+    
     
     @IBAction func addListTapped(_ sender: Any) {
         show(storyboard: .listEditing)

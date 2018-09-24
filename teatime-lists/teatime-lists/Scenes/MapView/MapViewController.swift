@@ -20,6 +20,12 @@ final class MapViewController: UIViewController {
     
     var markers = Set<PlaceMarker>()
     
+    var places: Set<Place>? {
+        didSet {
+            updateMarkers()
+        }
+    }
+    
     
     init() {
         let latitude = LocationService.shared.rxLocation.value.latitude
@@ -43,13 +49,23 @@ final class MapViewController: UIViewController {
 
         view.addSubview(mapView)
         
-        
-        // DEBUG: Remove
-        let marker = PlaceMarker(place: 0)
-        markers.insert(marker)
-        marker.map = mapView
     }
 
+    func updateMarkers() {
+        markers.forEach({$0.map = nil})
+        markers.removeAll()
+        
+        if let places = places {
+            places.forEach { (place) in
+                let marker = PlaceMarker(place: place)
+                markers.insert(marker)
+                marker.map = mapView
+            }
+        }
+    }
+    
+    
+    
     
     func setMapBottomPadding(_ padding: CGFloat) {
         mapView.padding = UIEdgeInsets(top: 0, left: 0, bottom: padding, right: 0)
