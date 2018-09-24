@@ -16,12 +16,14 @@ extension ListBrowserViewController {
 
 extension ListBrowserViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return listsData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: ListInfoTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        
+        cell.configure(listModel: listsData[indexPath.row])
         
         return cell
     }

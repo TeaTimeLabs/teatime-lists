@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ListInfoTableViewCell: UITableViewCell, NibReusable {
 
@@ -29,7 +30,14 @@ class ListInfoTableViewCell: UITableViewCell, NibReusable {
         authorImageView.layer.cornerRadius = authorImageView.frame.width / 2
     }
     
-    
+    func configure(listModel: ListModel) {
+        titleLabel.text = listModel.title
+        authorLabel.text = "by " + listModel.user.firstname
+        placeCountLabel.text = "\(listModel.placeItems.count) PLACES"
+        
+        let url = URL(string: listModel.user.photoURL)
+        authorImageView.kf.setImage(with: url)
+    }
     
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
         // TODO: make a static method on it to instantiate
         addDrawerController(with: ListBrowserViewController(nibName: "ListBrowserViewController", bundle: nil))
         
-        addPopoverController(with: PlaceInfoViewController())
+//        addPopoverController(with: PlaceInfoViewController())
         
         view.bringSubview(toFront: floatingButton)
         
@@ -47,7 +47,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func addListTapped(_ sender: Any) {
-        present(storyboard: .listEditing)
+        show(storyboard: .listEditing)
     }
     
     

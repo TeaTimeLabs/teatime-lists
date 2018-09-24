@@ -32,15 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             $0.server = "https://parseapi.back4app.com"
         }
         Parse.initialize(with: configuration)
-        
-        
-//        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+    
         PFFacebookUtils.initializeFacebook(applicationLaunchOptions: launchOptions)
 
         configureParseClasses()
-        
-   
-        
         saveInstallationObject()
         
         PFAnalytics.trackAppOpened(launchOptions: launchOptions)
@@ -95,10 +90,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func configureParseClasses(){
-//        UserModel.registerSubclass()
-//        ListModel.registerSubclass()
-//        Place.registerSubclass()
-//        PlaceItem.registerSubclass()
+        UserModel.registerSubclass()
+        ListModel.registerSubclass()
+        Place.registerSubclass()
+        PlaceItem.registerSubclass()
     }
 
 

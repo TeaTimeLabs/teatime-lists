@@ -1,41 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WSb-gY-sAn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="akA-kQ-AkG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List Editing View Controller-->
-        <scene sceneID="0gc-4s-wv7">
+        <!--Navigation Controller-->
+        <scene sceneID="IdP-aj-Ff6">
             <objects>
-                <viewController id="WSb-gY-sAn" customClass="ListEditingViewController" customModule="teatime_lists" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pFt-3v-P1Z">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <navigationController id="akA-kQ-AkG" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Oxd-dS-MpI">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="u5k-9A-TTc" kind="relationship" relationship="rootViewController" id="o01-9U-M06"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="skk-q5-5tl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="497" y="44"/>
+        </scene>
+        <!--New List-->
+        <scene sceneID="RK7-rp-AS4">
+            <objects>
+                <viewController id="u5k-9A-TTc" customClass="NewListViewController" customModule="placetest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="Ybl-Ld-DCg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anL-cr-cYZ">
-                                <rect key="frame" x="163.5" y="318.5" width="48" height="30"/>
-                                <state key="normal" title="Cancel"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ex: Brunch Places, Paris Trip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x61-Rc-gLs">
+                                <rect key="frame" x="20" y="60" width="335" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                <color key="textColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="List Name" adjustsFontSizeToFit="NO" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="WoG-qj-oYS">
+                                <rect key="frame" x="20" y="20" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="zYD-8e-ir5"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w7x-dy-Vde">
+                                <rect key="frame" x="20" y="90" width="335" height="1"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Wng-TI-kAR"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpb-9k-s7x">
+                                <rect key="frame" x="20" y="201" width="335" height="1"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="mlH-AO-kJn"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4U-e2-CJ4" customClass="CustomTextView" customModule="teatime_lists" customModuleProvider="target">
+                                <rect key="frame" x="20" y="131" width="335" height="50"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                        <integer key="value" value="500"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Description"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minHeight">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxHeight">
+                                        <real key="value" value="200"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trimWhiteSpaceWhenEndEditing" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnf-3C-QTD">
+                                <rect key="frame" x="50" y="503" width="275" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="C42-y6-xmj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <state key="normal" title="Create List">
+                                    <color key="titleColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="cancelTapped:" destination="WSb-gY-sAn" eventType="touchUpInside" id="ADs-0z-6lX"/>
+                                    <action selector="createListButtonTapped:" destination="u5k-9A-TTc" eventType="touchUpInside" id="2i0-al-Urr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ex: The best breakfast places to get eggs on a Sunday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35P-I7-x5C">
+                                <rect key="frame" x="20" y="166" width="335" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                <color key="textColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="anL-cr-cYZ" firstAttribute="centerX" secondItem="pFt-3v-P1Z" secondAttribute="centerX" id="AmP-RG-oTY"/>
-                            <constraint firstItem="anL-cr-cYZ" firstAttribute="centerY" secondItem="pFt-3v-P1Z" secondAttribute="centerY" id="wnj-Nf-cZJ"/>
+                            <constraint firstItem="4ky-Ce-yE4" firstAttribute="trailing" secondItem="WoG-qj-oYS" secondAttribute="trailing" constant="20" id="0T6-Qr-B57"/>
+                            <constraint firstItem="x61-Rc-gLs" firstAttribute="trailing" secondItem="WoG-qj-oYS" secondAttribute="trailing" id="4eO-uz-byr"/>
+                            <constraint firstItem="w7x-dy-Vde" firstAttribute="top" secondItem="WoG-qj-oYS" secondAttribute="bottom" constant="20" id="A37-LT-jEl"/>
+                            <constraint firstItem="w7x-dy-Vde" firstAttribute="trailing" secondItem="WoG-qj-oYS" secondAttribute="trailing" id="DHr-99-93x"/>
+                            <constraint firstItem="35P-I7-x5C" firstAttribute="trailing" secondItem="WoG-qj-oYS" secondAttribute="trailing" id="Fy4-uX-Sdn"/>
+                            <constraint firstItem="fpb-9k-s7x" firstAttribute="leading" secondItem="WoG-qj-oYS" secondAttribute="leading" id="H5j-aE-hkr"/>
+                            <constraint firstItem="fpb-9k-s7x" firstAttribute="top" secondItem="w4U-e2-CJ4" secondAttribute="bottom" constant="20" id="Qxb-Hb-pDQ"/>
+                            <constraint firstItem="x61-Rc-gLs" firstAttribute="top" secondItem="WoG-qj-oYS" secondAttribute="bottom" constant="-10" id="TBJ-KL-8qd"/>
+                            <constraint firstItem="w4U-e2-CJ4" firstAttribute="top" secondItem="w7x-dy-Vde" secondAttribute="bottom" constant="40" id="VTE-r9-Nsm"/>
+                            <constraint firstItem="35P-I7-x5C" firstAttribute="top" secondItem="w4U-e2-CJ4" secondAttribute="bottom" constant="-15" id="YGy-YB-8wv"/>
+                            <constraint firstItem="bnf-3C-QTD" firstAttribute="trailing" secondItem="4ky-Ce-yE4" secondAttribute="trailing" constant="-50" id="YOc-ru-CIe"/>
+                            <constraint firstItem="WoG-qj-oYS" firstAttribute="top" secondItem="4ky-Ce-yE4" secondAttribute="top" constant="20" id="bkq-di-TzJ"/>
+                            <constraint firstItem="w4U-e2-CJ4" firstAttribute="trailing" secondItem="WoG-qj-oYS" secondAttribute="trailing" id="eBR-VP-e5L"/>
+                            <constraint firstItem="w7x-dy-Vde" firstAttribute="leading" secondItem="WoG-qj-oYS" secondAttribute="leading" id="gI3-jc-fOj"/>
+                            <constraint firstItem="x61-Rc-gLs" firstAttribute="leading" secondItem="WoG-qj-oYS" secondAttribute="leading" id="gbb-z4-1Ck"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="bnf-3C-QTD" secondAttribute="bottom" constant="50" id="hJr-xi-avD"/>
+                            <constraint firstItem="fpb-9k-s7x" firstAttribute="trailing" secondItem="WoG-qj-oYS" secondAttribute="trailing" id="kPa-cB-b4J"/>
+                            <constraint firstItem="w4U-e2-CJ4" firstAttribute="leading" secondItem="WoG-qj-oYS" secondAttribute="leading" id="lWN-qZ-njT"/>
+                            <constraint firstItem="bnf-3C-QTD" firstAttribute="leading" secondItem="4ky-Ce-yE4" secondAttribute="leading" constant="50" id="mqk-O6-NkV"/>
+                            <constraint firstItem="WoG-qj-oYS" firstAttribute="leading" secondItem="4ky-Ce-yE4" secondAttribute="leading" constant="20" id="n6M-W4-pFr"/>
+                            <constraint firstItem="35P-I7-x5C" firstAttribute="leading" secondItem="WoG-qj-oYS" secondAttribute="leading" id="tmv-84-49Y"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="nVf-AM-6pJ"/>
+                        <viewLayoutGuide key="safeArea" id="4ky-Ce-yE4"/>
                     </view>
+                    <navigationItem key="navigationItem" title="New List" id="577-Al-DgF">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="MIU-gX-UdV">
+                            <color key="tintColor" red="0.84723395109999999" green="0.38912752270000001" blue="0.54817265270000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="u5k-9A-TTc" id="NIM-Ox-UQx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="cancelButton" destination="MIU-gX-UdV" id="PV3-Tx-9Vp"/>
+                        <outlet property="createListButton" destination="bnf-3C-QTD" id="nYd-1l-9Qm"/>
+                        <outlet property="createListButtonBottomConstraint" destination="hJr-xi-avD" id="xDy-UA-H0q"/>
+                        <outlet property="descriptionExampleLabel" destination="35P-I7-x5C" id="DdQ-VA-3sh"/>
+                        <outlet property="listDescriptionTextView" destination="w4U-e2-CJ4" id="xaC-cE-owD"/>
+                        <outlet property="listTitleTextField" destination="WoG-qj-oYS" id="G9j-UI-aSz"/>
+                        <outlet property="titleExampleLabel" destination="x61-Rc-gLs" id="vBO-9A-wtn"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WV4-yy-Z9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bmz-a9-ujh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="319" y="153"/>
+            <point key="canvasLocation" x="1360.8" y="43.628185907046479"/>
         </scene>
     </scenes>
 </document>

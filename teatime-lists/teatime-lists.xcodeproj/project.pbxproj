@@ -12,7 +12,6 @@
 		F011DE6A215019840058DEDE /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F011DE69215019840058DEDE /* Friend.swift */; };
 		F011DE6D215023590058DEDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F011DE6C215023590058DEDE /* Main.storyboard */; };
 		F011DE6F2150236A0058DEDE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F011DE6E2150236A0058DEDE /* MainViewController.swift */; };
-		F011DE7121507D790058DEDE /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = F011DE7021507D790058DEDE /* Account.swift */; };
 		F013C939214C86B5001F1179 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C938214C86B5001F1179 /* LandingViewController.swift */; };
 		F013C93B214C86DC001F1179 /* Landing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F013C93A214C86DC001F1179 /* Landing.storyboard */; };
 		F013C93E214C873B001F1179 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F013C93D214C873B001F1179 /* Login.storyboard */; };
@@ -24,6 +23,14 @@
 		F013C94B214C970A001F1179 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C94A214C970A001F1179 /* ErrorHandler.swift */; };
 		F013C94D214C9A8A001F1179 /* UIViewController+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C94C214C9A8A001F1179 /* UIViewController+Presenter.swift */; };
 		F013C94F214C9B48001F1179 /* GraphService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013C94E214C9B48001F1179 /* GraphService.swift */; };
+		F052C9C62158565800922DB2 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F052C9C22158565600922DB2 /* ListModel.swift */; };
+		F052C9C72158565800922DB2 /* PlaceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F052C9C32158565600922DB2 /* PlaceItem.swift */; };
+		F052C9C82158565800922DB2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F052C9C42158565700922DB2 /* UserModel.swift */; };
+		F052C9C92158565800922DB2 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F052C9C52158565700922DB2 /* Place.swift */; };
+		F052C9CB215856E100922DB2 /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F052C9CA215856E000922DB2 /* ParseHelper.swift */; };
+		F052C9CD21585A3E00922DB2 /* GoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F052C9CC21585A3E00922DB2 /* GoogleHelper.swift */; };
+		F052C9CF21585B4400922DB2 /* NewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F052C9CE21585B4400922DB2 /* NewListViewController.swift */; };
+		F052C9D121585E2B00922DB2 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F052C9D021585E2B00922DB2 /* CustomTextView.swift */; };
 		F06142262153182B00087370 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06142252153182B00087370 /* SearchBarView.swift */; };
 		F0614229215418C800087370 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614228215418C800087370 /* DrawerViewController.swift */; };
 		F061422C2154273E00087370 /* ListBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F061422A2154273E00087370 /* ListBrowserViewController.swift */; };
@@ -33,7 +40,6 @@
 		F079717A21544D10007A0CA4 /* MainViewController+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079717921544D10007A0CA4 /* MainViewController+Search.swift */; };
 		F079717C215471CD007A0CA4 /* DrawerViewController+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079717B215471CD007A0CA4 /* DrawerViewController+State.swift */; };
 		F079717E2154C37E007A0CA4 /* ListEditing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F079717D2154C37E007A0CA4 /* ListEditing.storyboard */; };
-		F07971802154C399007A0CA4 /* ListEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079717F2154C399007A0CA4 /* ListEditingViewController.swift */; };
 		F07971822154C819007A0CA4 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07971812154C819007A0CA4 /* FloatingButton.swift */; };
 		F079718521557ED2007A0CA4 /* ListDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079718421557ED2007A0CA4 /* ListDetailsViewController.swift */; };
 		F079718821557FB3007A0CA4 /* ListDetailsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F079718721557FB3007A0CA4 /* ListDetailsViewController+TableView.swift */; };
@@ -107,7 +113,6 @@
 		F011DE69215019840058DEDE /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		F011DE6C215023590058DEDE /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F011DE6E2150236A0058DEDE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		F011DE7021507D790058DEDE /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		F013C938214C86B5001F1179 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		F013C93A214C86DC001F1179 /* Landing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Landing.storyboard; sourceTree = "<group>"; };
 		F013C93D214C873B001F1179 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -119,6 +124,14 @@
 		F013C94A214C970A001F1179 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		F013C94C214C9A8A001F1179 /* UIViewController+Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Presenter.swift"; sourceTree = "<group>"; };
 		F013C94E214C9B48001F1179 /* GraphService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphService.swift; sourceTree = "<group>"; };
+		F052C9C22158565600922DB2 /* ListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		F052C9C32158565600922DB2 /* PlaceItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceItem.swift; sourceTree = "<group>"; };
+		F052C9C42158565700922DB2 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		F052C9C52158565700922DB2 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		F052C9CA215856E000922DB2 /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
+		F052C9CC21585A3E00922DB2 /* GoogleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleHelper.swift; sourceTree = "<group>"; };
+		F052C9CE21585B4400922DB2 /* NewListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewListViewController.swift; sourceTree = "<group>"; };
+		F052C9D021585E2B00922DB2 /* CustomTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		F06142252153182B00087370 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		F0614228215418C800087370 /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		F061422A2154273E00087370 /* ListBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBrowserViewController.swift; sourceTree = "<group>"; };
@@ -128,7 +141,6 @@
 		F079717921544D10007A0CA4 /* MainViewController+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Search.swift"; sourceTree = "<group>"; };
 		F079717B215471CD007A0CA4 /* DrawerViewController+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrawerViewController+State.swift"; sourceTree = "<group>"; };
 		F079717D2154C37E007A0CA4 /* ListEditing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListEditing.storyboard; sourceTree = "<group>"; };
-		F079717F2154C399007A0CA4 /* ListEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEditingViewController.swift; sourceTree = "<group>"; };
 		F07971812154C819007A0CA4 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		F079718421557ED2007A0CA4 /* ListDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailsViewController.swift; sourceTree = "<group>"; };
 		F079718721557FB3007A0CA4 /* ListDetailsViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListDetailsViewController+TableView.swift"; sourceTree = "<group>"; };
@@ -418,7 +430,10 @@
 			isa = PBXGroup;
 			children = (
 				F09A7995214C28480070CA93 /* Example from Dolo test */,
-				F011DE7021507D790058DEDE /* Account.swift */,
+				F052C9C42158565700922DB2 /* UserModel.swift */,
+				F052C9C22158565600922DB2 /* ListModel.swift */,
+				F052C9C52158565700922DB2 /* Place.swift */,
+				F052C9C32158565600922DB2 /* PlaceItem.swift */,
 				F011DE69215019840058DEDE /* Friend.swift */,
 			);
 			path = Models;
@@ -479,6 +494,7 @@
 				F07971AC2155AEF9007A0CA4 /* Examples */,
 				F07971812154C819007A0CA4 /* FloatingButton.swift */,
 				F07971A521559D94007A0CA4 /* ActionButton.swift */,
+				F052C9D021585E2B00922DB2 /* CustomTextView.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -489,6 +505,8 @@
 				F013C941214C8A46001F1179 /* AuthenticationService.swift */,
 				F013C94E214C9B48001F1179 /* GraphService.swift */,
 				F0FA8DA52152ECC100E0A5F0 /* LocationService.swift */,
+				F052C9CA215856E000922DB2 /* ParseHelper.swift */,
+				F052C9CC21585A3E00922DB2 /* GoogleHelper.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -507,7 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				F079717D2154C37E007A0CA4 /* ListEditing.storyboard */,
-				F079717F2154C399007A0CA4 /* ListEditingViewController.swift */,
+				F052C9CE21585B4400922DB2 /* NewListViewController.swift */,
 			);
 			path = ListEditing;
 			sourceTree = "<group>";
@@ -731,7 +749,10 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GrowingTextView/GrowingTextView.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -743,7 +764,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GrowingTextView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -796,11 +820,15 @@
 				F09A7974214C23A50070CA93 /* DButton.swift in Sources */,
 				F07971AA2155A9F2007A0CA4 /* PlaceInfoViewController.swift in Sources */,
 				F09A7978214C23D60070CA93 /* Routes.swift in Sources */,
+				F052C9CF21585B4400922DB2 /* NewListViewController.swift in Sources */,
 				F013C942214C8A46001F1179 /* AuthenticationService.swift in Sources */,
 				F013C94F214C9B48001F1179 /* GraphService.swift in Sources */,
+				F052C9C82158565800922DB2 /* UserModel.swift in Sources */,
 				F07971B22155AFB1007A0CA4 /* PopoverViewController+State.swift in Sources */,
 				F09A797F214C25560070CA93 /* UIViewController+Child.swift in Sources */,
 				F079718B21558151007A0CA4 /* ListInfoTableViewCell.swift in Sources */,
+				F052C9C72158565800922DB2 /* PlaceItem.swift in Sources */,
+				F052C9CB215856E100922DB2 /* ParseHelper.swift in Sources */,
 				F09A7992214C28240070CA93 /* Location.swift in Sources */,
 				F061422F21543E0E00087370 /* MainViewController+Drawer.swift in Sources */,
 				F0FA8DB3215306D800E0A5F0 /* UIFont+Custom.swift in Sources */,
@@ -816,8 +844,10 @@
 				F09A797B214C24F30070CA93 /* UIColor+Manipulation.swift in Sources */,
 				F09A797D214C25260070CA93 /* String+Localization.swift in Sources */,
 				F07971B62155BBE2007A0CA4 /* PlaceMarker.swift in Sources */,
-				F07971802154C399007A0CA4 /* ListEditingViewController.swift in Sources */,
+				F052C9C92158565800922DB2 /* Place.swift in Sources */,
+				F052C9CD21585A3E00922DB2 /* GoogleHelper.swift in Sources */,
 				F07971822154C819007A0CA4 /* FloatingButton.swift in Sources */,
+				F052C9C62158565800922DB2 /* ListModel.swift in Sources */,
 				F061423121543E4500087370 /* MainViewController+Map.swift in Sources */,
 				F06142262153182B00087370 /* SearchBarView.swift in Sources */,
 				F09A7999214C29B30070CA93 /* UIView+Subviews.swift in Sources */,
@@ -825,10 +855,10 @@
 				F079718F21558161007A0CA4 /* ListDescriptionTableViewCell.swift in Sources */,
 				F013C939214C86B5001F1179 /* LandingViewController.swift in Sources */,
 				F013C946214C8F50001F1179 /* UIWindow+TopVC.swift in Sources */,
+				F052C9D121585E2B00922DB2 /* CustomTextView.swift in Sources */,
 				F09A7976214C23CB0070CA93 /* Routable.swift in Sources */,
 				F079718821557FB3007A0CA4 /* ListDetailsViewController+TableView.swift in Sources */,
 				F07971A421558AEF007A0CA4 /* NibLoadable.swift in Sources */,
-				F011DE7121507D790058DEDE /* Account.swift in Sources */,
 				F09A7983214C25A10070CA93 /* InterfaceBuilder+Localization.swift in Sources */,
 				F0FA8DA62152ECC100E0A5F0 /* LocationService.swift in Sources */,
 				F013C949214C95EF001F1179 /* FacebookError.swift in Sources */,

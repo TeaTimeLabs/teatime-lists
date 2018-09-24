@@ -7,7 +7,6 @@ target 'teatime-lists' do
   # Auth
   pod 'Parse'
   pod 'Parse/FacebookUtils'
-  pod 'Parse/UI'
   pod 'FBSDKCoreKit', '~> 4.28.0'
   pod 'FBSDKLoginKit'
   
@@ -17,8 +16,11 @@ target 'teatime-lists' do
   
   # Utilities
   pod 'Alamofire'
+  pod 'Kingfisher', '= 4.9.0'
   pod 'TinyConstraints'
   pod 'SwiftyJSON'
+  pod 'GrowingTextView', '~> 0.5.5'
+  pod 'ProgressHUD'
   
 
   # Maps

@@ -15,6 +15,8 @@ class ListBrowserViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
+    var listsData = [ListModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,8 +35,28 @@ class ListBrowserViewController: UIViewController {
         registerTableViewCells()
         tableView.dataSource = self
         tableView.delegate = self
+        
+        fetchLists()
     }
 
-
+    
+    func fetchLists() {
+        ParseHelper.singleton.fetchUserLists(users: nil) { [weak self] (success, error, lists) in
+            guard let wself = self else { return }
+            if let err = error {
+                print("ERROR OCCURED WHILE RETRIEVING THE LISTS FOR THE CURRENT USER:", err)
+                return
+            }
+            
+            guard var lists = lists else { print("THE CURRENT USER HAS NO LIST"); return }
+            lists.sort(by: {
+                guard let date0 = $0.updatedAt, let date1 = $1.updatedAt else { return true }
+                return date0 > date1
+            })
+            
+            wself.listsData = lists
+            wself.tableView.reloadData()
+        }
+    }
     
 }
