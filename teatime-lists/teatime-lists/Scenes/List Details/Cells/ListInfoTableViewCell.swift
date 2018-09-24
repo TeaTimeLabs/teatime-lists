@@ -28,6 +28,7 @@ class ListInfoTableViewCell: UITableViewCell, NibReusable {
         placeCountLabel.font = UIFont.poppinsRegular(fontSize: 13)
         
         authorImageView.layer.cornerRadius = authorImageView.frame.width / 2
+        authorImageView.clipsToBounds = true
     }
     
     func configure(listModel: ListModel) {

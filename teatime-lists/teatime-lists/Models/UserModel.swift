@@ -9,7 +9,7 @@
 import Foundation
 import Parse
 
-class UserModel: PFUser{
+class UserModel: PFUser {
     @NSManaged var facebookID: String
     @NSManaged var fullname: String
     @NSManaged var firstname: String

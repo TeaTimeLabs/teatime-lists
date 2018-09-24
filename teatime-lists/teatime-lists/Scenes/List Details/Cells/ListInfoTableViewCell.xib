@@ -31,8 +31,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAV-xW-EbK">
                                 <rect key="frame" x="91" y="10" width="209" height="59.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLo-Xj-2n4">
-                                        <rect key="frame" x="0.0" y="0.0" width="209" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLo-Xj-2n4">
+                                        <rect key="frame" x="0.0" y="0.0" width="209" height="38"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -55,6 +55,7 @@
                                     <constraint firstItem="eLo-Xj-2n4" firstAttribute="top" secondItem="oAV-xW-EbK" secondAttribute="top" id="6L5-wm-Vgp"/>
                                     <constraint firstItem="jNd-E2-6b5" firstAttribute="leading" secondItem="1Fd-DP-UFq" secondAttribute="trailing" constant="10" id="SUP-mg-zsb"/>
                                     <constraint firstAttribute="trailing" secondItem="eLo-Xj-2n4" secondAttribute="trailing" id="Uyv-09-oTF"/>
+                                    <constraint firstItem="1Fd-DP-UFq" firstAttribute="top" secondItem="eLo-Xj-2n4" secondAttribute="bottom" id="aAX-IV-fco"/>
                                     <constraint firstItem="jNd-E2-6b5" firstAttribute="baseline" secondItem="1Fd-DP-UFq" secondAttribute="baseline" id="gcf-bB-y2i"/>
                                     <constraint firstItem="eLo-Xj-2n4" firstAttribute="leading" secondItem="oAV-xW-EbK" secondAttribute="leading" id="rlW-9H-7Zd"/>
                                     <constraint firstItem="1Fd-DP-UFq" firstAttribute="leading" secondItem="oAV-xW-EbK" secondAttribute="leading" id="xEt-mL-nDo"/>

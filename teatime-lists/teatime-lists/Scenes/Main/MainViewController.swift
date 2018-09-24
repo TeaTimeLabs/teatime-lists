@@ -37,13 +37,13 @@ class MainViewController: UIViewController {
         // TODO: make a static method on it to instantiate
         addDrawerController(with: ListBrowserViewController(nibName: "ListBrowserViewController", bundle: nil))
         
-//        addPopoverController(with: PlaceInfoViewController())
+        addPopoverController(with: PlaceInfoViewController())
         
         view.bringSubview(toFront: floatingButton)
         
-        mapViewController?.selectedMarker.asDriver().drive(onNext: { [weak self] (marker) in
-            self?.popoverViewController?.changeState((marker != nil) ? .onScreen : .offScreen)
-        }).disposed(by: disposeBag)
+//        mapViewController?.selectedMarker.asDriver().drive(onNext: { [weak self] (marker) in
+//            self?.popoverViewController?.changeState((marker != nil) ? .onScreen : .offScreen)
+//        }).disposed(by: disposeBag)
     }
     
     @IBAction func addListTapped(_ sender: Any) {

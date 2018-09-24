@@ -56,17 +56,16 @@ final class PopoverViewController: UIViewController {
     
     func changeState(_ state: PopoverState, animated: Bool = true, duration: TimeInterval = 5.0) {
         
-
+        switch state {
+        case .offScreen:
+            self.hiddingConstraint?.isActive = true
+        default:
+            self.hiddingConstraint?.isActive = false
+        }
         
-        UIView.animate(withDuration: duration, delay: 0.0,
-                       options: [], animations: {
-                        
-                        switch state {
-                        case .offScreen:
-                            self.hiddingConstraint?.isActive = true
-                        default:
-                            self.hiddingConstraint?.isActive = false
-                        }
+        UIView.animate(withDuration: animated ? duration : 0.0, delay: 0.0,
+                       options: [.allowAnimatedContent, .layoutSubviews], animations: {
+              
                         self.view.layoutIfNeeded()
         })
     }

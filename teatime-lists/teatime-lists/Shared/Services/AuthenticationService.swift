@@ -45,6 +45,8 @@ struct AuthenticationService {
                 return
             }
             
+            GraphService.updateUserInfo()
+            
             if user.isNew {
                 print("User is new")
                 UIWindow.topMostViewController()?.makeRootOfKeyWindow(storyboard: .main)
@@ -61,6 +63,7 @@ struct AuthenticationService {
     func landing() {
         if let user = PFUser.current(), PFFacebookUtils.isLinked(with: user) {
             UIWindow.topMostViewController()?.makeRootOfKeyWindow(storyboard: .main)
+            GraphService.updateUserInfo()
             return
         }
         UIWindow.topMostViewController()?.makeRootOfKeyWindow(storyboard: .login)

@@ -20,9 +20,6 @@ final class MapViewController: UIViewController {
     
     var markers = Set<PlaceMarker>()
     
-    // make it better (delegate?)
-    let selectedMarker = Variable<GMSMarker?>(nil)
-    
     
     init() {
         let latitude = LocationService.shared.rxLocation.value.latitude
@@ -80,7 +77,7 @@ extension MapViewController: GMSMapViewDelegate {
         mapView.selectedMarker = marker
         (marker as? PlaceMarker)?.isSelected = true
         
-        selectedMarker.value = marker
+//        selectedMarker.value = marker
         
         // tap event handled by delegate
         return true
@@ -91,7 +88,7 @@ extension MapViewController: GMSMapViewDelegate {
         markers.forEach({ $0.isSelected = false})
         
         mapView.selectedMarker = nil
-        selectedMarker.value = nil
+//        selectedMarker.value = nil
     }
 }
 

@@ -12,12 +12,12 @@ import TinyConstraints
 
 extension MainViewController {
     
-    func addPopoverController(with content: UIViewController, state: PopoverState = .offScreen) {
+    func addPopoverController(with content: UIViewController) {
         guard let popoverController = popoverViewController else {
             popoverViewController = PopoverViewController(content: content)
             add(popoverViewController!, inside: view, pin: false)
             popoverViewController?.setUpConstraints()
-            
+            popoverViewController?.changeState(.offScreen, animated: false)
             return
         }
         
