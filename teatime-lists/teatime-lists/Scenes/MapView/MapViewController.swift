@@ -15,11 +15,9 @@ import GoogleMaps
 final class MapViewController: UIViewController {
     
     let defaultZoom: Float = 16.0
-    
     let mapView: GMSMapView
-    
     var markers = Set<PlaceMarker>()
-    
+
     var places: Set<Place>? {
         didSet {
             updateMarkers()
@@ -48,7 +46,6 @@ final class MapViewController: UIViewController {
         super.viewDidLoad()
 
         view.addSubview(mapView)
-        
     }
 
     func updateMarkers() {
@@ -63,8 +60,6 @@ final class MapViewController: UIViewController {
             }
         }
     }
-    
-    
     
     
     func setMapBottomPadding(_ padding: CGFloat) {

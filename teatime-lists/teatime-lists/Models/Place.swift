@@ -47,4 +47,13 @@ class Place: PFObject, PFSubclassing{
         return "Place"
     }
     
+    var categoryIcon: UIImage {
+        let iconName = String.underscoreToDash(text: category)
+        if let iconImage = UIImage(named: iconName){
+            return iconImage
+        } else{
+            return #imageLiteral(resourceName: "default-category")
+        }
+    }
+    
 }

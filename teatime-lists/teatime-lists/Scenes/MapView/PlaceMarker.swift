@@ -12,33 +12,27 @@ import GoogleMaps
 final class PlaceMarker: GMSMarker {
     
     let place: Place
+    let placeIcon: PlaceIcon
     
     var isSelected = false {
         didSet {
-            iconView = getIconView() // TO CHANGE TO iconView
+            // Configure iconView and set redraw
         }
     }
     
-//    let place: PLACETYPE
-    
-    init(place: Place) { // PLACETYPE
+    init(place: Place) {
         self.place = place
+        self.placeIcon = PlaceIcon(place: place)
+        
         super.init()
         
         position = CLLocationCoordinate2D(latitude: place.lat, longitude: place.long)
-        iconView = getIconView()
+        
+        placeIcon.parentMarker = self
+        iconView = placeIcon
+        
         groundAnchor = CGPoint(x: 0.5, y: 1)
         appearAnimation = .pop
-        title = place.name
         tracksViewChanges = false
-    }
-    
-    
-    func getIconView() -> UIView {
-        if isSelected {
-            return PlaceIcon()
-        } else {
-            return PlaceIcon()
-        }
     }
 }
