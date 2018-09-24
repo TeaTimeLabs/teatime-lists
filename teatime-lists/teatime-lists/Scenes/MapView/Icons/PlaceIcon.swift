@@ -16,6 +16,8 @@ class PlaceIcon: UIView {
     let iconImageContrainerView = UIView()
     let iconImageView = UIImageView()
     
+    let nameLabel = UILabel()
+    
     weak var parentMarker: PlaceMarker?
 
     // The Init method you need to use.
@@ -50,7 +52,7 @@ class PlaceIcon: UIView {
         
         iconImageContrainerView.frame = CGRect(x: 30, y: 55, width: 20, height: 20)
         iconImageContrainerView.backgroundColor = UIColor.iconBackground
-        iconImageContrainerView.layer.cornerRadius = 10
+        iconImageContrainerView.layer.cornerRadius = iconImageContrainerView.frame.width / 2
         iconImageContrainerView.layer.borderColor = UIColor.white.cgColor
         iconImageContrainerView.layer.borderWidth = 1
         iconImageContrainerView.clipsToBounds = true
@@ -58,10 +60,19 @@ class PlaceIcon: UIView {
         iconImageContrainerView.addSubview(iconImageView)
         iconImageView.frame = CGRect(x: 5, y: 5, width: 10, height: 10)
         
+        nameLabel.frame = CGRect(x: 0, y: 75, width: 80, height: 25)
+        nameLabel.textAlignment = .center
+        nameLabel.numberOfLines = 2
+        nameLabel.font = UIFont.poppinsMedium(fontSize: 8)
+        nameLabel.textColor = UIColor.middleTextColor
+        nameLabel.text = place.name
+        nameLabel.sizeToFit() // Needs to be after the Text
+        nameLabel.frame = CGRect(x: 0, y: 75, width: 80, height: nameLabel.frame.height)
         
         
         addSubview(mainImageContrainerView)
         addSubview(iconImageContrainerView)
+        addSubview(nameLabel)
         
         setImages(place: place)
     }
@@ -79,9 +90,37 @@ class PlaceIcon: UIView {
         if let urlString = place.followers.first?.photoURL,
             let url = URL(string: urlString) {
             mainImageView.kf.setImage(with: url) { [weak self] (_, _, _, _) in
-                                self?.parentMarker?.tracksViewChanges = true
-                                self?.parentMarker?.tracksViewChanges = false
+                self?.refreshIconView()
             }
         }
+    }
+    
+    func setSelected(_ selected: Bool) {
+        if selected {
+            iconImageContrainerView.backgroundColor = UIColor.primaryColor
+            iconImageContrainerView.frame = CGRect(x: 23, y: 41, width: 34, height: 34)
+            iconImageView.frame = CGRect(x: 7, y: 7, width: 20, height: 20)
+            nameLabel.textColor = UIColor.black
+            nameLabel.font = UIFont.poppinsMedium(fontSize: 12)
+        } else {
+            iconImageContrainerView.backgroundColor = UIColor.iconBackground
+            iconImageContrainerView.frame = CGRect(x: 30, y: 55, width: 20, height: 20)
+            iconImageView.frame = CGRect(x: 5, y: 5, width: 10, height: 10)
+            nameLabel.textColor = UIColor.middleTextColor
+            nameLabel.font = UIFont.poppinsMedium(fontSize: 8)
+        }
+        
+        iconImageContrainerView.layer.cornerRadius = iconImageContrainerView.frame.width / 2
+        nameLabel.sizeToFit() // Needs to be after the Text
+        nameLabel.frame = CGRect(x: 0, y: 75, width: 80, height: nameLabel.frame.height)
+        
+        refreshIconView()
+    }
+    
+    
+    
+    private func refreshIconView() {
+        parentMarker?.tracksViewChanges = true
+        parentMarker?.tracksViewChanges = false
     }
 }

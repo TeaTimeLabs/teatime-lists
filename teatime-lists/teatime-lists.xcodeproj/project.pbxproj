@@ -87,6 +87,7 @@
 		F09A7994214C28240070CA93 /* LocationCategoryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A7990214C28240070CA93 /* LocationCategoryIcon.swift */; };
 		F09A7997214C28A00070CA93 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F09A7996214C28A00070CA93 /* Localizable.strings */; };
 		F09A7999214C29B30070CA93 /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A7998214C29B30070CA93 /* UIView+Subviews.swift */; };
+		F0B71B3D21598D5100793E36 /* UIView+Pike.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B71B3C21598D5100793E36 /* UIView+Pike.swift */; };
 		F0FA8DA42152EAA700E0A5F0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA8DA32152EAA700E0A5F0 /* MapViewController.swift */; };
 		F0FA8DA62152ECC100E0A5F0 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA8DA52152ECC100E0A5F0 /* LocationService.swift */; };
 		F0FA8DA92152FF4E00E0A5F0 /* UltraLight.json in Resources */ = {isa = PBXBuildFile; fileRef = F0FA8DA82152FF4E00E0A5F0 /* UltraLight.json */; };
@@ -196,6 +197,7 @@
 		F09A7990214C28240070CA93 /* LocationCategoryIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCategoryIcon.swift; sourceTree = "<group>"; };
 		F09A7996214C28A00070CA93 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		F09A7998214C29B30070CA93 /* UIView+Subviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
+		F0B71B3C21598D5100793E36 /* UIView+Pike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Pike.swift"; sourceTree = "<group>"; };
 		F0FA8DA32152EAA700E0A5F0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F0FA8DA52152ECC100E0A5F0 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		F0FA8DA82152FF4E00E0A5F0 /* UltraLight.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UltraLight.json; sourceTree = "<group>"; };
@@ -494,6 +496,7 @@
 				F0FA8DB2215306D800E0A5F0 /* UIFont+Custom.swift */,
 				F052967B21597234001F1512 /* String+Manipulation.swift */,
 				F05F74E72159798A00E34B86 /* UIImageView+Tint.swift */,
+				F0B71B3C21598D5100793E36 /* UIView+Pike.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -823,6 +826,7 @@
 				F09A7991214C28240070CA93 /* LocationCategory.swift in Sources */,
 				F0614229215418C800087370 /* DrawerViewController.swift in Sources */,
 				F052967C21597234001F1512 /* String+Manipulation.swift in Sources */,
+				F0B71B3D21598D5100793E36 /* UIView+Pike.swift in Sources */,
 				F079719821558362007A0CA4 /* ListBrowserViewController+TableView.swift in Sources */,
 				F07971B42155B2B7007A0CA4 /* MainViewController+Popover.swift in Sources */,
 				F013C94D214C9A8A001F1179 /* UIViewController+Presenter.swift in Sources */,

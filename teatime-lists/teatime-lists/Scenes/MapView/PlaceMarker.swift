@@ -16,7 +16,7 @@ final class PlaceMarker: GMSMarker {
     
     var isSelected = false {
         didSet {
-            // Configure iconView and set redraw
+            placeIcon.setSelected(isSelected)
         }
     }
     
@@ -31,7 +31,7 @@ final class PlaceMarker: GMSMarker {
         placeIcon.parentMarker = self
         iconView = placeIcon
         
-        groundAnchor = CGPoint(x: 0.5, y: 1)
+        groundAnchor = CGPoint(x: 0.5, y: 0.60)
         appearAnimation = .pop
         tracksViewChanges = false
     }

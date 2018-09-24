@@ -30,4 +30,8 @@ extension UIColor {
     static var iconBackground: UIColor {
         return UIColor(named: "IconBackground")!
     }
+    
+    static var middleTextColor: UIColor {
+        return UIColor(named: "MiddleTextColor")!
+    }
 }
