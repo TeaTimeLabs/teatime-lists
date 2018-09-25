@@ -12,7 +12,22 @@ import CoreLocation
 import GoogleMaps
 
 class MainViewController: UIViewController {
-
+    
+    enum MainState {
+        case drawer
+        case popover
+        case search
+    }
+    
+    var state: MainState = .drawer {
+        didSet {
+            if oldValue != state {
+                updateUI(state)
+            }
+        }
+    }
+    
+    
     let disposeBag = DisposeBag()
     let mainViewModel = MainViewModel()
     
@@ -21,15 +36,12 @@ class MainViewController: UIViewController {
     var popoverViewController: PopoverViewController?
     
     var listBrowserViewController: ListBrowserViewController?
+    var placeInfoViewController: PlaceInfoViewController?
     
     @IBOutlet var searchBarView: SearchBarView!
     @IBOutlet var floatingButton: FloatingButton!
     
-    enum MainState {
-        case popover
-        case drawer
-        case search
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,18 +53,12 @@ class MainViewController: UIViewController {
         listBrowserViewController = ListBrowserViewController(nibName: "ListBrowserViewController", bundle: nil)
         addDrawerController(with: listBrowserViewController!)
         
-        addPopoverController(with: PlaceInfoViewController())
+        placeInfoViewController = PlaceInfoViewController()
+        addPopoverController(with: placeInfoViewController!)
         
         
-        mainViewModel.lists.asDriver().drive(onNext: { [weak self] (listModels) in
-            self?.listBrowserViewController?.listsData = listModels ?? []
-        }).disposed(by: disposeBag)
-        
-        
-        mainViewModel.places.asDriver().drive(onNext: { [weak self] (places) in
-            self?.mapViewController?.places = places
-        }).disposed(by: disposeBag)
-        
+
+        binding()
         
         view.bringSubview(toFront: floatingButton)
     }
@@ -64,10 +70,34 @@ class MainViewController: UIViewController {
     }
     
     
-    @IBAction func addListTapped(_ sender: Any) {
-        show(storyboard: .listEditing)
+    private func binding() {
+        mainViewModel.lists.asDriver().drive(onNext: { [weak self] (listModels) in
+            self?.listBrowserViewController?.listsData = listModels ?? []
+        }).disposed(by: disposeBag)
+        
+        
+        mainViewModel.places.asDriver().drive(onNext: { [weak self] (places) in
+            self?.mapViewController?.places = places
+        }).disposed(by: disposeBag)
     }
     
     
+    private func updateUI(_ state: MainState) {
+        switch state {
+        case .drawer:
+            drawerViewController?.changeState(.partialScreen)
+            popoverViewController?.changeState(.offScreen)
+        case .popover:
+            drawerViewController?.changeState(.offScreen)
+            popoverViewController?.changeState(.onScreen)
+        default:
+            break
+        }
+    }
+    
+    
+    @IBAction func addListTapped(_ sender: Any) {
+        show(storyboard: .listEditing)
+    }
 }
 

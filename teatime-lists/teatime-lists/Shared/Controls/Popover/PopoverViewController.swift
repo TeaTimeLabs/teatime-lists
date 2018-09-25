@@ -38,14 +38,6 @@ final class PopoverViewController: UIViewController {
         changeContent(contentViewController)
     }
     
-    func setUpConstraints() {
-        view.rightToSuperview(offset: 8)
-        view.leftToSuperview(offset: 8)
-        view.bottomToSuperview(offset: -8, priority: .defaultHigh, usingSafeArea: true)
-        if let superview = view.superview {
-            hiddingConstraint = view.topToBottom(of: superview, offset: 30)
-        }
-    }
     
     func changeContent(_ content: UIViewController) {
         contentViewController.removeFromParent()
@@ -54,19 +46,15 @@ final class PopoverViewController: UIViewController {
     }
     
     
-    func changeState(_ state: PopoverState, animated: Bool = true, duration: TimeInterval = 5.0) {
+    func changeState(_ state: PopoverState, animated: Bool = true, duration: TimeInterval = 0.3) {
+        let finalDuration = animated ? duration : 0.0 // 0.0 animation if not animated
         
-        switch state {
-        case .offScreen:
-            self.hiddingConstraint?.isActive = true
-        default:
-            self.hiddingConstraint?.isActive = false
-        }
-        
-        UIView.animate(withDuration: animated ? duration : 0.0, delay: 0.0,
-                       options: [.allowAnimatedContent, .layoutSubviews], animations: {
-              
-                        self.view.layoutIfNeeded()
+        UIView.animate(withDuration: finalDuration, delay: 0.0,
+                       options: [.layoutSubviews], animations: {
+                        // configure the State from Enum values
+                        self.view.frame = state.getFrame()
+                        
+                        //self.delegate?.didUpdateFrame(self.view.frame)
         })
     }
 

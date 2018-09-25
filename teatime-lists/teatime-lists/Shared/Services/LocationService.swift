@@ -26,11 +26,12 @@ final class LocationService: NSObject {
         
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.delegate = self
-        rxLocation.value = locationManager.location?.coordinate ?? defaultMapLocation
         
         NotificationCenter.default.rx.notification(Notification.Name.UIApplicationDidBecomeActive).asObservable().subscribe(onNext: { [weak self] _ in
             self?.checkStatus()
         }).disposed(by: disposeBag)
+        
+        rxLocation.value = locationManager.location?.coordinate ?? defaultMapLocation
     }
     
     @discardableResult func checkStatus() -> Bool {

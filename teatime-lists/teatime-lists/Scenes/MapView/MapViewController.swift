@@ -10,9 +10,15 @@ import UIKit
 import RxSwift
 import GoogleMaps
 
+protocol MapViewControllerDelegate: class {
+    func didSelectMarker(place: Place?)
+}
+
 
 
 final class MapViewController: UIViewController {
+    
+    weak var delegate: MapViewControllerDelegate?
     
     let defaultZoom: Float = 16.0
     let mapView: GMSMapView
@@ -36,6 +42,9 @@ final class MapViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
         mapView.delegate = self
+        
+        
+        centerOnUserLocation()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -77,29 +86,31 @@ final class MapViewController: UIViewController {
 
 
 extension MapViewController: GMSMapViewDelegate {
-    // tap map marker
+    
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        // remove color from currently selected marker
-        if let selectedMarker = mapView.selectedMarker {
-            selectedMarker.icon = GMSMarker.markerImage(with: nil)
+        // Unselect current Market
+        if let previousSelectedMarker = mapView.selectedMarker as? PlaceMarker {
+            previousSelectedMarker.isSelected = false
         }
         
-        // select new marker and make green
-        mapView.selectedMarker = marker
-        (marker as? PlaceMarker)?.isSelected = true
+        // Select Tapped Marker and send it back to the Main for info display
+        if let selectedMarker = marker as? PlaceMarker {
+            selectedMarker.isSelected = true
+            delegate?.didSelectMarker(place: selectedMarker.place)
+        }
         
-//        selectedMarker.value = marker
+        
+        mapView.selectedMarker = marker
         
         // tap event handled by delegate
         return true
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-        
         markers.forEach({ $0.isSelected = false})
-        
-        mapView.selectedMarker = nil
-//        selectedMarker.value = nil
+
+        mapView.selectedMarker = nil // should be already nil but heh.
+        delegate?.didSelectMarker(place: nil)
     }
 }
 

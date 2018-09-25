@@ -16,7 +16,6 @@ extension MainViewController {
         guard let popoverController = popoverViewController else {
             popoverViewController = PopoverViewController(content: content)
             add(popoverViewController!, inside: view, pin: false)
-            popoverViewController?.setUpConstraints()
             popoverViewController?.changeState(.offScreen, animated: false)
             return
         }

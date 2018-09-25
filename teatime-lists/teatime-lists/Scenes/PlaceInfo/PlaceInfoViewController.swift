@@ -16,6 +16,8 @@ class PlaceInfoViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    
+    func changeContent(place: Place) {
+        
+    }
 
 }

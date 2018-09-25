@@ -24,7 +24,7 @@ final class ActionButton: UIButton {
         layer.borderWidth = 1
         layer.cornerRadius = frame.size.height / 2
         titleLabel?.font = UIFont.poppinsSemiBold(fontSize: 14)
-        layer.borderColor = UIColor.secondaryColor.cgColor
+        layer.borderColor = UIColor.secondaryColor.withAlphaComponent(0.44).cgColor
         self.setTitleColor(UIColor.secondaryColor, for: .normal)
         self.setTitleColor(UIColor.secondaryColor.darker(), for: UIControlState.highlighted)
     }

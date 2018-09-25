@@ -12,4 +12,31 @@ import UIKit
 enum PopoverState {
     case onScreen
     case offScreen
+    
+    
+    func getFrame() -> CGRect {
+        return CGRect(x: getMargins().left, y: getYPosition(), width: getWidth(), height: getHeight())
+    }
+    
+    
+    private func getMargins() -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 8, bottom: 8, right: 8)
+    }
+    
+    private func getYPosition() -> CGFloat {
+        switch self {
+        case .onScreen:
+            return UIScreen.main.bounds.height - (getHeight() + getMargins().bottom)
+        case .offScreen:
+            return UIScreen.main.bounds.height
+        }
+    }
+    
+    private func getHeight() -> CGFloat {
+        return getWidth() * 0.80
+    }
+    
+    private func getWidth() -> CGFloat {
+        return UIScreen.main.bounds.width - (getMargins().left + getMargins().right)
+    }
 }

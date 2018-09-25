@@ -16,7 +16,9 @@ final class PlaceMarker: GMSMarker {
     
     var isSelected = false {
         didSet {
-            placeIcon.setSelected(isSelected)
+            if oldValue != isSelected {
+                placeIcon.setSelected(isSelected)
+            }
         }
     }
     

@@ -29,9 +29,14 @@ extension MainViewController {
 
 extension MainViewController: DrawerViewControllerDelegate {
     func didUpdateFrame(_ frame: CGRect) {
+        guard state == .drawer else {
+            return
+        }
         // Pushing up the Map according to the Drawer Height
         mapViewController?.setMapBottomPadding(frame.height)
         
         searchBarView?.alpha = (frame.minY - 150) / 180
     }
 }
+
+

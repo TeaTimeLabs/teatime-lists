@@ -11,7 +11,20 @@ import UIKit
 extension MainViewController {
     func addMapController() {
         mapViewController = MapViewController()
+        mapViewController?.delegate = self
         add(mapViewController!, inside: view)
         view.sendSubview(toBack: mapViewController!.view)
+    }
+}
+
+extension MainViewController: MapViewControllerDelegate {
+    func didSelectMarker(place: Place?) {
+        guard let place = place else {
+            state = .drawer
+            return
+        }
+        
+        placeInfoViewController?.changeContent(place: place)
+        state = .popover
     }
 }
