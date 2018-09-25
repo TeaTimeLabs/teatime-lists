@@ -28,9 +28,9 @@ final class PopoverViewController: UIViewController {
         super.viewDidLoad()
 
         view.layer.cornerRadius = 4.0
-        view.layer.shadowRadius = 2.5
+        view.layer.shadowRadius = 3
         view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOpacity = 0.20
+        view.layer.shadowOpacity = 0.30
         view.layer.shadowOffset = CGSize(width: 0, height: 1)
         
         contentViewController.view.layer.cornerRadius = 4.0
@@ -46,7 +46,7 @@ final class PopoverViewController: UIViewController {
     }
     
     
-    func changeState(_ state: PopoverState, animated: Bool = true, duration: TimeInterval = 0.3) {
+    func changeState(_ state: PopoverState, animated: Bool = true, duration: TimeInterval = 0.2) {
         let finalDuration = animated ? duration : 0.0 // 0.0 animation if not animated
         
         UIView.animate(withDuration: finalDuration, delay: 0.0,

@@ -20,7 +20,11 @@ extension MainViewController {
 extension MainViewController: MapViewControllerDelegate {
     func didSelectMarker(place: Place?) {
         guard let place = place else {
-            state = .drawer
+            if state != .drawer {
+                state = .drawer
+                // After interacting with map (open the drawer a minimum)
+                drawerViewController?.changeState(.minimumScreen)
+            }
             return
         }
         
