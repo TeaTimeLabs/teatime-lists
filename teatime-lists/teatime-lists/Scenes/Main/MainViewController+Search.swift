@@ -28,10 +28,11 @@ extension MainViewController: SearchResultsViewControllerDelegate {
     func didSelectPlace(_ place: Place?) {
         mapViewController?.centerOnPlace(place)
         
-        if let place = place {
-            placeInfoViewController?.changeContent(place: place)
-            state = .popover
-        }
+        state = .drawer
+//        if let place = place {
+//            placeInfoViewController?.changeContent(place: place)
+//            state = .dra
+//        }
     }
 }
 

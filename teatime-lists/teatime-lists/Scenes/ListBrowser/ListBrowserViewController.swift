@@ -10,6 +10,14 @@ import UIKit
 
 class ListBrowserViewController: UIViewController {
     
+    private var state: BrowserState = .everyone {
+        didSet {
+            filterButton?.setAttributedTitle(state.getButtonTitle(), for: .normal)
+            // TODO:
+            // updateFilters and reload
+        }
+    }
+    
     @IBOutlet var filterButton: UIButton?
     @IBOutlet var titleLabel: UILabel?
     
@@ -24,13 +32,7 @@ class ListBrowserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        let attributes : [NSAttributedStringKey: Any] = [NSAttributedStringKey.underlineStyle: NSUnderlineStyle.patternDot.rawValue | NSUnderlineStyle.styleThick.rawValue,
-                                                         NSAttributedStringKey.foregroundColor : UIColor.primaryColor,
-                                                         NSAttributedStringKey.font: UIFont.poppinsSemiBold(fontSize: 28)!]
-        
-        let underlineAttributedString = NSAttributedString(string: "LIST_BROWSER_FILTER_BUTTON_EVERYONE".localized, attributes: attributes)
-        filterButton?.setAttributedTitle(underlineAttributedString, for: .normal)
+        filterButton?.setAttributedTitle(state.getButtonTitle(), for: .normal)
         
         titleLabel?.text = " " + "LIST_BROWSER_FILTER_TITLE".localized
         titleLabel?.font = UIFont.poppinsSemiBold(fontSize: 28)
@@ -41,5 +43,21 @@ class ListBrowserViewController: UIViewController {
         tableView.delegate = self
     }
 
-  
+    
+    @IBAction func filterButtonTapped(_ sender: Any) {
+        let everyoneAction: ActionSheetAction =  { [weak self] action in
+            self?.state = .everyone
+        }
+        
+        let onlyMeAction: ActionSheetAction =  { [weak self] action in
+            self?.state = .onlymy
+        }
+        
+        let friendsAction: ActionSheetAction =  { [weak self] action in
+            self?.state = .friends
+        }
+        
+        showActionSheet(firstTitle: "LIST_BROWSER_FILTER_BUTTON_EVERYONE".localized, secondTitle: "LIST_BROWSER_FILTER_BUTTON_ONLY_MINE".localized, thirdTitle: "LIST_BROWSER_FILTER_BUTTON_FRIENDS".localized, everyoneAction, onlyMeAction, friendsAction)
+    }
+    
 }

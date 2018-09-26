@@ -29,25 +29,25 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sfGeneric" highlightedImage="sfGeneric" translatesAutoresizingMaskIntoConstraints="NO" id="6dr-uX-QkJ">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qrp-ub-tcp">
-                            <rect key="frame" x="0.0" y="142" width="375" height="62"/>
+                            <rect key="frame" x="0.0" y="139" width="375" height="65"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="!name!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9I-rm-H4g">
-                                    <rect key="frame" x="20" y="12" width="335" height="21"/>
+                                    <rect key="frame" x="20" y="8" width="335" height="28"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="!category!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuJ-1l-MQ1">
-                                    <rect key="frame" x="20" y="36" width="77.5" height="21"/>
+                                    <rect key="frame" x="20" y="39" width="77.5" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="!hours!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdG-Gl-URw">
-                                    <rect key="frame" x="110.5" y="36" width="53.5" height="21"/>
+                                    <rect key="frame" x="110.5" y="39" width="53.5" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -56,12 +56,12 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="NuJ-1l-MQ1" firstAttribute="leading" secondItem="qrp-ub-tcp" secondAttribute="leading" constant="20" id="2LR-sM-TX5"/>
-                                <constraint firstAttribute="height" constant="62" id="33I-cq-uqg"/>
+                                <constraint firstAttribute="height" constant="65" id="33I-cq-uqg"/>
                                 <constraint firstItem="rdG-Gl-URw" firstAttribute="leading" secondItem="NuJ-1l-MQ1" secondAttribute="trailing" constant="13" id="Akq-fq-bM2"/>
                                 <constraint firstAttribute="trailing" secondItem="w9I-rm-H4g" secondAttribute="trailing" constant="20" id="K7o-gD-Y5d"/>
                                 <constraint firstItem="NuJ-1l-MQ1" firstAttribute="top" secondItem="w9I-rm-H4g" secondAttribute="bottom" constant="3" id="KV2-8N-wtI"/>
                                 <constraint firstItem="w9I-rm-H4g" firstAttribute="leading" secondItem="qrp-ub-tcp" secondAttribute="leading" constant="20" id="ijv-2F-Shv"/>
-                                <constraint firstItem="w9I-rm-H4g" firstAttribute="top" secondItem="qrp-ub-tcp" secondAttribute="top" constant="12" id="kip-nd-sz9"/>
+                                <constraint firstItem="w9I-rm-H4g" firstAttribute="top" secondItem="qrp-ub-tcp" secondAttribute="top" constant="8" id="kip-nd-sz9"/>
                                 <constraint firstItem="rdG-Gl-URw" firstAttribute="baseline" secondItem="NuJ-1l-MQ1" secondAttribute="baseline" id="me9-OL-7Qx"/>
                                 <constraint firstAttribute="bottom" secondItem="NuJ-1l-MQ1" secondAttribute="bottom" constant="5" id="wsz-Hg-4a4"/>
                             </constraints>
@@ -148,6 +148,6 @@
         </view>
     </objects>
     <resources>
-        <image name="sfGeneric" width="750" height="415"/>
+        <image name="sfGeneric" width="1500" height="830"/>
     </resources>
 </document>

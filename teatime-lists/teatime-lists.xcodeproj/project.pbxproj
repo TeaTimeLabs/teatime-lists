@@ -93,6 +93,7 @@
 		F0A2C439215AEF0D00F038CB /* PlaceResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0A2C437215AEF0D00F038CB /* PlaceResultTableViewCell.xib */; };
 		F0A2C43B215B0BA700F038CB /* GMSMapView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2C43A215B0BA700F038CB /* GMSMapView+Style.swift */; };
 		F0A2C43D215B0BF200F038CB /* MapViewController+MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2C43C215B0BF200F038CB /* MapViewController+MapDelegate.swift */; };
+		F0A2C43F215BF4F900F038CB /* ListBrowserViewController+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2C43E215BF4F900F038CB /* ListBrowserViewController+State.swift */; };
 		F0B71B3D21598D5100793E36 /* UIView+Pike.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B71B3C21598D5100793E36 /* UIView+Pike.swift */; };
 		F0FA8DA42152EAA700E0A5F0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA8DA32152EAA700E0A5F0 /* MapViewController.swift */; };
 		F0FA8DA62152ECC100E0A5F0 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA8DA52152ECC100E0A5F0 /* LocationService.swift */; };
@@ -209,6 +210,7 @@
 		F0A2C437215AEF0D00F038CB /* PlaceResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceResultTableViewCell.xib; sourceTree = "<group>"; };
 		F0A2C43A215B0BA700F038CB /* GMSMapView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GMSMapView+Style.swift"; sourceTree = "<group>"; };
 		F0A2C43C215B0BF200F038CB /* MapViewController+MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+MapDelegate.swift"; sourceTree = "<group>"; };
+		F0A2C43E215BF4F900F038CB /* ListBrowserViewController+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListBrowserViewController+State.swift"; sourceTree = "<group>"; };
 		F0B71B3C21598D5100793E36 /* UIView+Pike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Pike.swift"; sourceTree = "<group>"; };
 		F0FA8DA32152EAA700E0A5F0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F0FA8DA52152ECC100E0A5F0 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
@@ -615,6 +617,7 @@
 			children = (
 				F061422B2154273E00087370 /* ListBrowserViewController.xib */,
 				F061422A2154273E00087370 /* ListBrowserViewController.swift */,
+				F0A2C43E215BF4F900F038CB /* ListBrowserViewController+State.swift */,
 				F079719721558362007A0CA4 /* ListBrowserViewController+TableView.swift */,
 			);
 			path = ListBrowser;
@@ -886,6 +889,7 @@
 				F09A7994214C28240070CA93 /* LocationCategoryIcon.swift in Sources */,
 				F061422C2154273E00087370 /* ListBrowserViewController.swift in Sources */,
 				F05F74E82159798A00E34B86 /* UIImageView+Tint.swift in Sources */,
+				F0A2C43F215BF4F900F038CB /* ListBrowserViewController+State.swift in Sources */,
 				F079718521557ED2007A0CA4 /* ListDetailsViewController.swift in Sources */,
 				F079717A21544D10007A0CA4 /* MainViewController+Search.swift in Sources */,
 				F07971B02155AF51007A0CA4 /* PopoverViewController.swift in Sources */,

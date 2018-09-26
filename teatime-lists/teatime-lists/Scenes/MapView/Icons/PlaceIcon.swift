@@ -22,7 +22,7 @@ class PlaceIcon: UIView {
 
     // The Init method you need to use.
     convenience init(place: Place) {
-        self.init(frame: CGRect(x: 0, y: 0, width: 80, height: 120))
+        self.init(frame: CGRect(x: 0, y: 0, width: 80, height: 110))
         commonInit(place: place)
     }
     
