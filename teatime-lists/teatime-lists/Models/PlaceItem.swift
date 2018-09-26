@@ -11,8 +11,9 @@ import Parse
 
 class PlaceItem : PFObject, PFSubclassing{
     @NSManaged var place : Place
+    @NSManaged weak var list : ListModel?
     @NSManaged var position : Int
- 
+    
     override init(){
         super.init()
     }
@@ -20,6 +21,8 @@ class PlaceItem : PFObject, PFSubclassing{
     
     init(list: ListModel, place: Place, position: Int = 0){
         super.init()
+        
+        self.list = list
         self.place = place
         self.position = position
     }
@@ -28,5 +31,5 @@ class PlaceItem : PFObject, PFSubclassing{
     static func parseClassName() -> String {
         return "PlaceItem"
     }
-
+    
 }

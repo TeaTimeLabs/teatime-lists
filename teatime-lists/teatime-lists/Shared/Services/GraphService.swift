@@ -30,7 +30,7 @@ struct GraphService {
             let json = JSON(result)
             
             print(json)
-            let user = PFUser.current() as? UserModel
+            let user = AuthenticationService.shared.getUser()
             user?.email = json["email"].stringValue
             user?.lastname = json["last_name"].stringValue
             user?.firstname = json["first_name"].stringValue

@@ -29,8 +29,8 @@ struct AuthenticationService {
     private init() { }
     
     
-    func getUser() -> PFUser? {
-        return PFUser.current()
+    func getUser() -> UserModel? {
+        return PFUser.current() as? UserModel
     }
     
     func isAuthenticated() -> Bool {

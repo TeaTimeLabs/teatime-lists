@@ -94,6 +94,9 @@
 		F0A2C43B215B0BA700F038CB /* GMSMapView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2C43A215B0BA700F038CB /* GMSMapView+Style.swift */; };
 		F0A2C43D215B0BF200F038CB /* MapViewController+MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2C43C215B0BF200F038CB /* MapViewController+MapDelegate.swift */; };
 		F0A2C43F215BF4F900F038CB /* ListBrowserViewController+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2C43E215BF4F900F038CB /* ListBrowserViewController+State.swift */; };
+		F0AA72DA215C3CAF007AE39E /* PFGeoPoint+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA72D9215C3CAF007AE39E /* PFGeoPoint+Conversion.swift */; };
+		F0AA72DC215C4258007AE39E /* CoreLocation+Manipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA72DB215C4258007AE39E /* CoreLocation+Manipulation.swift */; };
+		F0AA72DE215C4321007AE39E /* MainViewController+ListBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA72DD215C4321007AE39E /* MainViewController+ListBrowser.swift */; };
 		F0B71B3D21598D5100793E36 /* UIView+Pike.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B71B3C21598D5100793E36 /* UIView+Pike.swift */; };
 		F0FA8DA42152EAA700E0A5F0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA8DA32152EAA700E0A5F0 /* MapViewController.swift */; };
 		F0FA8DA62152ECC100E0A5F0 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA8DA52152ECC100E0A5F0 /* LocationService.swift */; };
@@ -211,6 +214,9 @@
 		F0A2C43A215B0BA700F038CB /* GMSMapView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GMSMapView+Style.swift"; sourceTree = "<group>"; };
 		F0A2C43C215B0BF200F038CB /* MapViewController+MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+MapDelegate.swift"; sourceTree = "<group>"; };
 		F0A2C43E215BF4F900F038CB /* ListBrowserViewController+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListBrowserViewController+State.swift"; sourceTree = "<group>"; };
+		F0AA72D9215C3CAF007AE39E /* PFGeoPoint+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PFGeoPoint+Conversion.swift"; sourceTree = "<group>"; };
+		F0AA72DB215C4258007AE39E /* CoreLocation+Manipulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreLocation+Manipulation.swift"; sourceTree = "<group>"; };
+		F0AA72DD215C4321007AE39E /* MainViewController+ListBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+ListBrowser.swift"; sourceTree = "<group>"; };
 		F0B71B3C21598D5100793E36 /* UIView+Pike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Pike.swift"; sourceTree = "<group>"; };
 		F0FA8DA32152EAA700E0A5F0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F0FA8DA52152ECC100E0A5F0 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
@@ -270,6 +276,7 @@
 				F079717921544D10007A0CA4 /* MainViewController+Search.swift */,
 				F061422E21543E0E00087370 /* MainViewController+Drawer.swift */,
 				F07971B32155B2B7007A0CA4 /* MainViewController+Popover.swift */,
+				F0AA72DD215C4321007AE39E /* MainViewController+ListBrowser.swift */,
 				F052C9D22158985A00922DB2 /* MainViewModel.swift */,
 			);
 			path = Main;
@@ -514,6 +521,8 @@
 				F052967B21597234001F1512 /* String+Manipulation.swift */,
 				F05F74E72159798A00E34B86 /* UIImageView+Tint.swift */,
 				F0B71B3C21598D5100793E36 /* UIView+Pike.swift */,
+				F0AA72D9215C3CAF007AE39E /* PFGeoPoint+Conversion.swift */,
+				F0AA72DB215C4258007AE39E /* CoreLocation+Manipulation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -868,6 +877,7 @@
 				F07971A321558AEF007A0CA4 /* UITableView+Reusable.swift in Sources */,
 				F0A2C430215AE5E900F038CB /* SearchResultsViewModel.swift in Sources */,
 				F09A7974214C23A50070CA93 /* DButton.swift in Sources */,
+				F0AA72DA215C3CAF007AE39E /* PFGeoPoint+Conversion.swift in Sources */,
 				F07971AA2155A9F2007A0CA4 /* PlaceInfoViewController.swift in Sources */,
 				F09A7978214C23D60070CA93 /* Routes.swift in Sources */,
 				F052C9CF21585B4400922DB2 /* NewListViewController.swift in Sources */,
@@ -917,9 +927,11 @@
 				F07971A421558AEF007A0CA4 /* NibLoadable.swift in Sources */,
 				F09A7983214C25A10070CA93 /* InterfaceBuilder+Localization.swift in Sources */,
 				F0FA8DA62152ECC100E0A5F0 /* LocationService.swift in Sources */,
+				F0AA72DE215C4321007AE39E /* MainViewController+ListBrowser.swift in Sources */,
 				F013C949214C95EF001F1179 /* FacebookError.swift in Sources */,
 				F0FA8DA42152EAA700E0A5F0 /* MapViewController.swift in Sources */,
 				F079717C215471CD007A0CA4 /* DrawerViewController+State.swift in Sources */,
+				F0AA72DC215C4258007AE39E /* CoreLocation+Manipulation.swift in Sources */,
 				F07971A621559D94007A0CA4 /* ActionButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

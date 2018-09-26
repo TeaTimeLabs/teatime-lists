@@ -73,9 +73,15 @@ final class MapViewController: UIViewController {
     }
     
     
-    func setMapBottomPadding(_ padding: CGFloat) {
-        mapView.padding = UIEdgeInsets(top: 0, left: 0, bottom: padding, right: 0)
+    func setMapTopBottomPadding(top: CGFloat, bottom: CGFloat) {
+        mapView.padding = UIEdgeInsets(top: top, left: 0, bottom: bottom, right: 0)
     }
+
+}
+
+
+
+extension MapViewController { /// Camera Manipulation
     
     func centerOnUserLocation(zoom: Float? = nil) {
         guard let latitude = mapView.myLocation?.coordinate.latitude,
@@ -90,12 +96,22 @@ final class MapViewController: UIViewController {
             return
         }
         
-        let camera = GMSCameraPosition.camera(withLatitude: place.lat, longitude: place.long, zoom: zoom ?? defaultZoom)
+        let camera = GMSCameraPosition.camera(withLatitude: place.coordinates.latitude, longitude: place.coordinates.longitude, zoom: zoom ?? defaultZoom)
         mapView.animate(to: camera)
     }
+    
+    
+    func centerOnList(_ list: ListModel) {
+        var bounds = GMSCoordinateBounds()
+        
+        for placeItem in list.placeItems
+        {
+            bounds = bounds.includingCoordinate(placeItem.place.coordinates.asCLCoordinate2D)
+        }
+        let update = GMSCameraUpdate.fit(bounds, withPadding: 100)
+        mapView.animate(with: update)
+    }
+    
 }
-
-
-
 
 

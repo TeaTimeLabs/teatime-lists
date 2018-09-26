@@ -68,7 +68,7 @@ class PlaceIcon: UIView {
         nameLabel.text = place.name
         nameLabel.sizeToFit() // Needs to be after the Text
         nameLabel.frame = CGRect(x: 0, y: 75, width: 80, height: nameLabel.frame.height)
-        
+    
         
         addSubview(mainImageContrainerView)
         addSubview(iconImageContrainerView)

@@ -28,7 +28,7 @@ final class PlaceMarker: GMSMarker {
         
         super.init()
         
-        position = CLLocationCoordinate2D(latitude: place.lat, longitude: place.long)
+        position = place.coordinates.asCLCoordinate2D
         
         placeIcon.parentMarker = self
         iconView = placeIcon

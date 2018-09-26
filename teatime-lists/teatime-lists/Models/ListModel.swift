@@ -9,7 +9,7 @@
 import Foundation
 import Parse
 
-final class ListModel: PFObject, PFSubclassing {
+final class ListModel : PFObject, PFSubclassing{
     @NSManaged var user : UserModel
     @NSManaged var title : String
     @NSManaged var listDescription : String
@@ -36,13 +36,25 @@ final class ListModel: PFObject, PFSubclassing {
         self.image = image
         self.imageURL = imageURL
         if let items = placeItems{
-           self.placeItems = items
+            self.placeItems = items
         }
     }
     
     func placeItemsDidSet(){
         guard !placeItems.isEmpty else { return }
         placeItems.sort { $0.position < $1.position }
+    }
+    
+    //Locally removes a placeItem from a list and adjusts the position value of each record accordingly
+    func removePlaceItem(placeItem: PlaceItem){
+        guard let index = placeItems.index(where: {$0.place.googleID == placeItem.place.googleID}) else { return }
+        
+        placeItems.remove(at: index)
+        if !placeItems.isEmpty{
+            for i in 0...placeItems.count-1{
+                placeItems[i].position = i
+            }
+        }
     }
     
     

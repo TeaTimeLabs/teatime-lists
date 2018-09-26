@@ -9,8 +9,8 @@
 import Foundation
 import Parse
 
-class Place: PFObject, PFSubclassing{
- 
+class Place: PFObject, PFSubclassing {
+    
     @NSManaged var googleID: String
     @NSManaged var name: String
     @NSManaged var category: String
@@ -18,11 +18,11 @@ class Place: PFObject, PFSubclassing{
     @NSManaged var formattedAddress: String
     @NSManaged var city: String
     @NSManaged var country: String
-    @NSManaged var lat : Double
-    @NSManaged var long: Double
+    @NSManaged var coordinates: PFGeoPoint
     @NSManaged var imageURL: String
     @NSManaged var followers: [UserModel]
-    
+    var isCurrentLocation = false
+    var isNoLocation = false
     
     override init(){
         super.init()
@@ -37,8 +37,7 @@ class Place: PFObject, PFSubclassing{
         self.shortAddress = shortAddress
         self.city = city
         self.country = country
-        self.lat = lat
-        self.long = long
+        self.coordinates = PFGeoPoint(latitude: lat, longitude: long)
         self.imageURL = imageURL
         self.followers = [UserModel]()
     }
@@ -55,5 +54,4 @@ class Place: PFObject, PFSubclassing{
             return #imageLiteral(resourceName: "default-category")
         }
     }
-    
 }

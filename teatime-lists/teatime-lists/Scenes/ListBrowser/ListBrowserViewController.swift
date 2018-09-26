@@ -8,13 +8,23 @@
 
 import UIKit
 
-class ListBrowserViewController: UIViewController {
+
+protocol ListBrowserViewControllerDelegate: class {
+    func didChangeFilter(_ filter: FilterState)
+    func didSelectList(_ list: ListModel)
+}
+
+
+
+final class ListBrowserViewController: UIViewController {
     
-    private var state: BrowserState = .everyone {
+    weak var delegate: ListBrowserViewControllerDelegate?
+    
+    
+    private var state: FilterState = .everyone {
         didSet {
             filterButton?.setAttributedTitle(state.getButtonTitle(), for: .normal)
-            // TODO:
-            // updateFilters and reload
+            delegate?.didChangeFilter(state)
         }
     }
     

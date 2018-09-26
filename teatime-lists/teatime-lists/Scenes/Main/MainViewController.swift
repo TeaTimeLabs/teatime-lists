@@ -53,14 +53,16 @@ class MainViewController: UIViewController {
         
         // TODO: BETTER
         listBrowserViewController = ListBrowserViewController(nibName: "ListBrowserViewController", bundle: nil)
+        listBrowserViewController?.delegate = self
         addDrawerController(with: listBrowserViewController!)
         
         placeInfoViewController = PlaceInfoViewController()
         addPopoverController(with: placeInfoViewController!)
         
-        
 
         binding()
+        
+        mainViewModel.fetchLists()
         
         view.bringSubview(toFront: floatingButton)
     }
@@ -68,7 +70,6 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        mainViewModel.fetchLists()
     }
     
     

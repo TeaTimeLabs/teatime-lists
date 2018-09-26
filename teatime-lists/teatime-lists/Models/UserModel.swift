@@ -14,8 +14,10 @@ class UserModel: PFUser {
     @NSManaged var fullname: String
     @NSManaged var firstname: String
     @NSManaged var lastname: String
+    @NSManaged var gender: String
     @NSManaged var photoURL: String
-    @NSManaged var places: PFRelation<Place>
+    
+    var photoImage: UIImage?
     
     static var currentUser : UserModel?
     
@@ -23,13 +25,14 @@ class UserModel: PFUser {
         super.init()
     }
     
-    init(facebookID: String = "", email: String, fullname: String, firstname: String = "", lastname: String = "", photoURL: String = ""){
+    init(facebookID: String = "", email: String, fullname: String, firstname: String = "", lastname: String = "", gender: String = "", photoURL: String = ""){
         super.init()
         self.facebookID = facebookID
         self.email = email
         self.fullname = fullname
         self.firstname = firstname
         self.lastname = lastname
+        self.gender = gender
         self.photoURL = photoURL
     }
     

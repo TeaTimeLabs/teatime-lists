@@ -7,13 +7,35 @@
 //
 
 import Foundation
+import Parse
 import GooglePlaces
 import Alamofire
 import SwiftyJSON
 
-final class GoogleHelper: NSObject {
+class GoogleHelper: NSObject{
     static let singleton = GoogleHelper()
-
+    //The list of place categories ignored in the search results
+    private var googlePlaceCategoryBlackList = [
+        "administrative_area_level_1",
+        "administrative_area_level_2",
+        "administrative_area_level_3",
+        "administrative_area_level_4",
+        "administrative_area_level_5",
+        "colloquial_area",
+        "floor",
+        "geocode",
+        "post_box",
+        "postal_code",
+        "postal_code_prefix",
+        "postal_code_suffix",
+        "postal_town",
+        "sublocality",
+        "sublocality_level_1",
+        "sublocality_level_2",
+        "sublocality_level_3",
+        "sublocality_level_4",
+        "sublocality_level_5"
+    ]
     
     private var googlePlacesClient : GMSPlacesClient!
     private let GOOGLE_PLACES_SDK_API_KEY = "AIzaSyBr4D7SOxkwhUj-6qACVv5HI4K4Tn_yhMM"
@@ -21,12 +43,11 @@ final class GoogleHelper: NSObject {
     private let GOOGLE_PLACEDETAILS_URL = "https://maps.googleapis.com/maps/api/place/details/json"
     private let GOOGLE_PLACEAUTOCOMPLETE_URL = "https://maps.googleapis.com/maps/api/place/autocomplete/json"
     
-    
-    override private init(){
+    override init(){
         super.init()
         
         //Initializing the Google Places SDK
-//        GMSPlacesClient.provideAPIKey(GOOGLE_PLACES_SDK_API_KEY)
+        GMSPlacesClient.provideAPIKey(GOOGLE_PLACES_SDK_API_KEY)
         googlePlacesClient = GMSPlacesClient.shared()
         
     }
@@ -53,30 +74,35 @@ final class GoogleHelper: NSObject {
             for likelihood in placeLikelihoodList.likelihoods {
                 let googlePlace = likelihood.place
                 
-                let googlePlaceCoordinates = CLLocation(latitude: googlePlace.coordinate.latitude, longitude: googlePlace.coordinate.longitude)
-//                let distanceInMeters = googlePlaceCoordinates.distance(from: LocationServicesHelper.singleton.currentLocation)
-                let city = googlePlace.addressComponents?.filter({ (addressComponent) -> Bool in
-                    addressComponent.type.lowercased() == "locality"
-                }).first?.name ?? ""
+                let country = googlePlace.addressComponents?.filter({ (addressComponent) -> Bool in
+                    addressComponent.type.lowercased() == "country"}).first?.name ?? ""
                 
-                nearbyPlaceSearchResults.append(Place(
-                    googleID: googlePlace.placeID,
-                    name: googlePlace.name,
-                    category: googlePlace.types.first ?? "",
-                    formattedAddress: googlePlace.formattedAddress ?? "",
-                    shortAddress: wself.getShortAddress(googlePlace: googlePlace, includeNeighborhood: false),
-                    city: city,
-                    lat: googlePlace.coordinate.latitude,
-                    long: googlePlace.coordinate.longitude,
-                    imageURL: ""
-                ))
-                //print(googlePlace.name, " | ADDR: ", googlePlace.formattedAddress ?? "No formattedAddress", " | CITY: ", city, "DIST: ", distanceInMeters)
+                
+                let city = googlePlace.addressComponents?.filter({ (addressComponent) -> Bool in
+                    addressComponent.type.lowercased() == "locality"}).first?.name ?? ""
+                
+                let category = googlePlace.types.first ?? ""
+                
+                if !wself.googlePlaceCategoryBlackList.contains(category){
+                    nearbyPlaceSearchResults.append(Place(
+                        googleID: googlePlace.placeID,
+                        name: googlePlace.name,
+                        category: category,
+                        formattedAddress: googlePlace.formattedAddress ?? "",
+                        shortAddress: wself.getShortAddress(googlePlace: googlePlace, includeNeighborhood: false),
+                        city: city,
+                        country: country,
+                        lat: googlePlace.coordinate.latitude,
+                        long: googlePlace.coordinate.longitude,
+                        imageURL: ""
+                    ))
+                }//print(googlePlace.name, " | ADDR: ", googlePlace.formattedAddress ?? "No formattedAddress", " | CITY: ", city, "DIST: ", distanceInMeters)
             }
             completion(nil, nearbyPlaceSearchResults)
         }
     }
     
-  
+    
     func getPlaceAutoCompletePredictions(userQuery: String, queryID: Int, completion: @escaping ((_ queryID: Int, _ error: Error?, _ results: [Place]?)-> Void)) {
         
         let googleParam : [String : String] = [
@@ -100,13 +126,11 @@ final class GoogleHelper: NSObject {
             }
             
             let predictions = json["predictions"]
-            print("PREDICTIONS.COUNT = ", predictions.count)
             var predictionArray = [Place]()
             
             for i in 0...predictions.count{
                 let prediction = predictions[i]
-                print("PREDICTION \(i) = ", prediction)
-                if let name = prediction["description"].string, let id = prediction["place_id"].string, let category = prediction["types"][0].string{
+                if let name = prediction["description"].string, let id = prediction["place_id"].string, let category = prediction["types"][0].string, !wself.googlePlaceCategoryBlackList.contains(category){
                     let place = Place()
                     place.googleID = id
                     place.name = name
@@ -133,12 +157,11 @@ final class GoogleHelper: NSObject {
                     }
                 }
             }
-            //completion(queryID, nil, results)
         }
     }
     
     func getPlaceDetails(googleID: String, completion: @escaping ((_ error: Error?, _ result: Place?)-> Void)) {
-       
+        
         googlePlacesClient.lookUpPlaceID(googleID) { [weak self] (googlePlace, error) -> Void in
             guard let wself = self else { return }
             if let error = error {
@@ -148,7 +171,7 @@ final class GoogleHelper: NSObject {
             }
             
             guard let googlePlace = googlePlace else {
-                print("No place details found for \(googleID)")
+                print("No place details found for Google Place ID \(googleID)")
                 completion(nil, nil)
                 return
             }
@@ -159,16 +182,8 @@ final class GoogleHelper: NSObject {
             place.name = googlePlace.name
             place.category = googlePlace.types[0]
             place.formattedAddress = googlePlace.formattedAddress ?? ""
-            
-//            print("\n\nFORMATTED ADDRESS = ", place.formattedAddress)
-//            if let components = googlePlace.addressComponents{
-//                for comp in components{
-//                    print("COMPONENTS = [", comp.type, ",", comp.name, "]\n\n")
-//                }
-//            }
-            
             place.shortAddress = wself.getShortAddress(googlePlace: googlePlace, includeNeighborhood: false)
-          
+            
             let city = googlePlace.addressComponents?.filter({ (addressComponent) -> Bool in
                 addressComponent.type.lowercased() == "locality"}).first?.name ?? ""
             place.city = city
@@ -177,37 +192,13 @@ final class GoogleHelper: NSObject {
                 addressComponent.type.lowercased() == "country"}).first?.name ?? ""
             place.country = country
             
-            place.lat = googlePlace.coordinate.latitude
-            place.long = googlePlace.coordinate.longitude
+            let coordinates = PFGeoPoint(latitude: googlePlace.coordinate.latitude, longitude: googlePlace.coordinate.longitude)
+            place.coordinates = coordinates
             completion(nil, place)
         }
     }
-        
-//        func loadFirstPhotoForPlace(placeID: String) {
-//            GMSPlacesClient.shared().lookUpPhotos(forPlaceID: placeID) { (photos, error) -> Void in
-//                if let error = error {
-//                    // TODO: handle the error.
-//                    print("Error: \(error.localizedDescription)")
-//                } else {
-//                    if let firstPhoto = photos?.results.first {
-//                        self.loadImageForMetadata(photoMetadata: firstPhoto)
-//                    }
-//                }
-//            }
-//        }
-//
-//        func loadImageForMetadata(photoMetadata: GMSPlacePhotoMetadata) {
-//            GMSPlacesClient.shared().loadPlacePhoto(photoMetadata, callback: {
-//                (photo, error) -> Void in
-//                if let error = error {
-//                    // TODO: handle the error.
-//                    print("Error: \(error.localizedDescription)")
-//                } else {
-//                    self.imageView.image = photo;
-//                    self.attributionTextView.attributedText = photoMetadata.attributions;
-//                }
-//            })
-//        }
+    
+    
     
     //Returns the address info to display in cells for a place based on the address components returned by Google
     func getShortAddress(googlePlace: GMSPlace, includeNeighborhood: Bool) -> String{
@@ -271,7 +262,53 @@ final class GoogleHelper: NSObject {
     }
     
     
+    func getPlacePhotos(googleID: String, completion: @escaping ((_ error: Error?, _ photo: UIImage?)-> Void)) {
+        
+        googlePlacesClient.lookUpPhotos(forPlaceID: googleID) { [weak self] (photoMetadata, error) -> Void in
+            guard let wself = self else { return }
+            
+            if let error = error {
+                print("lookup place photo error: \(error.localizedDescription)")
+                completion(error, nil)
+                return
+            }
+            
+            guard let photoData = photoMetadata, let firstPhotoData = photoData.results.first else {
+                print("No photos found for Google Place ID \(googleID)")
+                completion(nil, nil)
+                return
+            }
+            
+            wself.loadImageForPhotoMetadata(photoMetadata: firstPhotoData) { (error, image) in
+                if let error = error {
+                    print("Failed to retrieve photos for Google Place ID \(googleID)")
+                    completion(error, nil)
+                    return
+                }
+                if let image = image{
+                    completion(nil, image)
+                } else{
+                    completion(nil, nil)
+                }
+            }
+        }
+    }
     
+    private func loadImageForPhotoMetadata(photoMetadata: GMSPlacePhotoMetadata, completion: @escaping ((_ error: Error?, _ photo: UIImage?)-> Void)) {
+        GMSPlacesClient.shared().loadPlacePhoto(photoMetadata) { (photo, error) -> Void in
+            if let error = error {
+                completion(error, nil)
+                return
+            }
+            if let photo = photo{
+                completion(nil, photo)
+            } else{
+                completion(nil, nil)
+            }
+            
+            //self.attributionTextView.attributedText = photoMetadata.attributions;
+        }
+    }
     
 }
 
