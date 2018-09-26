@@ -26,14 +26,14 @@ enum PopoverState {
     private func getYPosition() -> CGFloat {
         switch self {
         case .onScreen:
-            return UIScreen.main.bounds.height - (getHeight() + getMargins().bottom)
+            return UIScreen.main.bounds.height - (getHeight() + getMargins().bottom + UIWindow.safeAreaBottom)
         case .offScreen:
             return UIScreen.main.bounds.height
         }
     }
     
     private func getHeight() -> CGFloat {
-        return getWidth() * 0.80
+        return getWidth() * 0.85
     }
     
     private func getWidth() -> CGFloat {

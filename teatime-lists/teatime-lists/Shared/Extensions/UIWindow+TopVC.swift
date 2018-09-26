@@ -10,6 +10,14 @@ import UIKit
 
 extension UIWindow {
     
+    static var safeAreaTop: CGFloat {
+        return UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0.0
+    }
+    
+    static var safeAreaBottom: CGFloat {
+        return UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0.0
+    }
+    
     static func topMostViewController() -> UIViewController? {
         return UIApplication.shared.keyWindow?.topMostViewController()
     }

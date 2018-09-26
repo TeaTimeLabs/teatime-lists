@@ -39,7 +39,9 @@ final class SearchResultsViewController: UIViewController {
         tableView.register(cellType: PlaceResultTableViewCell.self)
         
         view.addSubview(tableView)
-        tableView.edgesToSuperview(insets: TinyEdgeInsets(top: 75, left: 23, bottom: -10, right: -23), usingSafeArea: true)
+        tableView.edgesToSuperview()
+        tableView.contentInsetAdjustmentBehavior = .never
+        tableView.contentInset = UIEdgeInsets(top: searchBar.frame.maxY, left: 0, bottom: UIWindow.safeAreaBottom, right: 0)
     }
     
     required init?(coder aDecoder: NSCoder) {

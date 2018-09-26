@@ -19,11 +19,11 @@ class DrawerViewController: UIViewController {
     weak var delegate: DrawerViewControllerDelegate?
     private var contentViewController: UIViewController
     
-    
     init(content: UIViewController) {
         contentViewController = content
         super.init(nibName: nil, bundle: nil)
         
+        view.backgroundColor = UIColor.white
         view.isOpaque = true
     }
     
@@ -50,8 +50,8 @@ class DrawerViewController: UIViewController {
     func changeContent(_ content: UIViewController) {
         contentViewController.removeFromParent()
         contentViewController = content
-        add(contentViewController, inside: view, pin: true)
-//        contentViewController.view.edgesToSuperview(insets: UIApplication.shared.keyWindow!.safeAreaInsets)
+        add(contentViewController, inside: view, pin: false)
+        contentViewController.view.edgesToSuperview(usingSafeArea: true)
     }
     
     

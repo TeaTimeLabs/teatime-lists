@@ -97,6 +97,7 @@ class SearchBarView: UIView {
     }
     
     @objc func didTapCenterLocation() {
+        forceSearchQuery(nil)
         delegate?.didTapCenterLocation()
     }
     
