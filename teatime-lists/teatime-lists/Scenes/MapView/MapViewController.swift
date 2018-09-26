@@ -20,9 +20,11 @@ final class MapViewController: UIViewController {
     
     weak var delegate: MapViewControllerDelegate?
     
-    let defaultZoom: Float = 16.0
+    let defaultZoom: Float = 15.0
     let mapView: GMSMapView
     var markers = Set<PlaceMarker>()
+
+    // Make a unique search marker for search and pin
 
     var places: Set<Place>? {
         didSet {
@@ -82,54 +84,18 @@ final class MapViewController: UIViewController {
         let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: zoom ?? defaultZoom)
         mapView.animate(to: camera)
     }
-}
-
-
-extension MapViewController: GMSMapViewDelegate {
     
-    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        // Unselect current Market
-        if let previousSelectedMarker = mapView.selectedMarker as? PlaceMarker {
-            previousSelectedMarker.isSelected = false
+    func centerOnPlace(_ place: Place?, zoom: Float? = nil) {
+        guard let place = place else {
+            return
         }
         
-        // Select Tapped Marker and send it back to the Main for info display
-        if let selectedMarker = marker as? PlaceMarker {
-            selectedMarker.isSelected = true
-            delegate?.didSelectMarker(place: selectedMarker.place)
-        }
-        
-        
-        mapView.selectedMarker = marker
-        
-        // tap event handled by delegate
-        return true
-    }
-    
-    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-        markers.forEach({ $0.isSelected = false})
-
-        mapView.selectedMarker = nil // should be already nil but heh.
-        delegate?.didSelectMarker(place: nil)
+        let camera = GMSCameraPosition.camera(withLatitude: place.lat, longitude: place.long, zoom: zoom ?? defaultZoom)
+        mapView.animate(to: camera)
     }
 }
 
 
 
-
-extension GMSMapView {
-    func styleMap() {
-        do {
-            // Set the map style by passing the URL of the local file.
-            if let styleURL = Bundle.main.url(forResource: "UltraLight", withExtension: "json") {
-                self.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
-            } else {
-                print("Unable to find style.json")
-            }
-        } catch {
-            print("One or more of the map styles failed to load. \(error)")
-        }
-    }
-}
 
 

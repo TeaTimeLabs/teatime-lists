@@ -32,6 +32,7 @@ class MainViewController: UIViewController {
     let mainViewModel = MainViewModel()
     
     var mapViewController: MapViewController?
+    var searchResultsViewController: SearchResultsViewController?
     var drawerViewController: DrawerViewController?
     var popoverViewController: PopoverViewController?
     
@@ -50,6 +51,7 @@ class MainViewController: UIViewController {
         searchBarView?.delegate = self
         addMapController()
         
+        // TODO: BETTER
         listBrowserViewController = ListBrowserViewController(nibName: "ListBrowserViewController", bundle: nil)
         addDrawerController(with: listBrowserViewController!)
         
@@ -85,13 +87,16 @@ class MainViewController: UIViewController {
     private func updateUI(_ state: MainState) {
         switch state {
         case .drawer:
+            removeSearchResultsController()
             drawerViewController?.changeState(.partialScreen)
             popoverViewController?.changeState(.offScreen)
         case .popover:
+            removeSearchResultsController()
             drawerViewController?.changeState(.offScreen)
             popoverViewController?.changeState(.onScreen)
-        default:
-            break
+        case .search:
+            popoverViewController?.changeState(.offScreen)
+            addSearchResultsController()
         }
     }
     

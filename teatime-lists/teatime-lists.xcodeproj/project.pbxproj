@@ -87,6 +87,12 @@
 		F09A7994214C28240070CA93 /* LocationCategoryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A7990214C28240070CA93 /* LocationCategoryIcon.swift */; };
 		F09A7997214C28A00070CA93 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F09A7996214C28A00070CA93 /* Localizable.strings */; };
 		F09A7999214C29B30070CA93 /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A7998214C29B30070CA93 /* UIView+Subviews.swift */; };
+		F0A2C42E215ADBA600F038CB /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2C42D215ADBA600F038CB /* SearchResultsViewController.swift */; };
+		F0A2C430215AE5E900F038CB /* SearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2C42F215AE5E900F038CB /* SearchResultsViewModel.swift */; };
+		F0A2C438215AEF0D00F038CB /* PlaceResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2C436215AEF0D00F038CB /* PlaceResultTableViewCell.swift */; };
+		F0A2C439215AEF0D00F038CB /* PlaceResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0A2C437215AEF0D00F038CB /* PlaceResultTableViewCell.xib */; };
+		F0A2C43B215B0BA700F038CB /* GMSMapView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2C43A215B0BA700F038CB /* GMSMapView+Style.swift */; };
+		F0A2C43D215B0BF200F038CB /* MapViewController+MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2C43C215B0BF200F038CB /* MapViewController+MapDelegate.swift */; };
 		F0B71B3D21598D5100793E36 /* UIView+Pike.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B71B3C21598D5100793E36 /* UIView+Pike.swift */; };
 		F0FA8DA42152EAA700E0A5F0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA8DA32152EAA700E0A5F0 /* MapViewController.swift */; };
 		F0FA8DA62152ECC100E0A5F0 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA8DA52152ECC100E0A5F0 /* LocationService.swift */; };
@@ -197,6 +203,12 @@
 		F09A7990214C28240070CA93 /* LocationCategoryIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCategoryIcon.swift; sourceTree = "<group>"; };
 		F09A7996214C28A00070CA93 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		F09A7998214C29B30070CA93 /* UIView+Subviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
+		F0A2C42D215ADBA600F038CB /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		F0A2C42F215AE5E900F038CB /* SearchResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModel.swift; sourceTree = "<group>"; };
+		F0A2C436215AEF0D00F038CB /* PlaceResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceResultTableViewCell.swift; sourceTree = "<group>"; };
+		F0A2C437215AEF0D00F038CB /* PlaceResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceResultTableViewCell.xib; sourceTree = "<group>"; };
+		F0A2C43A215B0BA700F038CB /* GMSMapView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GMSMapView+Style.swift"; sourceTree = "<group>"; };
+		F0A2C43C215B0BF200F038CB /* MapViewController+MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+MapDelegate.swift"; sourceTree = "<group>"; };
 		F0B71B3C21598D5100793E36 /* UIView+Pike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Pike.swift"; sourceTree = "<group>"; };
 		F0FA8DA32152EAA700E0A5F0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F0FA8DA52152ECC100E0A5F0 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
@@ -279,12 +291,15 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
-		F06142242153181000087370 /* SearchMap */ = {
+		F06142242153181000087370 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				F0A2C435215AED2900F038CB /* Cells */,
 				F06142252153182B00087370 /* SearchBarView.swift */,
+				F0A2C42D215ADBA600F038CB /* SearchResultsViewController.swift */,
+				F0A2C42F215AE5E900F038CB /* SearchResultsViewModel.swift */,
 			);
-			path = SearchMap;
+			path = Search;
 			sourceTree = "<group>";
 		};
 		F079718321557E75007A0CA4 /* List Details */ = {
@@ -427,7 +442,7 @@
 				F07971A72155A9C8007A0CA4 /* PlaceInfo */,
 				F09A799A214C2A720070CA93 /* Landing */,
 				F013C93C214C8729001F1179 /* Login */,
-				F06142242153181000087370 /* SearchMap */,
+				F06142242153181000087370 /* Search */,
 				F011DE6B215023410058DEDE /* Main */,
 				F09A7986214C26520070CA93 /* MapView */,
 				F0FA8DB42153103B00E0A5F0 /* ListBrowser */,
@@ -551,6 +566,7 @@
 				F07971B72155C695007A0CA4 /* Icons */,
 				F0FA8DA72152FED700E0A5F0 /* Map Styling */,
 				F0FA8DA32152EAA700E0A5F0 /* MapViewController.swift */,
+				F0A2C43C215B0BF200F038CB /* MapViewController+MapDelegate.swift */,
 				F07971B52155BBE2007A0CA4 /* PlaceMarker.swift */,
 			);
 			path = MapView;
@@ -576,10 +592,20 @@
 			path = Landing;
 			sourceTree = "<group>";
 		};
+		F0A2C435215AED2900F038CB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F0A2C436215AEF0D00F038CB /* PlaceResultTableViewCell.swift */,
+				F0A2C437215AEF0D00F038CB /* PlaceResultTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		F0FA8DA72152FED700E0A5F0 /* Map Styling */ = {
 			isa = PBXGroup;
 			children = (
 				F0FA8DA82152FF4E00E0A5F0 /* UltraLight.json */,
+				F0A2C43A215B0BA700F038CB /* GMSMapView+Style.swift */,
 			);
 			path = "Map Styling";
 			sourceTree = "<group>";
@@ -688,6 +714,7 @@
 				F061422D2154273E00087370 /* ListBrowserViewController.xib in Resources */,
 				F09A7988214C269D0070CA93 /* Colors.xcassets in Resources */,
 				F079718C21558151007A0CA4 /* ListInfoTableViewCell.xib in Resources */,
+				F0A2C439215AEF0D00F038CB /* PlaceResultTableViewCell.xib in Resources */,
 				F0FA8DB02153060F00E0A5F0 /* Poppins-SemiBold.ttf in Resources */,
 				F0FA8DB12153060F00E0A5F0 /* Poppins-Regular.ttf in Resources */,
 				F013C93E214C873B001F1179 /* Login.storyboard in Resources */,
@@ -819,10 +846,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F013C940214C8747001F1179 /* LoginViewController.swift in Sources */,
+				F0A2C42E215ADBA600F038CB /* SearchResultsViewController.swift in Sources */,
 				F011DE6F2150236A0058DEDE /* MainViewController.swift in Sources */,
 				F013C944214C8B12001F1179 /* Constants.swift in Sources */,
 				F07971A021558AEF007A0CA4 /* UICollectionView+Reusable.swift in Sources */,
 				F011DE6A215019840058DEDE /* Friend.swift in Sources */,
+				F0A2C438215AEF0D00F038CB /* PlaceResultTableViewCell.swift in Sources */,
 				F09A7991214C28240070CA93 /* LocationCategory.swift in Sources */,
 				F0614229215418C800087370 /* DrawerViewController.swift in Sources */,
 				F052967C21597234001F1512 /* String+Manipulation.swift in Sources */,
@@ -834,6 +863,7 @@
 				F09A798C214C27A10070CA93 /* Collection+Safety.swift in Sources */,
 				F07971A221558AEF007A0CA4 /* Reusable.swift in Sources */,
 				F07971A321558AEF007A0CA4 /* UITableView+Reusable.swift in Sources */,
+				F0A2C430215AE5E900F038CB /* SearchResultsViewModel.swift in Sources */,
 				F09A7974214C23A50070CA93 /* DButton.swift in Sources */,
 				F07971AA2155A9F2007A0CA4 /* PlaceInfoViewController.swift in Sources */,
 				F09A7978214C23D60070CA93 /* Routes.swift in Sources */,
@@ -841,10 +871,12 @@
 				F013C942214C8A46001F1179 /* AuthenticationService.swift in Sources */,
 				F013C94F214C9B48001F1179 /* GraphService.swift in Sources */,
 				F052C9C82158565800922DB2 /* UserModel.swift in Sources */,
+				F0A2C43B215B0BA700F038CB /* GMSMapView+Style.swift in Sources */,
 				F05F74E6215978B400E34B86 /* UIColor+Assets.swift in Sources */,
 				F07971B22155AFB1007A0CA4 /* PopoverViewController+State.swift in Sources */,
 				F09A797F214C25560070CA93 /* UIViewController+Child.swift in Sources */,
 				F079718B21558151007A0CA4 /* ListInfoTableViewCell.swift in Sources */,
+				F0A2C43D215B0BF200F038CB /* MapViewController+MapDelegate.swift in Sources */,
 				F052C9C72158565800922DB2 /* PlaceItem.swift in Sources */,
 				F052C9CB215856E100922DB2 /* ParseHelper.swift in Sources */,
 				F09A7992214C28240070CA93 /* Location.swift in Sources */,

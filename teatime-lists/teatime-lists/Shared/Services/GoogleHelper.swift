@@ -26,7 +26,7 @@ final class GoogleHelper: NSObject {
         super.init()
         
         //Initializing the Google Places SDK
-        GMSPlacesClient.provideAPIKey(GOOGLE_PLACES_SDK_API_KEY)
+//        GMSPlacesClient.provideAPIKey(GOOGLE_PLACES_SDK_API_KEY)
         googlePlacesClient = GMSPlacesClient.shared()
         
     }
