@@ -40,7 +40,6 @@ class MainViewController: UIViewController {
     var placeInfoViewController: PlaceInfoViewController?
     
     @IBOutlet var searchBarView: SearchBarView!
-    @IBOutlet var floatingButton: FloatingButton!
     
 
     
@@ -63,8 +62,6 @@ class MainViewController: UIViewController {
         binding()
         
         mainViewModel.fetchLists()
-        
-        view.bringSubview(toFront: floatingButton)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,10 +97,6 @@ class MainViewController: UIViewController {
             addSearchResultsController()
         }
     }
-    
-    
-    @IBAction func addListTapped(_ sender: Any) {
-        show(storyboard: .listEditing)
-    }
+
 }
 

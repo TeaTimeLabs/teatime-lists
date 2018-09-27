@@ -12,6 +12,9 @@ import UIKit
 protocol ListBrowserViewControllerDelegate: class {
     func didChangeFilter(_ filter: FilterState)
     func didSelectList(_ list: ListModel)
+    
+    func didTapNewList()
+    func didTapOnLowBar()
 }
 
 
@@ -28,6 +31,7 @@ final class ListBrowserViewController: UIViewController {
         }
     }
     
+    @IBOutlet var headerBarView: UIView?
     @IBOutlet var filterButton: UIButton?
     @IBOutlet var titleLabel: UILabel?
     
@@ -51,6 +55,9 @@ final class ListBrowserViewController: UIViewController {
         registerTableViewCells()
         tableView.dataSource = self
         tableView.delegate = self
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(headerBarTapped(_:)))
+        headerBarView?.addGestureRecognizer(tap)
     }
 
     
@@ -68,6 +75,14 @@ final class ListBrowserViewController: UIViewController {
         }
         
         showActionSheet(firstTitle: "LIST_BROWSER_FILTER_BUTTON_EVERYONE".localized, secondTitle: "LIST_BROWSER_FILTER_BUTTON_ONLY_MINE".localized, thirdTitle: "LIST_BROWSER_FILTER_BUTTON_FRIENDS".localized, everyoneAction, onlyMeAction, friendsAction)
+    }
+    
+    @objc func headerBarTapped(_ sender: Any) {
+        delegate?.didTapOnLowBar()
+    }
+    
+    @IBAction func newListTapped(_ sender: Any) {
+        delegate?.didTapNewList()
     }
     
 }

@@ -14,10 +14,11 @@ protocol DrawerViewControllerDelegate: class {
 }
 
 
-class DrawerViewController: UIViewController {
+final class DrawerViewController: UIViewController {
 
     weak var delegate: DrawerViewControllerDelegate?
     private var contentViewController: UIViewController
+    var state: DrawerState? = .partialScreen
     
     init(content: UIViewController) {
         contentViewController = content
@@ -56,6 +57,8 @@ class DrawerViewController: UIViewController {
     
     
     func changeState(_ state: DrawerState, animated: Bool = true, duration: TimeInterval = 0.8) {
+        self.state = state
+        
         let finalDuration = animated ? duration : 0.0 // 0.0 animation if not animated
         
         UIView.animate(withDuration: finalDuration, delay: 0.0,

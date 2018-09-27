@@ -9,6 +9,7 @@
 import UIKit
 
 extension MainViewController: ListBrowserViewControllerDelegate {
+
     func didChangeFilter(_ filter: FilterState) {
         mainViewModel.state = filter
         mainViewModel.fetchLists()
@@ -18,5 +19,13 @@ extension MainViewController: ListBrowserViewControllerDelegate {
         mapViewController?.centerOnList(list)
     }
     
+    func didTapNewList() {
+        show(storyboard: .listEditing)
+    }
     
+    func didTapOnLowBar() {
+        if drawerViewController?.state == .minimumScreen {
+            drawerViewController?.changeState(.partialScreen, animated: true, duration: 0.3)
+        }
+    }
 }

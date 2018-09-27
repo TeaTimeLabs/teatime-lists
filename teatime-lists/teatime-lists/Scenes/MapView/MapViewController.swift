@@ -108,7 +108,7 @@ extension MapViewController { /// Camera Manipulation
         {
             bounds = bounds.includingCoordinate(placeItem.place.coordinates.asCLCoordinate2D)
         }
-        let update = GMSCameraUpdate.fit(bounds, withPadding: 100)
+        let update = GMSCameraUpdate.fit(bounds, withPadding: 80)
         mapView.animate(with: update)
     }
     

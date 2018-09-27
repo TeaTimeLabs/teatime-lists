@@ -14,6 +14,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListBrowserViewController" customModule="teatime_lists" customModuleProvider="target">
             <connections>
                 <outlet property="filterButton" destination="R1P-tK-lda" id="flH-u9-9XO"/>
+                <outlet property="headerBarView" destination="NK9-qT-50O" id="sCw-9A-n2C"/>
                 <outlet property="tableView" destination="NSz-IS-n6D" id="Vcm-0u-kt0"/>
                 <outlet property="titleLabel" destination="RtR-HS-Dej" id="Ujw-Hf-31G"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -28,10 +29,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="330"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NK9-qT-50O">
-                            <rect key="frame" x="0.0" y="10" width="375" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1P-tK-lda">
-                                    <rect key="frame" x="20" y="0.0" width="75" height="50"/>
+                                    <rect key="frame" x="20" y="0.0" width="75" height="70"/>
                                     <state key="normal" title="Everyone's">
                                         <color key="titleColor" name="PrimaryColor"/>
                                     </state>
@@ -40,29 +41,46 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lists" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RtR-HS-Dej">
-                                    <rect key="frame" x="95" y="0.0" width="30.5" height="50"/>
+                                    <rect key="frame" x="95" y="0.0" width="30.5" height="70"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wta-br-M6e" customClass="FloatingButton" customModule="teatime_lists" customModuleProvider="target">
+                                    <rect key="frame" x="320" y="15" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="NBx-ZQ-Zx8"/>
+                                        <constraint firstAttribute="width" constant="40" id="u1a-vV-J9E"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                            <integer key="value" value="0"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="newListTapped:" destination="-1" eventType="touchUpInside" id="aZS-3I-KTV"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="13f-wU-UKH"/>
+                                <constraint firstAttribute="height" constant="70" id="13f-wU-UKH"/>
                                 <constraint firstItem="RtR-HS-Dej" firstAttribute="leading" secondItem="R1P-tK-lda" secondAttribute="trailing" id="85t-xn-OKK"/>
                                 <constraint firstAttribute="bottom" secondItem="R1P-tK-lda" secondAttribute="bottom" id="Cmc-V6-dSi"/>
+                                <constraint firstItem="wta-br-M6e" firstAttribute="centerY" secondItem="NK9-qT-50O" secondAttribute="centerY" id="IAf-Qs-X53"/>
                                 <constraint firstItem="R1P-tK-lda" firstAttribute="leading" secondItem="NK9-qT-50O" secondAttribute="leading" constant="20" id="Kil-GH-MXj"/>
                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RtR-HS-Dej" secondAttribute="trailing" id="LcJ-cQ-Y4A"/>
                                 <constraint firstItem="R1P-tK-lda" firstAttribute="top" secondItem="NK9-qT-50O" secondAttribute="top" id="RDJ-ai-tyf"/>
+                                <constraint firstAttribute="trailing" secondItem="wta-br-M6e" secondAttribute="trailing" constant="15" id="U7A-Pf-2CU"/>
                                 <constraint firstItem="RtR-HS-Dej" firstAttribute="top" secondItem="NK9-qT-50O" secondAttribute="top" id="YDc-IW-eyC"/>
                                 <constraint firstAttribute="bottom" secondItem="RtR-HS-Dej" secondAttribute="bottom" id="aIw-0d-LmK"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZy-bW-GX5">
-                            <rect key="frame" x="0.0" y="60" width="375" height="270"/>
+                            <rect key="frame" x="0.0" y="70" width="375" height="260"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NSz-IS-n6D">
-                                    <rect key="frame" x="0.0" y="10" width="375" height="260"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableView>
                             </subviews>
@@ -71,7 +89,7 @@
                                 <constraint firstItem="NSz-IS-n6D" firstAttribute="leading" secondItem="hZy-bW-GX5" secondAttribute="leading" id="0du-uh-Sjk"/>
                                 <constraint firstAttribute="bottom" secondItem="NSz-IS-n6D" secondAttribute="bottom" id="5f1-an-7Yg"/>
                                 <constraint firstAttribute="trailing" secondItem="NSz-IS-n6D" secondAttribute="trailing" id="Ge8-ed-lwq"/>
-                                <constraint firstItem="NSz-IS-n6D" firstAttribute="top" secondItem="hZy-bW-GX5" secondAttribute="top" constant="10" id="tNw-uh-Vea"/>
+                                <constraint firstItem="NSz-IS-n6D" firstAttribute="top" secondItem="hZy-bW-GX5" secondAttribute="top" id="tNw-uh-Vea"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -80,7 +98,7 @@
                         <constraint firstAttribute="trailing" secondItem="NK9-qT-50O" secondAttribute="trailing" id="8Kh-Dr-GHn"/>
                         <constraint firstAttribute="trailing" secondItem="hZy-bW-GX5" secondAttribute="trailing" id="Uyt-ES-Hob"/>
                         <constraint firstItem="hZy-bW-GX5" firstAttribute="top" secondItem="NK9-qT-50O" secondAttribute="bottom" id="bV3-O5-hjI"/>
-                        <constraint firstItem="NK9-qT-50O" firstAttribute="top" secondItem="p1r-W5-2iM" secondAttribute="top" constant="10" id="bo1-Yt-AI3"/>
+                        <constraint firstItem="NK9-qT-50O" firstAttribute="top" secondItem="p1r-W5-2iM" secondAttribute="top" id="bo1-Yt-AI3"/>
                         <constraint firstAttribute="bottom" secondItem="hZy-bW-GX5" secondAttribute="bottom" priority="750" id="kLg-RW-Dt8"/>
                         <constraint firstItem="NK9-qT-50O" firstAttribute="leading" secondItem="p1r-W5-2iM" secondAttribute="leading" id="vrM-8U-m2q"/>
                         <constraint firstItem="hZy-bW-GX5" firstAttribute="leading" secondItem="p1r-W5-2iM" secondAttribute="leading" id="w0v-4b-Vf3"/>

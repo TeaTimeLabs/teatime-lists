@@ -18,6 +18,7 @@ final class PlaceMarker: GMSMarker {
         didSet {
             if oldValue != isSelected {
                 placeIcon.setSelected(isSelected)
+                self.zIndex = isSelected ? 1 : 0
             }
         }
     }

@@ -62,11 +62,11 @@ class FloatingButton: UIButton {
         layer.cornerRadius = frame.size.height / 2
         setImage(buttonStyle.getIcon(), for: .normal)
         
-        layer.shadowRadius = 3
-        layer.shadowOffset = CGSize(width: 0, height: 1)
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.3
-        clipsToBounds = false
+//        layer.shadowRadius = 3
+//        layer.shadowOffset = CGSize(width: 0, height: 1)
+//        layer.shadowColor = UIColor.black.cgColor
+//        layer.shadowOpacity = 0.3
+//        clipsToBounds = false
     }
     
     override var isEnabled:Bool {
